@@ -79,11 +79,11 @@ python scripts/extract_schema.py \
 Extract relation triples guided by the initial ontology schema using an LLM:
 ```bash
 python scripts/run_extraction.py \
-    --data data/raw_data/ReTACRED/dev.json \
+    --data data/raw_data/ReTACRED/test.json \
     --schema data/ontologies/ReTACRED_ontology.json \
-    --output-dir results/my_experiment \
-    --provider gemini \
-    --api-key "YOUR_GEMINI_API_KEY"
+    --output results/my_run \
+    --base-url http://localhost:8000 \
+    --model Qwen/Qwen3-14B
 ```
 
 ---
@@ -93,9 +93,9 @@ python scripts/run_extraction.py \
 Embed the extracted triples and align them against the initial ontology:
 ```bash
 python scripts/run_alignment.py \
-    --extraction-dir results/my_experiment \
-    --output-dir results/my_experiment \
-    --embedder sentence-transformers/all-MiniLM-L6-v2 \
+    --run-dir results/my_run \
+    --output results/my_run \
+    --embedder Qwen/Qwen3-Embedding-8B \
     --threshold 0.90 \
     --device cpu
 ```
@@ -107,7 +107,7 @@ python scripts/run_alignment.py \
 Cluster unaligned triples into semantically coherent groups:
 ```bash
 python scripts/run_clustering.py \
-    --run-dir results/my_experiment \
+    --run-dir results/my_run \
     --similarity-threshold 0.60 \
     --consensus-runs 3
 ```
@@ -119,10 +119,12 @@ python scripts/run_clustering.py \
 Validate the clusters and label novel relations before integration into the ontology:
 ```bash
 python scripts/run_validation.py \
-    --run-dir results/my_experiment \
-    --provider gemini \
-    --api-key "YOUR_GEMINI_API_KEY" \
-    --model gemini-2.5-flash-lite \
+    --extraction-dir results/my_run \
+    --clusters results/my_run/04_clustering/clusters.json \
+    --embeddings results/my_run/03_alignment/extracted_embeddings.pt \
+    --output results/my_run/05_validation \
+    --base-url http://localhost:8000 \
+    --model Qwen/Qwen3-32B \
     --min-cluster-size 5 \
     --min-confidence Medium
 ```
@@ -164,6 +166,7 @@ results/retacred_gemini_20250310_142501/
 │   └── statistics.json          # Alignment statistics
 │
 ├── 04_clustering/
+│   ├──cluster_embeddings.pt     # saved embedding tensors of each cluster
 │   ├── clusters.json            # Cluster assignments
 │   ├── metrics.json             # Flat quality metrics
 │   └── stratified_metrics.json  # Per-subset evaluation (novel/known/overall)
@@ -180,8 +183,13 @@ results/retacred_gemini_20250310_142501/
 ```
 ORAX-KG/
 │
-├── config.yaml                  # Main configuration file
-│
+├── configs/                     # Main configuration file
+│   ├── config.yaml
+│   ├── test_config.yaml         # For testing
+├── README.md  
+├── requirements.txt
+├── run_predictions.ipynb
+│     
 ├── scripts/                     # Entry-point scripts
 │   ├── run_extraction.py
 │   ├── run_alignment.py
@@ -193,20 +201,16 @@ ORAX-KG/
 ├── src/                         # Core library
 │   ├── extraction/              # LLM extraction + prompt generation
 │   │   ├── llm_extractor.py
-│   │   └── README.md
 │   ├── alignment/               # Embedding + similarity computation
 │   │   ├── embedder.py
 │   │   ├── similarity.py
 │   │   ├── aligner.py
-│   │   └── README.md
 │   ├── clustering/              # Consensus clustering + evaluation
 │   │   ├── consensus.py
 │   │   ├── evaluation.py
 │   │   ├── utils.py
-│   │   └── README.md
 │   └── validation/              # LLM cluster validation
 │       ├── llm_validator.py
-│       └── README.md
 │
 ├── data/
 │   ├── raw_data/
