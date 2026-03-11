@@ -1,0 +1,482 @@
+[
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "city"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "location"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "criminal_charge"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "person"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "religion"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "number"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "cause_of_death"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "country"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "nationality"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "date"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "title"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "duration"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "person",
+    "range_type": "organization"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "organization"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "ideology"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "url"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "number"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "city"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "country"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "location"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "religion"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "person"
+  },
+  {
+    "relation": "no_relation",
+    "domain_type": "organization",
+    "range_type": "date"
+  },
+  {
+    "relation": "per:city_of_death",
+    "domain_type": "person",
+    "range_type": "city"
+  },
+  {
+    "relation": "per:city_of_death",
+    "domain_type": "person",
+    "range_type": "location"
+  },
+  {
+    "relation": "per:city_of_death",
+    "domain_type": "person",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "per:city_of_death",
+    "domain_type": "person",
+    "range_type": "country"
+  },
+  {
+    "relation": "per:city_of_birth",
+    "domain_type": "person",
+    "range_type": "city"
+  },
+  {
+    "relation": "per:city_of_birth",
+    "domain_type": "person",
+    "range_type": "location"
+  },
+  {
+    "relation": "per:city_of_birth",
+    "domain_type": "person",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "per:city_of_birth",
+    "domain_type": "person",
+    "range_type": "nationality"
+  },
+  {
+    "relation": "per:stateorprovinces_of_residence",
+    "domain_type": "person",
+    "range_type": "city"
+  },
+  {
+    "relation": "per:stateorprovinces_of_residence",
+    "domain_type": "person",
+    "range_type": "location"
+  },
+  {
+    "relation": "per:stateorprovinces_of_residence",
+    "domain_type": "person",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "per:cities_of_residence",
+    "domain_type": "person",
+    "range_type": "city"
+  },
+  {
+    "relation": "per:cities_of_residence",
+    "domain_type": "person",
+    "range_type": "location"
+  },
+  {
+    "relation": "per:cities_of_residence",
+    "domain_type": "person",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "per:cities_of_residence",
+    "domain_type": "person",
+    "range_type": "country"
+  },
+  {
+    "relation": "per:stateorprovince_of_birth",
+    "domain_type": "person",
+    "range_type": "location"
+  },
+  {
+    "relation": "per:stateorprovince_of_birth",
+    "domain_type": "person",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "per:stateorprovince_of_birth",
+    "domain_type": "person",
+    "range_type": "nationality"
+  },
+  {
+    "relation": "per:cause_of_death",
+    "domain_type": "person",
+    "range_type": "criminal_charge"
+  },
+  {
+    "relation": "per:cause_of_death",
+    "domain_type": "person",
+    "range_type": "cause_of_death"
+  },
+  {
+    "relation": "per:cause_of_death",
+    "domain_type": "person",
+    "range_type": "date"
+  },
+  {
+    "relation": "per:cause_of_death",
+    "domain_type": "person",
+    "range_type": "title"
+  },
+  {
+    "relation": "per:country_of_birth",
+    "domain_type": "person",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "per:country_of_birth",
+    "domain_type": "person",
+    "range_type": "country"
+  },
+  {
+    "relation": "per:country_of_birth",
+    "domain_type": "person",
+    "range_type": "nationality"
+  },
+  {
+    "relation": "per:stateorprovince_of_death",
+    "domain_type": "person",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "per:children",
+    "domain_type": "person",
+    "range_type": "person"
+  },
+  {
+    "relation": "per:parents",
+    "domain_type": "person",
+    "range_type": "person"
+  },
+  {
+    "relation": "per:other_family",
+    "domain_type": "person",
+    "range_type": "person"
+  },
+  {
+    "relation": "per:identity",
+    "domain_type": "person",
+    "range_type": "person"
+  },
+  {
+    "relation": "per:siblings",
+    "domain_type": "person",
+    "range_type": "person"
+  },
+  {
+    "relation": "per:religion",
+    "domain_type": "person",
+    "range_type": "religion"
+  },
+  {
+    "relation": "per:religion",
+    "domain_type": "person",
+    "range_type": "title"
+  },
+  {
+    "relation": "per:date_of_death",
+    "domain_type": "person",
+    "range_type": "number"
+  },
+  {
+    "relation": "per:date_of_death",
+    "domain_type": "person",
+    "range_type": "date"
+  },
+  {
+    "relation": "per:date_of_death",
+    "domain_type": "person",
+    "range_type": "duration"
+  },
+  {
+    "relation": "per:date_of_birth",
+    "domain_type": "person",
+    "range_type": "number"
+  },
+  {
+    "relation": "per:date_of_birth",
+    "domain_type": "person",
+    "range_type": "date"
+  },
+  {
+    "relation": "per:date_of_birth",
+    "domain_type": "person",
+    "range_type": "duration"
+  },
+  {
+    "relation": "per:country_of_death",
+    "domain_type": "person",
+    "range_type": "country"
+  },
+  {
+    "relation": "per:country_of_death",
+    "domain_type": "person",
+    "range_type": "nationality"
+  },
+  {
+    "relation": "per:title",
+    "domain_type": "person",
+    "range_type": "title"
+  },
+  {
+    "relation": "per:schools_attended",
+    "domain_type": "person",
+    "range_type": "organization"
+  },
+  {
+    "relation": "org:alternate_names",
+    "domain_type": "organization",
+    "range_type": "organization"
+  },
+  {
+    "relation": "org:members",
+    "domain_type": "organization",
+    "range_type": "organization"
+  },
+  {
+    "relation": "org:members",
+    "domain_type": "organization",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "org:members",
+    "domain_type": "organization",
+    "range_type": "city"
+  },
+  {
+    "relation": "org:members",
+    "domain_type": "organization",
+    "range_type": "country"
+  },
+  {
+    "relation": "org:members",
+    "domain_type": "organization",
+    "range_type": "location"
+  },
+  {
+    "relation": "org:shareholders",
+    "domain_type": "organization",
+    "range_type": "organization"
+  },
+  {
+    "relation": "org:shareholders",
+    "domain_type": "organization",
+    "range_type": "person"
+  },
+  {
+    "relation": "org:member_of",
+    "domain_type": "organization",
+    "range_type": "organization"
+  },
+  {
+    "relation": "org:political/religious_affiliation",
+    "domain_type": "organization",
+    "range_type": "ideology"
+  },
+  {
+    "relation": "org:political/religious_affiliation",
+    "domain_type": "organization",
+    "range_type": "religion"
+  },
+  {
+    "relation": "org:website",
+    "domain_type": "organization",
+    "range_type": "url"
+  },
+  {
+    "relation": "org:website",
+    "domain_type": "organization",
+    "range_type": "number"
+  },
+  {
+    "relation": "org:country_of_branch",
+    "domain_type": "organization",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "org:country_of_branch",
+    "domain_type": "organization",
+    "range_type": "city"
+  },
+  {
+    "relation": "org:country_of_branch",
+    "domain_type": "organization",
+    "range_type": "country"
+  },
+  {
+    "relation": "org:country_of_branch",
+    "domain_type": "organization",
+    "range_type": "location"
+  },
+  {
+    "relation": "org:city_of_branch",
+    "domain_type": "organization",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "org:city_of_branch",
+    "domain_type": "organization",
+    "range_type": "city"
+  },
+  {
+    "relation": "org:city_of_branch",
+    "domain_type": "organization",
+    "range_type": "country"
+  },
+  {
+    "relation": "org:city_of_branch",
+    "domain_type": "organization",
+    "range_type": "location"
+  },
+  {
+    "relation": "org:stateorprovince_of_branch",
+    "domain_type": "organization",
+    "range_type": "state_or_province"
+  },
+  {
+    "relation": "org:stateorprovince_of_branch",
+    "domain_type": "organization",
+    "range_type": "city"
+  },
+  {
+    "relation": "org:stateorprovince_of_branch",
+    "domain_type": "organization",
+    "range_type": "country"
+  },
+  {
+    "relation": "org:stateorprovince_of_branch",
+    "domain_type": "organization",
+    "range_type": "location"
+  },
+  {
+    "relation": "org:number_of_employees/members",
+    "domain_type": "organization",
+    "range_type": "number"
+  },
+  {
+    "relation": "org:founded",
+    "domain_type": "organization",
+    "range_type": "date"
+  },
+  {
+    "relation": "org:dissolved",
+    "domain_type": "organization",
+    "range_type": "date"
+  }
+]

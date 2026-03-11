@@ -1,0 +1,1651 @@
+{
+  "relation": {
+    "0": [
+      {
+        "idx": 0,
+        "triple": {
+          "subject": "Pentagon",
+          "subj_type": "organization",
+          "relation": "org:confirmed_official",
+          "object": "Lloyd Austin",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      }
+    ],
+    "1": [
+      {
+        "idx": 5,
+        "triple": {
+          "subject": "Facebook",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Mark Zuckerberg",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 32,
+        "triple": {
+          "subject": "Netflix",
+          "subj_type": "organization",
+          "relation": "org:has_ceo",
+          "object": "Ted Sarandos",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 33,
+        "triple": {
+          "subject": "Twitter",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Jack Dorsey",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 37,
+        "triple": {
+          "subject": "Apple",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Steve Jobs",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 53,
+        "triple": {
+          "subject": "WHO",
+          "subj_type": "organization",
+          "relation": "org:appointed_director",
+          "object": "Tedros Adhanom",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 65,
+        "triple": {
+          "subject": "SpaceX",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Elon Musk",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 74,
+        "triple": {
+          "subject": "Uber",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Travis Kalanick",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 78,
+        "triple": {
+          "subject": "Wikipedia",
+          "subj_type": "organization",
+          "relation": "org:founded_by",
+          "object": "Jimmy Wales",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 115,
+        "triple": {
+          "subject": "ECB",
+          "subj_type": "organization",
+          "relation": "org:appointed_president",
+          "object": "Christine Lagarde",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 126,
+        "triple": {
+          "subject": "Volkswagen",
+          "subj_type": "organization",
+          "relation": "org:appointed_ceo",
+          "object": "Oliver Blume",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 141,
+        "triple": {
+          "subject": "Amazon",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Jeff Bezos",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 143,
+        "triple": {
+          "subject": "Snapchat",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Evan Spiegel",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 145,
+        "triple": {
+          "subject": "LinkedIn",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Reid Hoffman",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 146,
+        "triple": {
+          "subject": "Red Cross",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Henry Dunant",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 163,
+        "triple": {
+          "subject": "institute",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Marie Curie",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 168,
+        "triple": {
+          "subject": "JPMorgan Chase",
+          "subj_type": "organization",
+          "relation": "org:chairman",
+          "object": "Jamie Dimon",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 170,
+        "triple": {
+          "subject": "Amazon",
+          "subj_type": "organization",
+          "relation": "org:appointed_leader",
+          "object": "Andy Jassy",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 188,
+        "triple": {
+          "subject": "Alibaba",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Jack Ma",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 204,
+        "triple": {
+          "subject": "PayPal",
+          "subj_type": "organization",
+          "relation": "org:founded_by",
+          "object": "Peter Thiel",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 209,
+        "triple": {
+          "subject": "NASA",
+          "subj_type": "organization",
+          "relation": "org:has_administrator",
+          "object": "Bill Nelson",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 211,
+        "triple": {
+          "subject": "Tesla",
+          "subj_type": "organization",
+          "relation": "org:has_ceo",
+          "object": "Elon Musk",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 227,
+        "triple": {
+          "subject": "World Bank",
+          "subj_type": "organization",
+          "relation": "org:head",
+          "object": "Ajay Banga",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 240,
+        "triple": {
+          "subject": "IMF",
+          "subj_type": "organization",
+          "relation": "org:has_head_of_organization",
+          "object": "Kristalina Georgieva",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 255,
+        "triple": {
+          "subject": "Microsoft",
+          "subj_type": "organization",
+          "relation": "founded_by",
+          "object": "Bill Gates",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 270,
+        "triple": {
+          "subject": "Shell",
+          "subj_type": "organization",
+          "relation": "org:appointed_ceo",
+          "object": "Wael Sawan",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 271,
+        "triple": {
+          "subject": "Apple",
+          "subj_type": "organization",
+          "relation": "org:ceo",
+          "object": "Tim Cook",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 280,
+        "triple": {
+          "subject": "Alphabet",
+          "subj_type": "organization",
+          "relation": "org:ceo",
+          "object": "Sundar Pichai",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      }
+    ],
+    "2": [
+      {
+        "idx": 43,
+        "triple": {
+          "subject": "Meta",
+          "subj_type": "organization",
+          "relation": "org:promoted_individual_to_position",
+          "object": "Mark Zuckerberg",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      }
+    ],
+    "3": [
+      {
+        "idx": 1,
+        "triple": {
+          "subject": "Angelina Jolie",
+          "subj_type": "person",
+          "relation": "person:spouse",
+          "object": "Brad Pitt",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 13,
+        "triple": {
+          "subject": "Anna Wintour",
+          "subj_type": "person",
+          "relation": "per:spouse",
+          "object": "David Shaffer",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 17,
+        "triple": {
+          "subject": "Kim Kardashian",
+          "subj_type": "person",
+          "relation": "person_married_to_person",
+          "object": "Kanye West",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 28,
+        "triple": {
+          "subject": "Barack Obama",
+          "subj_type": "person",
+          "relation": "person:spouse",
+          "object": "Michelle Obama",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 58,
+        "triple": {
+          "subject": "Prince Harry",
+          "subj_type": "person",
+          "relation": "married_to",
+          "object": "Meghan Markle",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 59,
+        "triple": {
+          "subject": "professor",
+          "subj_type": "person",
+          "relation": "person_married_to_person",
+          "object": "Alan Morris",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 66,
+        "triple": {
+          "subject": "Ryan Reynolds",
+          "subj_type": "person",
+          "relation": "person_married_to_person",
+          "object": "Blake Lively",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 67,
+        "triple": {
+          "subject": "senator",
+          "subj_type": "person",
+          "relation": "person_married_to_person",
+          "object": "Jane Ross",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 101,
+        "triple": {
+          "subject": "George Clooney",
+          "subj_type": "person",
+          "relation": "person_married_to_person",
+          "object": "Amal Alamuddin",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 118,
+        "triple": {
+          "subject": "Victoria Beckham",
+          "subj_type": "person",
+          "relation": "person_married_to_person",
+          "object": "David Beckham",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 135,
+        "triple": {
+          "subject": "author",
+          "subj_type": "person",
+          "relation": "person_dedicated_book_to_person",
+          "object": "Michael",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 177,
+        "triple": {
+          "subject": "actress",
+          "subj_type": "person",
+          "relation": "person_married_to_person",
+          "object": "co star",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 191,
+        "triple": {
+          "subject": "diplomat",
+          "subj_type": "person",
+          "relation": "married_to",
+          "object": "Elena Petrov",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 235,
+        "triple": {
+          "subject": "Justin Trudeau",
+          "subj_type": "person",
+          "relation": "person:spouse",
+          "object": "Sophie Gregoire",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 236,
+        "triple": {
+          "subject": "CEO",
+          "subj_type": "person",
+          "relation": "person_married_to",
+          "object": "Sarah Chen",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 251,
+        "triple": {
+          "subject": "John Legend",
+          "subj_type": "person",
+          "relation": "person:spouse",
+          "object": "Chrissy Teigen",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      }
+    ],
+    "4": [
+      {
+        "idx": 19,
+        "triple": {
+          "subject": "president",
+          "subj_type": "person",
+          "relation": "has_children",
+          "object": "sons",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      }
+    ],
+    "5": [
+      {
+        "idx": 70,
+        "triple": {
+          "subject": "scientist",
+          "subj_type": "person",
+          "relation": "inspired_by",
+          "object": "father",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      }
+    ],
+    "6": [
+      {
+        "idx": 173,
+        "triple": {
+          "subject": "champion",
+          "subj_type": "person",
+          "relation": "person_coached_by",
+          "object": "father",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      }
+    ],
+    "7": [
+      {
+        "idx": 176,
+        "triple": {
+          "subject": "Maya Angelou",
+          "subj_type": "person",
+          "relation": "per:raised_by",
+          "object": "Annie Henderson",
+          "obj_type": "person"
+        },
+        "sentence_id": null
+      }
+    ],
+    "8": [
+      {
+        "idx": 3,
+        "triple": {
+          "subject": "Macron",
+          "subj_type": "person",
+          "relation": "has_title",
+          "object": "President",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 7,
+        "triple": {
+          "subject": "James Kirk",
+          "subj_type": "person",
+          "relation": "has_title",
+          "object": "Captain",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 10,
+        "triple": {
+          "subject": "Desmond Tutu",
+          "subj_type": "person",
+          "relation": "has_title",
+          "object": "Archbishop",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 14,
+        "triple": {
+          "subject": "Colin Powell",
+          "subj_type": "person",
+          "relation": "held_title",
+          "object": "General",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 80,
+        "triple": {
+          "subject": "James Cameron",
+          "subj_type": "person",
+          "relation": "person_has_title",
+          "object": "Director",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 83,
+        "triple": {
+          "subject": "John McCain",
+          "subj_type": "person",
+          "relation": "per:held_title",
+          "object": "Senator",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 87,
+        "triple": {
+          "subject": "Boris Johnson",
+          "subj_type": "person",
+          "relation": "held_title",
+          "object": "Prime Minister",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 89,
+        "triple": {
+          "subject": "Ruth Bader Ginsburg",
+          "subj_type": "person",
+          "relation": "has_title",
+          "object": "Judge",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 93,
+        "triple": {
+          "subject": "Duke Ellington",
+          "subj_type": "person",
+          "relation": "person_has_title",
+          "object": "Duke",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 110,
+        "triple": {
+          "subject": "Eric Adams",
+          "subj_type": "person",
+          "relation": "has_title",
+          "object": "Mayor",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 283,
+        "triple": {
+          "subject": "John Roberts",
+          "subj_type": "person",
+          "relation": "holds_title",
+          "object": "Chief Justice",
+          "obj_type": "title"
+        },
+        "sentence_id": null
+      }
+    ],
+    "9": [
+      {
+        "idx": 8,
+        "triple": {
+          "subject": "Boeing",
+          "subj_type": "organization",
+          "relation": "known_as",
+          "object": "plane_maker",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      }
+    ],
+    "10": [
+      {
+        "idx": 128,
+        "triple": {
+          "subject": "Al Qaeda",
+          "subj_type": "organization",
+          "relation": "new_relation",
+          "object": "The",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      }
+    ],
+    "11": [
+      {
+        "idx": 282,
+        "triple": {
+          "subject": "G8",
+          "subj_type": "organization",
+          "relation": "org:member_removed",
+          "object": "Russia",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      }
+    ],
+    "12": [
+      {
+        "idx": 11,
+        "triple": {
+          "subject": "Emma Rivera",
+          "subj_type": "person",
+          "relation": "per_age_at_event",
+          "object": "19",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 107,
+        "triple": {
+          "subject": "director",
+          "subj_type": "person",
+          "relation": "per:age",
+          "object": "46",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 171,
+        "triple": {
+          "subject": "suspect",
+          "subj_type": "person",
+          "relation": "per:age",
+          "object": "34",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 198,
+        "triple": {
+          "subject": "athlete",
+          "subj_type": "person",
+          "relation": "per:age",
+          "object": "28",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 275,
+        "triple": {
+          "subject": "William Hayes",
+          "subj_type": "person",
+          "relation": "per:age",
+          "object": "53",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      }
+    ],
+    "13": [
+      {
+        "idx": 25,
+        "triple": {
+          "subject": "she",
+          "subj_type": "person",
+          "relation": "per:age_when_became_senator",
+          "object": "33",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      }
+    ],
+    "14": [
+      {
+        "idx": 264,
+        "triple": {
+          "subject": "CEO",
+          "subj_type": "person",
+          "relation": "new_relation",
+          "object": "38",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 71,
+        "triple": {
+          "subject": "Clara Munn",
+          "subj_type": "person",
+          "relation": "new_relation",
+          "object": "31",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 117,
+        "triple": {
+          "subject": "John Carter",
+          "subj_type": "person",
+          "relation": "new_relation",
+          "object": "42",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 139,
+        "triple": {
+          "subject": "Oscar Fleming",
+          "subj_type": "person",
+          "relation": "new_relation",
+          "object": "44",
+          "obj_type": "number"
+        },
+        "sentence_id": null
+      }
+    ],
+    "15": [
+      {
+        "idx": 12,
+        "triple": {
+          "subject": "contractor",
+          "subj_type": "person",
+          "relation": "person_faces_criminal_charge",
+          "object": "bribery",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 38,
+        "triple": {
+          "subject": "Kevin Walsh",
+          "subj_type": "person",
+          "relation": "per:charged_with",
+          "object": "racketeering",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 46,
+        "triple": {
+          "subject": "suspect",
+          "subj_type": "person",
+          "relation": "person_faces_charges_of_criminal_charge",
+          "object": "armed robbery",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 51,
+        "triple": {
+          "subject": "Maria Lopez",
+          "subj_type": "person",
+          "relation": "charged_with",
+          "object": "bribery",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 52,
+        "triple": {
+          "subject": "Carlos Diaz",
+          "subj_type": "person",
+          "relation": "per:charged_with",
+          "object": "drug trafficking",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 76,
+        "triple": {
+          "subject": "Thomas Burke",
+          "subj_type": "person",
+          "relation": "per:charged_with",
+          "object": "tax evasion",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 85,
+        "triple": {
+          "subject": "CEO",
+          "subj_type": "person",
+          "relation": "per:charged_with",
+          "object": "accounting fraud",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 86,
+        "triple": {
+          "subject": "officer",
+          "subj_type": "person",
+          "relation": "person_faces_criminal_charge",
+          "object": "excessive use of force",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 149,
+        "triple": {
+          "subject": "politician",
+          "subj_type": "person",
+          "relation": "accused_of",
+          "object": "corruption",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 156,
+        "triple": {
+          "subject": "Lisa Monroe",
+          "subj_type": "person",
+          "relation": "per:charged_with",
+          "object": "wire fraud",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 196,
+        "triple": {
+          "subject": "He",
+          "subj_type": "person",
+          "relation": "per:charged_with",
+          "object": "manslaughter",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 207,
+        "triple": {
+          "subject": "He",
+          "subj_type": "person",
+          "relation": "charged_with_criminal_charge",
+          "object": "perjury",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 219,
+        "triple": {
+          "subject": "John Russo",
+          "subj_type": "person",
+          "relation": "per:convicted_of",
+          "object": "fraud",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 221,
+        "triple": {
+          "subject": "David Park",
+          "subj_type": "person",
+          "relation": "per:convicted_of",
+          "object": "cybercrime",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 233,
+        "triple": {
+          "subject": "She",
+          "subj_type": "person",
+          "relation": "per:accused_of",
+          "object": "identity theft",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 247,
+        "triple": {
+          "subject": "defendant",
+          "subj_type": "person",
+          "relation": "person_faces_criminal_charge",
+          "object": "conspiracy to commit murder",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 261,
+        "triple": {
+          "subject": "He",
+          "subj_type": "person",
+          "relation": "per:convicted_of",
+          "object": "assault with a deadly weapon",
+          "obj_type": "criminal_charge"
+        },
+        "sentence_id": null
+      }
+    ],
+    "16": [
+      {
+        "idx": 22,
+        "triple": {
+          "subject": "author",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Nigerian",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 31,
+        "triple": {
+          "subject": "Amara Diallo",
+          "subj_type": "person",
+          "relation": "person_has_nationality",
+          "object": "Senegalese",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 40,
+        "triple": {
+          "subject": "chef",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Lebanese",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 41,
+        "triple": {
+          "subject": "senator",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Mexican",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 82,
+        "triple": {
+          "subject": "Sofia Andersen",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Danish",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 113,
+        "triple": {
+          "subject": "Maria Garcia",
+          "subj_type": "person",
+          "relation": "has_maternal_nationality",
+          "object": "Italian",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 152,
+        "triple": {
+          "subject": "Ahmed Al Farsi",
+          "subj_type": "person",
+          "relation": "person_has_nationality",
+          "object": "Yemeni",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 154,
+        "triple": {
+          "subject": "musician",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Cuban",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 160,
+        "triple": {
+          "subject": "Yuki Nakamura",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Japanese",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 167,
+        "triple": {
+          "subject": "Elena Morozov",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Russian",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 186,
+        "triple": {
+          "subject": "athlete",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Kenyan",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 218,
+        "triple": {
+          "subject": "Kwame Mensah",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Ghanaian",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 238,
+        "triple": {
+          "subject": "Lukas Bauer",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "German",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 243,
+        "triple": {
+          "subject": "Ingrid Hansen",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Norwegian",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 248,
+        "triple": {
+          "subject": "Raj Patel",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Indian",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 277,
+        "triple": {
+          "subject": "Fatou Diop",
+          "subj_type": "person",
+          "relation": "person_has_nationality",
+          "object": "Senegalese",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 286,
+        "triple": {
+          "subject": "Pablo Morales",
+          "subj_type": "person",
+          "relation": "has_nationality",
+          "object": "Chilean",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      }
+    ],
+    "17": [
+      {
+        "idx": 183,
+        "triple": {
+          "subject": "Hana Kimura",
+          "subj_type": "person",
+          "relation": "per:nationality",
+          "object": "Japanese",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 142,
+        "triple": {
+          "subject": "Pierre Dubois",
+          "subj_type": "person",
+          "relation": "per:nationality",
+          "object": "French",
+          "obj_type": "nationality"
+        },
+        "sentence_id": null
+      }
+    ],
+    "18": [
+      {
+        "idx": 39,
+        "triple": {
+          "subject": "company",
+          "subj_type": "organization",
+          "relation": "org:has_branch_in",
+          "object": "Chicago",
+          "obj_type": "city"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 63,
+        "triple": {
+          "subject": "Apple",
+          "subj_type": "organization",
+          "relation": "org:has_store_in",
+          "object": "Shanghai",
+          "obj_type": "city"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 197,
+        "triple": {
+          "subject": "organization",
+          "subj_type": "organization",
+          "relation": "org:has_branch_in",
+          "object": "Nairobi",
+          "obj_type": "city"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 226,
+        "triple": {
+          "subject": "manufacturer",
+          "subj_type": "organization",
+          "relation": "org:has_branch_in",
+          "object": "Detroit",
+          "obj_type": "city"
+        },
+        "sentence_id": null
+      }
+    ],
+    "19": [
+      {
+        "idx": 54,
+        "triple": {
+          "subject": "JPMorgan Chase",
+          "subj_type": "organization",
+          "relation": "org:headquarters_location",
+          "object": "New York City",
+          "obj_type": "city"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 94,
+        "triple": {
+          "subject": "fund",
+          "subj_type": "organization",
+          "relation": "org:location",
+          "object": "Singapore",
+          "obj_type": "city"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 165,
+        "triple": {
+          "subject": "airline",
+          "subj_type": "organization",
+          "relation": "org:hub_location",
+          "object": "Dallas",
+          "obj_type": "city"
+        },
+        "sentence_id": null
+      }
+    ],
+    "20": [
+      {
+        "idx": 42,
+        "triple": {
+          "subject": "Samsung",
+          "subj_type": "organization",
+          "relation": "org:operates_in",
+          "object": "South Korea",
+          "obj_type": "country"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 150,
+        "triple": {
+          "subject": "organization",
+          "subj_type": "organization",
+          "relation": "org:operates_in_country",
+          "object": "Kenya",
+          "obj_type": "country"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 223,
+        "triple": {
+          "subject": "fund",
+          "subj_type": "organization",
+          "relation": "org:operates_in_country",
+          "object": "United Kingdom",
+          "obj_type": "country"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 250,
+        "triple": {
+          "subject": "shipping company",
+          "subj_type": "organization",
+          "relation": "operates_in",
+          "object": "China",
+          "obj_type": "country"
+        },
+        "sentence_id": null
+      }
+    ],
+    "21": [
+      {
+        "idx": 75,
+        "triple": {
+          "subject": "James O ' Brien",
+          "subj_type": "person",
+          "relation": "person_settled_in_country",
+          "object": "Canada",
+          "obj_type": "country"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 127,
+        "triple": {
+          "subject": "Marco Rossi",
+          "subj_type": "person",
+          "relation": "person_moved_to_country",
+          "object": "Brazil",
+          "obj_type": "country"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 257,
+        "triple": {
+          "subject": "engineer",
+          "subj_type": "person",
+          "relation": "person_moved_to_country",
+          "object": "Singapore",
+          "obj_type": "country"
+        },
+        "sentence_id": null
+      }
+    ],
+    "22": [
+      {
+        "idx": 79,
+        "triple": {
+          "subject": "Zhang Wei",
+          "subj_type": "person",
+          "relation": "per:residence_duration",
+          "object": "Australia",
+          "obj_type": "country"
+        },
+        "sentence_id": null
+      }
+    ],
+    "23": [
+      {
+        "idx": 81,
+        "triple": {
+          "subject": "Omar Hassan",
+          "subj_type": "person",
+          "relation": "worked_for",
+          "object": "McKinsey",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 84,
+        "triple": {
+          "subject": "Patricia Owens",
+          "subj_type": "person",
+          "relation": "person_employed_by_organization",
+          "object": "World Health Organization",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 88,
+        "triple": {
+          "subject": "Rachel Klein",
+          "subj_type": "person",
+          "relation": "works_for",
+          "object": "FBI",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 98,
+        "triple": {
+          "subject": "Stephen Grant",
+          "subj_type": "person",
+          "relation": "person_employed_by_organization",
+          "object": "Boeing",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 121,
+        "triple": {
+          "subject": "Yuki Tanaka",
+          "subj_type": "person",
+          "relation": "person_employed_by_organization",
+          "object": "Toyota",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 151,
+        "triple": {
+          "subject": "Tom Hanley",
+          "subj_type": "person",
+          "relation": "person_employment_organization",
+          "object": "Apple",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 169,
+        "triple": {
+          "subject": "Sarah Mitchell",
+          "subj_type": "person",
+          "relation": "person_worked_at_organization",
+          "object": "Goldman Sachs",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 185,
+        "triple": {
+          "subject": "Anita Sharma",
+          "subj_type": "person",
+          "relation": "works_for",
+          "object": "ACLU",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 192,
+        "triple": {
+          "subject": "Michael Torres",
+          "subj_type": "person",
+          "relation": "person_employed_by_organization",
+          "object": "Reuters",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 199,
+        "triple": {
+          "subject": "Laura Beck",
+          "subj_type": "person",
+          "relation": "person_employed_by_organization",
+          "object": "Amazon Web Services",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 244,
+        "triple": {
+          "subject": "Beatrice Fontaine",
+          "subj_type": "person",
+          "relation": "person_employed_by_organization",
+          "object": "Louvre",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 260,
+        "triple": {
+          "subject": "Carlos Rivera",
+          "subj_type": "person",
+          "relation": "works_for",
+          "object": "United Nations",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 263,
+        "triple": {
+          "subject": "Grace Wu",
+          "subj_type": "person",
+          "relation": "works_for",
+          "object": "Google",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 265,
+        "triple": {
+          "subject": "Alex Novak",
+          "subj_type": "person",
+          "relation": "person_employment_organization",
+          "object": "Spotify",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 266,
+        "triple": {
+          "subject": "Elena Voss",
+          "subj_type": "person",
+          "relation": "person_employed_by_organization",
+          "object": "MIT",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 269,
+        "triple": {
+          "subject": "David Chen",
+          "subj_type": "person",
+          "relation": "works_for",
+          "object": "Pfizer",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 288,
+        "triple": {
+          "subject": "Nadia Petrov",
+          "subj_type": "person",
+          "relation": "works_for",
+          "object": "European Central Bank",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      }
+    ],
+    "24": [
+      {
+        "idx": 99,
+        "triple": {
+          "subject": "Robert Pearce",
+          "subj_type": "person",
+          "relation": "org:member_of",
+          "object": "BlackRock",
+          "obj_type": "organization"
+        },
+        "sentence_id": null
+      }
+    ],
+    "25": [
+      {
+        "idx": 112,
+        "triple": {
+          "subject": "queen",
+          "subj_type": "person",
+          "relation": "person_head_of_religion",
+          "object": "Church of England",
+          "obj_type": "religion"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 202,
+        "triple": {
+          "subject": "athlete",
+          "subj_type": "person",
+          "relation": "person_converted_to_religion",
+          "object": "Islam",
+          "obj_type": "religion"
+        },
+        "sentence_id": null
+      },
+      {
+        "idx": 291,
+        "triple": {
+          "subject": "author",
+          "subj_type": "person",
+          "relation": "person_converted_to_religion",
+          "object": "Buddhism",
+          "obj_type": "religion"
+        },
+        "sentence_id": null
+      }
+    ]
+  }
+}

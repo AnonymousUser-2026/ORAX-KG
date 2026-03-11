@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "n_novel_relations": 4,
+    "timestamp": "2026-03-11T14:15:17.027527"
+  },
+  "novel_relations": [
+    {
+      "name": "org:founded_by",
+      "description": "The relationship between an organization and the person who founded it.",
+      "domain": "ORGANIZATION",
+      "range": "PERSON",
+      "confidence": "High",
+      "cluster_id": 1,
+      "evidence_count": 27,
+      "reasoning": "Step 1: Core semantics indicate the founder of an organization. Step 2: Existing relations 'no_relation' and 'org:shareholders' do not capture the founder relationship. Step 3: Domain and range are valid. Step 4: All triples consistently express the founder relationship.",
+      "sample_triples": [
+        {
+          "subject": "Facebook",
+          "relation": "founded_by",
+          "object": "Mark Zuckerberg"
+        },
+        {
+          "subject": "Netflix",
+          "relation": "org:has_ceo",
+          "object": "Ted Sarandos"
+        },
+        {
+          "subject": "Twitter",
+          "relation": "founded_by",
+          "object": "Jack Dorsey"
+        },
+        {
+          "subject": "Apple",
+          "relation": "founded_by",
+          "object": "Steve Jobs"
+        },
+        {
+          "subject": "WHO",
+          "relation": "org:appointed_director",
+          "object": "Tedros Adhanom"
+        }
+      ]
+    },
+    {
+      "name": "per:spouse",
+      "description": "Semantic relationship indicating a marital connection between two persons.",
+      "domain": "PERSON",
+      "range": "PERSON",
+      "confidence": "High",
+      "cluster_id": 3,
+      "evidence_count": 16,
+      "reasoning": "Step 1: Core semantics indicate a marital relationship. Step 2: None of the existing relations (per:children, per:parents, etc.) capture marriage. Step 3: Domain and range are valid PERSON types. Step 4: All triples consistently express marriage.",
+      "sample_triples": [
+        {
+          "subject": "Angelina Jolie",
+          "relation": "person:spouse",
+          "object": "Brad Pitt"
+        },
+        {
+          "subject": "Anna Wintour",
+          "relation": "per:spouse",
+          "object": "David Shaffer"
+        },
+        {
+          "subject": "Kim Kardashian",
+          "relation": "person_married_to_person",
+          "object": "Kanye West"
+        },
+        {
+          "subject": "Barack Obama",
+          "relation": "person:spouse",
+          "object": "Michelle Obama"
+        },
+        {
+          "subject": "Prince Harry",
+          "relation": "married_to",
+          "object": "Meghan Markle"
+        }
+      ]
+    },
+    {
+      "name": "per:charged_with",
+      "description": "Indicates a legal accusation against a person for a specific criminal offense.",
+      "domain": "PERSON",
+      "range": "CRIMINAL_CHARGE",
+      "confidence": "High",
+      "cluster_id": 15,
+      "evidence_count": 17,
+      "reasoning": "Step 1: Core semantics indicate a legal accusation relationship. Step 2: No existing relation matches this meaning. 'per:cause_of_death' is unrelated. Step 3: Domain and range are valid. Step 4: All triples consistently express being charged with a crime.",
+      "sample_triples": [
+        {
+          "subject": "contractor",
+          "relation": "person_faces_criminal_charge",
+          "object": "bribery"
+        },
+        {
+          "subject": "Kevin Walsh",
+          "relation": "per:charged_with",
+          "object": "racketeering"
+        },
+        {
+          "subject": "suspect",
+          "relation": "person_faces_charges_of_criminal_charge",
+          "object": "armed robbery"
+        },
+        {
+          "subject": "Maria Lopez",
+          "relation": "charged_with",
+          "object": "bribery"
+        },
+        {
+          "subject": "Carlos Diaz",
+          "relation": "per:charged_with",
+          "object": "drug trafficking"
+        }
+      ]
+    },
+    {
+      "name": "per:employed_by",
+      "description": "Semantic relationship indicating a person's current or past employment with an organization.",
+      "domain": "PERSON",
+      "range": "ORGANIZATION",
+      "confidence": "High",
+      "cluster_id": 23,
+      "evidence_count": 17,
+      "reasoning": "Step 1: Core semantics indicate employment relationship. Step 2: No existing relation (only 'schools_attended') matches employment. Step 3: Types are valid (PERSON -> ORGANIZATION). Step 4: All triples consistently express employment.",
+      "sample_triples": [
+        {
+          "subject": "Omar Hassan",
+          "relation": "worked_for",
+          "object": "McKinsey"
+        },
+        {
+          "subject": "Patricia Owens",
+          "relation": "person_employed_by_organization",
+          "object": "World Health Organization"
+        },
+        {
+          "subject": "Rachel Klein",
+          "relation": "works_for",
+          "object": "FBI"
+        },
+        {
+          "subject": "Stephen Grant",
+          "relation": "person_employed_by_organization",
+          "object": "Boeing"
+        },
+        {
+          "subject": "Yuki Tanaka",
+          "relation": "person_employed_by_organization",
+          "object": "Toyota"
+        }
+      ]
+    }
+  ]
+}

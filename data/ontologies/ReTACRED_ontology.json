@@ -1,0 +1,176 @@
+{
+    "PERSON": {
+        "CITY": [
+            "per:employee_of",
+            "no_relation",
+            "per:city_of_death",
+            "per:city_of_birth",
+            "per:origin",
+            "per:stateorprovinces_of_residence",
+            "per:countries_of_residence",
+            "per:cities_of_residence"
+        ],
+        "LOCATION": [
+            "per:countries_of_residence",
+            "per:stateorprovince_of_birth",
+            "per:cities_of_residence",
+            "per:employee_of",
+            "per:stateorprovinces_of_residence",
+            "no_relation",
+            "per:city_of_death",
+            "per:origin",
+            "per:city_of_birth"
+        ],
+        "CRIMINAL_CHARGE": [
+            "per:cause_of_death",
+            "no_relation",
+            "per:charges"
+        ],
+        "STATE_OR_PROVINCE": [
+            "per:city_of_death",
+            "per:city_of_birth",
+            "per:country_of_birth",
+            "per:stateorprovince_of_birth",
+            "per:stateorprovince_of_death",
+            "per:stateorprovinces_of_residence",
+            "per:cities_of_residence",
+            "per:employee_of",
+            "no_relation"
+        ],
+        "PERSON": [
+            "no_relation",
+            "per:spouse",
+            "per:children",
+            "per:parents",
+            "per:other_family",
+            "per:identity",
+            "per:siblings"
+        ],
+        "RELIGION": [
+            "no_relation",
+            "per:religion"
+        ],
+        "NUMBER": [
+            "no_relation",
+            "per:age",
+            "per:date_of_death",
+            "per:date_of_birth"
+        ],
+        "CAUSE_OF_DEATH": [
+            "no_relation",
+            "per:charges",
+            "per:cause_of_death"
+        ],
+        "COUNTRY": [
+            "per:origin",
+            "per:countries_of_residence",
+            "per:country_of_birth",
+            "per:country_of_death",
+            "per:cities_of_residence",
+            "per:employee_of",
+            "no_relation",
+            "per:city_of_death"
+        ],
+        "NATIONALITY": [
+            "per:employee_of",
+            "no_relation",
+            "per:city_of_birth",
+            "per:origin",
+            "per:countries_of_residence",
+            "per:country_of_birth",
+            "per:stateorprovince_of_birth",
+            "per:country_of_death"
+        ],
+        "DATE": [
+            "per:date_of_birth",
+            "per:cause_of_death",
+            "no_relation",
+            "per:age",
+            "per:date_of_death"
+        ],
+        "TITLE": [
+            "no_relation",
+            "per:charges",
+            "per:title",
+            "per:cause_of_death",
+            "per:age",
+            "per:religion"
+        ],
+        "DURATION": [
+            "per:age",
+            "per:date_of_death",
+            "per:date_of_birth",
+            "no_relation"
+        ],
+        "ORGANIZATION": [
+            "per:employee_of",
+            "no_relation",
+            "per:schools_attended"
+        ]
+    },
+    "ORGANIZATION": {
+        "ORGANIZATION": [
+            "org:alternate_names",
+            "org:members",
+            "org:shareholders",
+            "no_relation",
+            "org:member_of"
+        ],
+        "IDEOLOGY": [
+            "no_relation",
+            "org:political/religious_affiliation"
+        ],
+        "URL": [
+            "no_relation",
+            "org:website"
+        ],
+        "STATE_OR_PROVINCE": [
+            "no_relation",
+            "org:country_of_branch",
+            "org:members",
+            "org:city_of_branch",
+            "org:stateorprovince_of_branch"
+        ],
+        "NUMBER": [
+            "org:website",
+            "no_relation",
+            "org:number_of_employees/members"
+        ],
+        "CITY": [
+            "org:country_of_branch",
+            "org:members",
+            "org:city_of_branch",
+            "org:stateorprovince_of_branch",
+            "no_relation"
+        ],
+        "COUNTRY": [
+            "no_relation",
+            "org:country_of_branch",
+            "org:members",
+            "org:city_of_branch",
+            "org:stateorprovince_of_branch"
+        ],
+        "LOCATION": [
+            "org:city_of_branch",
+            "org:stateorprovince_of_branch",
+            "no_relation",
+            "org:country_of_branch",
+            "org:members"
+        ],
+        "RELIGION": [
+            "no_relation",
+            "org:political/religious_affiliation"
+        ],
+        "PERSON": [
+            "org:shareholders",
+            "org:founded_by",
+            "no_relation",
+            "org:top_members/employees"
+        ],
+        "DATE": [
+            "no_relation",
+            "org:founded",
+            "org:dissolved"
+        ]
+    }
+}
