@@ -102,7 +102,7 @@ def run_extraction(
     ontology_manager.load_from_schema(schema)
 
     print(f"\n  Splitting ontology...")
-    known_mgr, hidden_mgr, metadata = ontology_manager.split_ontology()
+    known_mgr, hidden_mgr, metadata = ontology_manager.split_ontology(hidden_split=0.2)
 
     print(f"\n  Saving ontology splits...")
     with open(ontology_dir / "known_ontology.json", "w") as f:

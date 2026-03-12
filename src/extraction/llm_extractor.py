@@ -38,7 +38,7 @@ class OntologyManager:
     Manages ontology for relation extraction.
     Handles loading, splitting, and querying ontologies.
     """
-
+ 
     # Relations withheld from the LLM during evaluation
     HIDDEN_RELATIONS = {
         "per:employee_of",
@@ -50,11 +50,11 @@ class OntologyManager:
         "org:founded_by",
         "per:spouse",
     }
-
+ 
     def __init__(self):
         self.ontology: List[RelationSchema] = []
         self.entity_types: set = set()
-
+ 
     def load_from_schema(self, schema: Dict) -> 'OntologyManager':
         """
         Load ontology from schema format.
@@ -95,7 +95,7 @@ class OntologyManager:
             print(f"   Found {len(multi_variant)} relations with multiple type signatures")
  
         return self
-
+ 
     def to_dict(self) -> List[Dict]:
         """Convert ontology to dictionary format for LLM prompts."""
         return [
@@ -106,51 +106,94 @@ class OntologyManager:
             }
             for schema in self.ontology
         ]
-
-    def split_ontology(self) -> Tuple['OntologyManager', 'OntologyManager', Dict]:
+ 
+    def split_ontology(
+        self,
+        hidden_split: float = 0.2,
+        seed: int = 42,
+    ) -> Tuple['OntologyManager', 'OntologyManager', Dict]:
         """
         Split ontology into known and hidden portions.
         All domain/range variants of the same relation stay together.
-
+ 
+        If HIDDEN_RELATIONS is non-empty and all its entries are present in
+        the ontology, uses the predefined split. Otherwise falls back to a
+        random split at the relation level using hidden_split as the fraction
+        of relations to withhold.
+ 
+        Args:
+            hidden_split: Fraction of relations to hide when using random split (default 0.2)
+            seed: Random seed for reproducibility of random split
+ 
         Returns:
             (known_manager, hidden_manager, metadata_dict)
         """
+        # Group entries by relation name — variants stay together
         relation_to_entries = defaultdict(list)
         for rel_schema in self.ontology:
             relation_to_entries[rel_schema.relation].append(rel_schema)
-
+ 
+        all_relations = list(relation_to_entries.keys())
+ 
+        # Decide split strategy
+        available_hidden = self.HIDDEN_RELATIONS & set(all_relations)
+        if available_hidden:
+            # Predefined split — use HIDDEN_RELATIONS
+            split_mode = "predefined"
+            hidden_relation_set = available_hidden
+            missing = self.HIDDEN_RELATIONS - set(all_relations)
+            if missing:
+                print(f"   Note: {len(missing)} predefined hidden relations not in ontology: {missing}")
+        else:
+            # Random split — shuffle at relation level and take hidden_split fraction
+            split_mode = "random"
+            rng = random.Random(seed)
+            shuffled = all_relations[:]
+            rng.shuffle(shuffled)
+            n_hidden = max(1, round(len(shuffled) * hidden_split))
+            hidden_relation_set = set(shuffled[:n_hidden])
+            print(f"   No predefined hidden relations found — using random {hidden_split:.0%} split")
+ 
         known_ontology, hidden_ontology = [], []
-
         for relation_label, entries in relation_to_entries.items():
-            if relation_label in self.HIDDEN_RELATIONS:
+            if relation_label in hidden_relation_set:
                 hidden_ontology.extend(entries)
             else:
                 known_ontology.extend(entries)
-
+ 
         assert len(known_ontology) + len(hidden_ontology) == len(self.ontology), \
             f"Split error: {len(known_ontology)} + {len(hidden_ontology)} != {len(self.ontology)}"
-
+ 
         known_rels  = len(set(e.relation for e in known_ontology))
         hidden_rels = len(set(e.relation for e in hidden_ontology))
-
-        print(f"\n Ontology Split:")
+ 
+        print(f"\n  Ontology Split ({split_mode}):")
         print(f"   Total ontology entries: {len(self.ontology)}")
         print(f"   Known:  {known_rels} relations -> {len(known_ontology)} entries")
         print(f"   Hidden: {hidden_rels} relations -> {len(hidden_ontology)} entries")
-
+        if split_mode == "random":
+            print(f"   Hidden relations: {sorted(hidden_relation_set)}")
+ 
         known_manager = OntologyManager()
         known_manager.set_ontology(known_ontology)
-
+ 
         hidden_manager = OntologyManager()
         hidden_manager.set_ontology(hidden_ontology)
-
-        return known_manager, hidden_manager, {}
-
+ 
+        metadata = {
+            "split_mode":          split_mode,
+            "hidden_relations":    sorted(hidden_relation_set),
+            "known_relation_count":  known_rels,
+            "hidden_relation_count": hidden_rels,
+            "hidden_split_ratio":  hidden_rels / (known_rels + hidden_rels) if (known_rels + hidden_rels) > 0 else 0,
+        }
+ 
+        return known_manager, hidden_manager, metadata
+ 
     def set_ontology(self, ontology_list: List[RelationSchema]) -> 'OntologyManager':
         """Set ontology from list of RelationSchema objects."""
         self.ontology = ontology_list
         return self
-
 
 class PromptGenerator:
     """Generate LLM prompts for relation extraction."""
