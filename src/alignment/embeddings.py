@@ -1,7 +1,3 @@
-"""
-Triple embedding module for ORAX-KG alignment.
-"""
-
 import torch
 import torch.nn.functional as F
 from typing import List, Dict
@@ -43,7 +39,6 @@ class TripleEmbedder:
         """
         if device is None:
             device = "cuda" if torch.cuda.is_available() else "cpu"
-            print(f"  Using {'CUDA GPU' if device == 'cuda' else 'CPU'}")
 
         self.device = device
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side="left")
@@ -52,12 +47,10 @@ class TripleEmbedder:
             self.model = AutoModel.from_pretrained(
                 model_name, torch_dtype=torch.float32
             ).to(device)
-            print("  Model loaded on CPU with float32")
         else:
             self.model = AutoModel.from_pretrained(
                 model_name, device_map="auto", torch_dtype=torch.float16
             ).to(device)
-            print("  Model loaded on GPU with float16")
 
         self.model_name = model_name
         self.pooling_fn = last_token_pool if "Embedding" in model_name else mean_pool

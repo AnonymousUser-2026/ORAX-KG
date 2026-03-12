@@ -1,5 +1,5 @@
 # ORAX-KG
-Official implementation of ORAX-KG
+Official implementation of ORAX-KG.
 ---
 
 ## Description
@@ -10,10 +10,10 @@ ORAX-KG is a unified framework that expands an initial ontology for ontology-gro
 
 **ORAX-KG combines:**
 
-1. **LLM-based extraction** — An instruction-tuned model extracts (subject, relation, object) triples from sentences, guided by the known portion of the ontology
-2. **Semantic alignment** — Extracted triples are embedded and matched against known ontology patterns; unmatched triples are flagged for clustering
-3. **Consensus clustering** — A multi-algorithm ensemble (Spectral, HDBSCAN, Leiden) groups unaligned triples by semantic similarity
-4. **LLM validation** — A second LLM pass inspects each cluster, decides whether it represents a genuinely new relation, and proposes a labeling
+1. **LLM-based extraction** — An instruction-tuned model extracts (subject, relation, object) triples from sentences, guided by the known portion of the ontology.
+2. **Semantic alignment** — Extracted triples are embedded and matched against known ontology patterns; unmatched triples are flagged for clustering.
+3. **Consensus clustering** — A multi-algorithm ensemble groups unaligned triples by semantic similarity.
+4. **LLM validation** — A second LLM pass inspects each cluster, decides whether it represents a genuinely new relation, and proposes a labeling.
 
 ---
 
@@ -97,7 +97,7 @@ python scripts/run_alignment.py \
     --output results/my_run \
     --embedder Qwen/Qwen3-Embedding-8B \
     --threshold 0.90 \
-    --device cpu
+    --device cuda
 ```
 
 ---
@@ -135,7 +135,7 @@ python scripts/run_validation.py \
 
 Execute the complete pipeline end-to-end from a configuration file:
 ```bash
-python scripts/run_full_pipeline.py --config config.yaml
+python scripts/run_full_pipeline.py --config configs/config.yaml
 ```
 
 ---
@@ -144,14 +144,14 @@ python scripts/run_full_pipeline.py --config config.yaml
 
 Each run creates a timestamped directory under `results/` with the following layout:
 ```
-results/retacred_gemini_20250310_142501/
+results/retacred_qwen_20250310_142501/
 │
 ├── 00_config.yaml               # Saved run configuration
 │
 ├── 01_ontology/
 │   ├── full_ontology.json       # Complete relation schema
-│   ├── known_ontology.json      # Relations shown to the LLM
-│   ├── hidden_ontology.json     # Relations withheld (evaluation targets)
+│   ├── known_ontology.json      # Ontology triples shown to the LLM
+│   ├── hidden_ontology.json     # Ontology triples withheld (evaluation targets)
 │   └── split_metadata.json      # Split statistics
 │
 ├── 02_extraction/
@@ -166,15 +166,15 @@ results/retacred_gemini_20250310_142501/
 │   └── statistics.json          # Alignment statistics
 │
 ├── 04_clustering/
-│   ├──cluster_embeddings.pt     # saved embedding tensors of each cluster
-│   ├── clusters.json            # Cluster assignments
+│   ├── cluster_embeddings.pt    # Full cluster items with embedding tensors
+│   ├── clusters.json            # Cluster assignments with triple metadata
 │   ├── metrics.json             # Flat quality metrics
 │   └── stratified_metrics.json  # Per-subset evaluation (novel/known/overall)
 │
 └── 05_validation/
     ├── novel_relations.json     # Accepted novel relation candidates
     ├── rejected_candidates.json # Rejected clusters with reasons
-    └── validation_config.yaml   # Validation-specific configuration
+    └── 00_config.yaml           # Validation-specific configuration
 ```
 
 ---
@@ -183,13 +183,14 @@ results/retacred_gemini_20250310_142501/
 ```
 ORAX-KG/
 │
-├── configs/                     # Main configuration file
+├── configs/                     # Configuration files
 │   ├── config.yaml
-│   ├── test_config.yaml         # For testing
-├── README.md  
+│   └── test_config.yaml         # For testing
+│
+├── README.md
 ├── requirements.txt
 ├── run_predictions.ipynb
-│     
+│
 ├── scripts/                     # Entry-point scripts
 │   ├── run_extraction.py
 │   ├── run_alignment.py
@@ -200,23 +201,25 @@ ORAX-KG/
 │
 ├── src/                         # Core library
 │   ├── extraction/              # LLM extraction + prompt generation
-│   │   ├── llm_extractor.py
+│   │   └── llm_extractor.py
 │   ├── alignment/               # Embedding + similarity computation
-│   │   ├── embedder.py
+│   │   ├── embeddings.py
 │   │   ├── similarity.py
-│   │   ├── aligner.py
+│   │   └── aligner.py
 │   ├── clustering/              # Consensus clustering + evaluation
 │   │   ├── consensus.py
 │   │   ├── evaluation.py
-│   │   ├── utils.py
+│   │   └── utils.py
 │   └── validation/              # LLM cluster validation
-│       ├── llm_validator.py
+│       └── llm_validator.py
 │
 ├── data/
 │   ├── raw_data/
-│   │   └── DATASET_EXAMPLE.json     # Small synthetic sample for testing
+│   │   └── DATASET_EXAMPLE/         # Small synthetic sample for testing
+│   │       
 │   └── ontologies/
-│       └── ReTACRED_ontology.json
+│       ├── ReTACRED_ontology.json
+│       └── TACRED_ontology.json
 │
 └── results/                     # Created at runtime; one sub-folder per run
 ```

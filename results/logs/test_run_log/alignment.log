@@ -1,0 +1,53 @@
+
+
+  Run started: 2026-03-12 14:23:01
+  Log: results/logs/test_run_log\alignment.log
+
+
+
+
+ORAX-KG Ontology Alignment:
+
+  Loading from:     results\test_run
+  Output directory: results\test_run\03_alignment
+
+  Loading extraction artifacts...
+   Loaded 296 extractions
+   Loaded known ontology (71 entries)
+
+  Preparing extracted triples...
+
+  Initializing embedder: sentence-transformers/all-MiniLM-L6-v2
+
+  Embedding extracted triples...
+
+  Embedding ontology patterns...
+
+  Saving embeddings...
+   Saved to results\test_run\03_alignment
+
+  Computing similarities...
+
+  Aligning triples (threshold=0.9)...
+
+  Computing alignment metrics...
+
+
+ALIGNMENT EVALUATION REPORT:
+
+Precision:    0.927
+Recall:       0.838
+F1-Score:     0.881
+Specificity:  0.915
+
+True Positives:  140
+False Positives: 11
+False Negatives: 27
+True Negatives:  118
+Total:           296
+
+
+  Alignment complete!
+   Aligned:          151
+   Novel candidates: 145
+   Artifacts saved:  results\test_run\03_alignment

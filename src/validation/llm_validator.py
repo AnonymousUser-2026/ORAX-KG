@@ -1,8 +1,3 @@
-"""
-LLM-based cluster validation for novel relation discovery in ORAX-KG.
-Validates clustering output and identifies genuinely novel ontology relations.
-"""
-
 import json
 from dataclasses import dataclass
 from enum import Enum
@@ -15,8 +10,6 @@ import pandas as pd
 from ..clustering.consensus import compute_inter_triple_similarities
 from ..extraction.llm_extractor import extract_json_from_text
 
-
-# Data Models
 
 class ConfidenceLevel(Enum):
     LOW    = "Low"
@@ -51,7 +44,6 @@ class ValidatedRelation:
     confidence: ConfidenceLevel
     reasoning: str
 
-# Cluster Validator
 
 class ClusterValidator:
     """
@@ -105,8 +97,6 @@ class ClusterValidator:
                 "range":  range_t,
             })
 
-    # Representative Selection
-
     def select_representatives(
         self,
         cluster_items: List[Dict],
@@ -129,7 +119,6 @@ class ClusterValidator:
 
         return [cluster_items[i] for i in top_indices.tolist()]
 
-    # Prompt Generation
     def _format_prompt(
         self,
         representatives: List[Dict],
@@ -157,17 +146,13 @@ class ClusterValidator:
 
         classes_text = ", ".join(sorted(self.ontology_classes))
 
-        return f"""You are a senior ontology engineer performing STRICT semantic validation.
+        return f"""You are an ontology expert performing semantic validation of relation clusters.
 
-Your task is to decide whether a cluster of triples represents:
-(A) a NEW ontology relation
-or
-(B) a REDUNDANT relation that already exists.
+### TASK
+Your task is to decide whether a cluster of triples srepresents a GENUINELY NEW relation that should be added to the initial ontology,
+or if it is REDUNDANT with existing ontology relations.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-INPUT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+### INPUT DATA
 Cluster ID: {cluster_id}
 Cluster Size: {cluster_size}
 
@@ -183,10 +168,7 @@ Existing ontology relations with SAME domain-range ({subj_type} -> {obj_type}):
 Valid ontology classes:
 {classes_text}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STRICT VALIDATION PROTOCOL
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+### VALIDATION PROCEDURE (FOLLOW STRICTLY):
 STEP 1 — Identify Core Semantics
 • Ignore surface wording.
 • Identify the SINGLE underlying semantic relationship.
@@ -198,26 +180,19 @@ For EACH existing relation above:
   2. Are these triples simply paraphrases or lexical variants?
   3. Is the semantic connection IDENTICAL (not just related)?
 
-If YES for ANY relation -> mark REDUNDANT.
-If NO for ALL relations -> mark NEW.
-
-IMPORTANT: Similarity is NOT enough.
-Only mark REDUNDANT if the semantic meaning is fundamentally the same.
+If cluster expresses THE SAME relationship as ANY existing ontology relation -> mark REDUNDANT.
+If cluster expresses a DIFFERENT relationship from ALL existing relations -> mark NEW.
 
 STEP 3 — Type Validation
 • Domain MUST equal: {subj_type}
 • Range  MUST equal: {obj_type}
 • Both must exist in valid ontology classes.
-Otherwise -> REDUNDANT with Low confidence.
 
 STEP 4 — Coherence Check
 All triples must express the SAME semantic relationship.
-If mixed meanings -> REDUNDANT (Low confidence).
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-DECISION CRITERIA
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+### DECISION CRITERIA
 REDUNDANT if:
 • Same semantic meaning as an existing relation
 • Or incoherent cluster
@@ -234,10 +209,8 @@ If NEW, the relation name must be:
 • Free of temporal or contextual modifiers
 • General rather than overly specific
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-OUTPUT REQUIREMENTS (MANDATORY)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+### OUTPUT FORMAT (JSON ONLY):
 Return ONLY valid JSON. No markdown, no code blocks, no extra text.
 
 Schema:
@@ -254,18 +227,18 @@ Schema:
 }}
 
 Hard Constraints:
-• If decision = "REDUNDANT":
+- If decision = "REDUNDANT":
     - name MUST be null
     - existing_match MUST be true
     - existing_relation_name MUST be provided
 
-• If decision = "NEW":
+- If decision = "NEW":
     - name MUST be provided
     - existing_match MUST be false
     - existing_relation_name MUST be null
+- Be FAIR: Only mark REDUNDANT if truly THE SAME relationship, not just related
 """
 
-    # LLM Call
     def _call_llm(self, prompt: str) -> Dict:
         """Call the OpenAI-compatible LLM and return parsed JSON response."""
         try:
@@ -288,8 +261,6 @@ Hard Constraints:
             print(f"   LLM call failed: {e}")
             raise
 
-
-    # Single-Cluster Validation
     def validate_cluster(
         self,
         cluster_id: int,
@@ -346,7 +317,6 @@ Hard Constraints:
 
         return True, "Accepted"
 
-    # Full Pipeline
     def validate_all_clusters(
         self,
         all_clusters: Dict[str, Dict[int, List[Dict]]],
@@ -364,9 +334,9 @@ Hard Constraints:
         """
         relation_clusters = all_clusters.get("relation", {})
 
-        print(f"\n{'='*70}")
+        print(f"\n")
         print(f"VALIDATING {len(relation_clusters)} CLUSTERS")
-        print(f"{'='*70}\n")
+        print(f"\n")
 
         novel_relations: List[ValidatedRelation] = []
         rejected: Dict[str, list] = {
@@ -462,9 +432,9 @@ def print_validation_summary(
     novel_relations: List[ValidatedRelation],
     rejected: Dict[str, list],
 ):
-    print(f"\n{'='*70}")
+    print(f"\n")
     print("VALIDATION SUMMARY")
-    print(f"{'='*70}\n")
+    print(f"\n")
 
     print(f"  Novel Relations Accepted:     {len(novel_relations)}")
     print(f"  Rejected (Existing Match):    {len(rejected['existing_match'])}")
@@ -472,9 +442,8 @@ def print_validation_summary(
     print(f"  Rejected (Low Confidence):    {len(rejected['low_confidence'])}")
 
     if novel_relations:
-        print(f"\n{'='*70}")
-        print("ACCEPTED NOVEL RELATIONS")
-        print(f"{'='*70}")
+        print(f"\n")
+        print("ACCEPTED NOVEL RELATIONS:")
         for rel in novel_relations:
             print(f"\n  {rel.name}")
             print(f"   Description: {rel.description}")
@@ -488,10 +457,3 @@ def print_validation_summary(
                 print(f"      - {triple.get('subject','N/A')} "
                       f"-> {triple.get('relation','N/A')} "
                       f"-> {triple.get('object','N/A')}")
-
-    if rejected["existing_match"]:
-        print(f"\n{'='*70}")
-        print("REJECTED — MATCHES EXISTING (first 10)")
-        print(f"{'='*70}")
-        for c in rejected["existing_match"][:10]:
-            print(f"   {c.name} -> maps to: {c.existing_relation_name}")

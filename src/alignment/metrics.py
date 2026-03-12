@@ -1,7 +1,3 @@
-"""
-Evaluation metrics for alignment quality.
-"""
-
 from typing import List, Dict
 
 
@@ -72,9 +68,8 @@ def evaluate_alignment(
 
 def print_alignment_report(metrics: Dict):
     """Print formatted alignment report."""
-    print("\n" + "=" * 70)
-    print("ALIGNMENT EVALUATION REPORT")
-    print("=" * 70)
+    print("\n")
+    print("ALIGNMENT EVALUATION REPORT:")
     print(f"\nPrecision:    {metrics['precision']:.3f}")
     print(f"Recall:       {metrics['recall']:.3f}")
     print(f"F1-Score:     {metrics['f1']:.3f}")
@@ -84,4 +79,3 @@ def print_alignment_report(metrics: Dict):
     print(f"False Negatives: {metrics['false_negatives']}")
     print(f"True Negatives:  {metrics['true_negatives']}")
     print(f"Total:           {metrics['total']}")
-    print("=" * 70)

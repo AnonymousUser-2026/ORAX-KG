@@ -1,0 +1,36 @@
+{
+  "existing_match": [
+    {
+      "name": null,
+      "matched_to": "per:other_family",
+      "cluster_id": 4
+    },
+    {
+      "name": null,
+      "matched_to": "per:title",
+      "cluster_id": 10
+    },
+    {
+      "name": null,
+      "matched_to": "per:date_of_birth",
+      "cluster_id": 12
+    },
+    {
+      "name": null,
+      "matched_to": "per:country_of_birth",
+      "cluster_id": 15
+    },
+    {
+      "name": null,
+      "matched_to": "per:cause_of_death",
+      "cluster_id": 17
+    },
+    {
+      "name": null,
+      "matched_to": "per:schools_attended",
+      "cluster_id": 24
+    }
+  ],
+  "type_incompatible": [],
+  "low_confidence": []
+}

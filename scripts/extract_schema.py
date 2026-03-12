@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""
-Extract relation schema from a TACRED-format training file.
-Produces a JSON schema mapping domain types → range types → relation labels,
-ready to be used as the ontology input for the ORAX-KG pipeline.
-"""
-
 import json
 import argparse
 from pathlib import Path

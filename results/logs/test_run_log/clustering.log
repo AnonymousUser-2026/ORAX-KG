@@ -1,0 +1,55 @@
+
+
+  Run started: 2026-03-12 14:25:59
+  Log: results/logs/test_run_log\clustering.log
+
+
+
+
+ORAX-KG Consensus Clustering:
+
+  Loading from: results\test_run
+
+  Loading artifacts...
+Loaded 296 extractions, 296 alignment results, 296 embeddings
+
+  Computing inter-triple similarities...
+
+  Running consensus clustering...
+ Initialized with algorithms: ['spectral', 'hdbscan', 'leiden']
+   Type stratification: 12 type-pair groups
+   Clustering organization:person (29 items)
+   Clustering person:person (22 items)
+   Clustering person:title (14 items)
+   Clustering person:number (13 items)
+   Clustering person:nationality (19 items)
+   Clustering person:criminal_charge (15 items)
+   Clustering organization:city (2 items)
+   Clustering person:country (5 items)
+   Clustering person:organization (18 items)
+   Clustering organization:country (2 items)
+   Preserving 17 singletons as potential novel relations
+→ Mode 'relation' produced 29 clusters
+   Preserving 0 singletons as potential novel relations
+→ Mode 'constraint' produced 1 clusters
+
+  Evaluating clustering...
+
+ NOVEL DISCOVERY EVALUATION
+   Samples: 114 | GT classes: 8 | Pred clusters: 17
+   B³ F1: 0.712 | V-measure: 0.760 | ARI: 0.566
+
+ ROBUSTNESS CHECK (Known Relations)
+   Samples: 27 | GT classes: 7 | Pred clusters: 13
+   B³ F1: 0.719 | V-measure: 0.706 | ARI: 0.630
+
+ OVERALL PIPELINE PERFORMANCE
+   Samples: 141 | GT classes: 15 | Pred clusters: 29
+   B³ F1: 0.714 | V-measure: 0.791 | ARI: 0.587
+
+  Saving results...
+   Saved cluster embeddings to results\test_run\04_clustering\cluster_embeddings.pt
+
+
+  Clustering complete!
+   Artifacts saved to: results\test_run\04_clustering

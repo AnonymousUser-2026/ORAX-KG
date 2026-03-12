@@ -1,8 +1,3 @@
-"""
-Semantic-aware consensus clustering for novel relation discovery.
-Combines Spectral, HDBSCAN, and Leiden clustering.
-"""
-
 import os
 import random
 import numpy as np
@@ -46,10 +41,6 @@ def set_all_seeds(seed: int = 42):
 set_all_seeds(SEED)
 
 
-# ============================================================================
-# Inter-Triple Similarity Computation
-# ============================================================================
-
 def compute_inter_triple_similarities(
     extracted_embeddings: List[Dict],
 ) -> Dict[str, torch.Tensor]:
@@ -86,10 +77,6 @@ def compute_inter_triple_similarities(
         "object":   obj_embs      @ obj_embs.T,
     }
 
-
-# ============================================================================
-# Consensus Clustering
-# ============================================================================
 
 class SemanticAwareConsensusClustering:
     """

@@ -1,0 +1,179 @@
+
+
+  Run started: 2026-03-12 14:47:19
+  Log: results/logs/test_run_log\validation.log
+
+
+
+
+ORAX-KG Cluster Validation:
+
+  Extraction dir: results\test_run
+  Output dir:     results\test_run\05_validation
+
+  Connecting to vLLM server at https://unflippant-concetta-bilgiest.ngrok-free.dev/v1...
+  Model: Qwen/Qwen3-14B
+
+  Loading ontology...
+   Known relations:  71
+   Ontology classes: 16
+
+  Loading clusters from results/test_run/04_clustering/clusters.json...
+   Loaded clusters from results/test_run/04_clustering/clusters.json
+   Relation-mode clusters: 29
+
+  Loading embeddings from results/test_run/03_alignment/extracted_embeddings.pt...
+   Loaded 296 embeddings from results/test_run/03_alignment/extracted_embeddings.pt
+
+  Computing inter-triple similarities...
+
+  Loading cluster embeddings from results\test_run\04_clustering\cluster_embeddings.pt...
+   Loaded 141 items across 29 relation clusters
+
+
+VALIDATING 29 CLUSTERS
+
+
+Cluster 0: Skipping (size 1 < min 5)
+
+Cluster 1 (26 items):
+   Name:       org:founded_by
+   Types:      ORGANIZATION -> PERSON
+   Confidence: High
+   Decision:   Accepted
+Cluster 2: Skipping (size 1 < min 5)
+Cluster 3: Skipping (size 1 < min 5)
+
+Cluster 4 (11 items):
+   Name:       None
+   Types:      PERSON -> PERSON
+   Confidence: High
+   Decision:   Matches existing: per:other_family
+
+Cluster 5 (7 items):
+   Name:       person_spouse
+   Types:      PERSON -> PERSON
+   Confidence: High
+   Decision:   Accepted
+Cluster 6: Skipping (size 1 < min 5)
+Cluster 7: Skipping (size 1 < min 5)
+Cluster 8: Skipping (size 1 < min 5)
+Cluster 9: Skipping (size 1 < min 5)
+
+Cluster 10 (12 items):
+   Name:       None
+   Types:      PERSON -> TITLE
+   Confidence: High
+   Decision:   Matches existing: per:title
+Cluster 11: Skipping (size 2 < min 5)
+
+Cluster 12 (7 items):
+   Name:       None
+   Types:      PERSON -> NUMBER
+   Confidence: High
+   Decision:   Matches existing: per:date_of_birth
+Cluster 13: Skipping (size 1 < min 5)
+
+Cluster 14 (5 items):
+   Name:       per:age
+   Types:      PERSON -> NUMBER
+   Confidence: High
+   Decision:   Accepted
+
+Cluster 15 (18 items):
+   Name:       None
+   Types:      PERSON -> NATIONALITY
+   Confidence: High
+   Decision:   Matches existing: per:country_of_birth
+Cluster 16: Skipping (size 1 < min 5)
+
+Cluster 17 (15 items):
+   Name:       None
+   Types:      PERSON -> CRIMINAL_CHARGE
+   Confidence: Low
+   Decision:   Matches existing: per:cause_of_death
+Cluster 18: Skipping (size 1 < min 5)
+Cluster 19: Skipping (size 1 < min 5)
+Cluster 20: Skipping (size 1 < min 5)
+Cluster 21: Skipping (size 3 < min 5)
+Cluster 22: Skipping (size 1 < min 5)
+
+Cluster 23 (9 items):
+   Name:       person_employed_by
+   Types:      PERSON -> ORGANIZATION
+   Confidence: High
+   Decision:   Accepted
+
+Cluster 24 (9 items):
+   Name:       None
+   Types:      PERSON -> ORGANIZATION
+   Confidence: High
+   Decision:   Matches existing: per:schools_attended
+Cluster 25: Skipping (size 1 < min 5)
+Cluster 26: Skipping (size 1 < min 5)
+Cluster 27: Skipping (size 1 < min 5)
+Cluster 28: Skipping (size 1 < min 5)
+
+
+VALIDATION SUMMARY
+
+
+  Novel Relations Accepted:     4
+  Rejected (Existing Match):    6
+  Rejected (Type Incompatible): 0
+  Rejected (Low Confidence):    0
+
+
+ACCEPTED NOVEL RELATIONS:
+
+  org:founded_by
+   Description: The cluster represents the relationship between an organization and its founder(s).
+   Signature:   ORGANIZATION -> PERSON
+   Confidence:  High
+   Evidence:    26 triples
+   Reasoning:   Step 1: Core semantics is 'founded by' which is distinct from 'shareholders'. Step 2: 'Shareholders' refers to ownership, not founding. Step 3: Types are valid. Step 4: All triples consistently express the founder relationship.
+   Samples:
+      - Facebook -> founded_by -> Mark Zuckerberg
+      - Netflix -> org:has_ceo -> Ted Sarandos
+      - Twitter -> org:founded_by -> Jack Dorsey
+
+  person_spouse
+   Description: Semantic relationship indicating a marital connection between two persons.
+   Signature:   PERSON -> PERSON
+   Confidence:  High
+   Evidence:    7 triples
+   Reasoning:   Step 1: Core semantics indicate a marital relationship between persons. Step 2: None of the existing relations (per:children, per:parents, etc.) express a marital connection. Step 3: Domain and range are both PERSON, valid. Step 4: All triples consistently express a spouse relationship.
+   Samples:
+      - Anna Wintour -> per:spouse -> David Shaffer
+      - Kim Kardashian -> per:spouse -> Kanye West
+      - Ryan Reynolds -> per:spouse -> Blake Lively
+
+  per:age
+   Description: The age of a person
+   Signature:   PERSON -> NUMBER
+   Confidence:  High
+   Evidence:    5 triples
+   Reasoning:   Step 1: Core semantics is the age of a person. Step 2: Existing relations are date_of_birth and date_of_death, which are different from age. Step 3: Domain is PERSON, range is NUMBER, both valid. Step 4: All triples consistently express age.
+   Samples:
+      - journalist -> per:age -> 29
+      - suspect -> per:age -> 34
+      - athlete -> per:age -> 28
+
+  person_employed_by
+   Description: The semantic relationship indicates employment by an organization, which is distinct from education-related relationships like schools_attended.
+   Signature:   PERSON -> ORGANIZATION
+   Confidence:  High
+   Evidence:    9 triples
+   Reasoning:   Step 1: Core semantics of the cluster indicate employment relationships (works_for, worked_for, employed_by). Step 2: Existing relation 'schools_attended' refers to education, not employment. No semantic identity. Step 3: Domain and range are valid. Step 4: All triples consistently express employment by an organization.
+   Samples:
+      - Omar Hassan -> person_worked_for_organization -> McKinsey
+      - Patricia Owens -> person_employed_by_organization -> World Health Organization
+      - Robert Pearce -> person_occupation_organization -> BlackRock
+
+  Exported 4 novel relations to results\test_run\05_validation\novel_relations.json
+   Rejected candidates saved to results\test_run\05_validation\rejected_candidates.json
+
+
+  Validation complete!
+   Novel relations: 4
+   Results saved to: results\test_run\05_validation

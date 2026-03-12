@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run LLM-based cluster validation on ORAX-KG clustering output.
-Loads artifacts produced by run_extraction.py and the clustering pipeline,
-validates each cluster, and saves accepted novel relations.
-"""
 
 import json
 import argparse
@@ -24,11 +19,7 @@ from src.validation.llm_validator import (
     export_validated_relations,
     print_validation_summary,
 )
-
-
-# ============================================================================
-# Loader Helpers
-# ============================================================================
+from src.logger import setup_logger, close_logger
 
 def load_clusters(clusters_path: str) -> dict:
     """Load clustering output from JSON."""
@@ -55,16 +46,12 @@ def normalize_embeddings(extracted_embs: list) -> list:
     return extracted_embs
 
 
-# ============================================================================
-# Main Pipeline
-# ============================================================================
-
 def run_validation(
     extraction_dir: str,
     clusters_path: str,
     embeddings_path: str,
     output_dir: str,
-    base_url: str = "http://localhost:8000/v1",
+    base_url: str = "http://localhost:8000",
     model_name: str = "Qwen/Qwen3-32B",
     top_k_representatives: int = 5,
     min_cluster_size: int = 5,
@@ -89,18 +76,15 @@ def run_validation(
     output_dir     = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    print("=" * 70)
-    print("ORAX-KG Cluster Validation")
-    print("=" * 70)
+    print("\n")
+    print("ORAX-KG Cluster Validation:")
     print(f"\n  Extraction dir: {extraction_dir}")
     print(f"  Output dir:     {output_dir}")
 
-    # LLM Client
     print(f"\n  Connecting to vLLM server at {base_url}...")
     client = setup_client(base_url=base_url)
     print(f"  Model: {model_name}")
 
-    # Ontology
     print(f"\n  Loading ontology...")
     known_path = extraction_dir / "01_ontology" / "known_ontology.json"
     full_path  = extraction_dir / "01_ontology" / "full_ontology.json"
@@ -120,13 +104,11 @@ def run_validation(
     print(f"   Known relations:  {len(known_ontology)}")
     print(f"   Ontology classes: {len(ontology_classes)}")
 
-    # Clusters
     print(f"\n  Loading clusters from {clusters_path}...")
     raw_clusters = load_clusters(clusters_path)
     n_relation_clusters = len(raw_clusters.get("relation", {}))
     print(f"   Relation-mode clusters: {n_relation_clusters}")
 
-    # Embeddings & Similarities
     # Load extracted_embeddings.pt for inter-triple similarity computation
     print(f"\n  Loading embeddings from {embeddings_path}...")
     extracted_embs = normalize_embeddings(load_embeddings(embeddings_path))
@@ -206,11 +188,10 @@ def run_validation(
     with open(output_dir / "00_config.yaml", "w") as f:
         yaml.dump(config, f)
 
-    print("\n" + "=" * 70)
+    print("\n")
     print(f"  Validation complete!")
     print(f"   Novel relations: {len(novel_relations)}")
     print(f"   Results saved to: {output_dir}")
-    print("=" * 70)
 
     return output_dir
 
@@ -233,8 +214,8 @@ def main():
         help="Output directory for validation results"
     )
     parser.add_argument(
-        "--base-url", type=str, default="http://localhost:8000/v1",
-        help="Base URL of the vLLM server (default: http://localhost:8000/v1)"
+        "--base-url", type=str, default="http://localhost:8000",
+        help="Base URL of the vLLM server (default: http://localhost:8000)"
     )
     parser.add_argument(
         "--model", type=str, default="Qwen/Qwen3-32B",
@@ -255,7 +236,7 @@ def main():
     )
 
     args = parser.parse_args()
-
+    setup_logger("validation")
     run_validation(
         extraction_dir=args.extraction_dir,
         clusters_path=args.clusters,
@@ -267,7 +248,7 @@ def main():
         min_cluster_size=args.min_cluster_size,
         min_confidence=args.min_confidence,
     )
-
+    close_logger()
 
 if __name__ == "__main__":
     main()

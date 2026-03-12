@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run relation extraction on structured relation datasets.
-Supports resuming from checkpoints and saves results incrementally.
-"""
 
 import json
 import argparse
@@ -21,7 +17,13 @@ from src.extraction.llm_extractor import (
     sample_dataset,
     setup_client,
 )
+from src.extraction.metrics import (
+    evaluate_extraction,
+    compute_extraction_metrics,
+    print_extraction_report,
+)
 
+from src.logger import setup_logger, close_logger
 
 def load_schema_from_file(schema_path: str) -> Dict:
     """
@@ -55,7 +57,7 @@ def run_extraction(
     data_path: str,
     schema_path: str,
     output_dir: str,
-    base_url: str = "http://localhost:8000/v1",
+    base_url: str = "http://localhost:8000",
     model_name: str = "Qwen/Qwen3-14B",
     resume: bool = True,
 ):
@@ -77,27 +79,19 @@ def run_extraction(
     ontology_dir.mkdir(parents=True, exist_ok=True)
     extraction_dir.mkdir(parents=True, exist_ok=True)
 
-    print("=" * 70)
-    print("ORAX-KG Relation Extraction")
-    print("=" * 70)
+    print("\n")
+    print("ORAX-KG Relation Extraction:")
     print(f"\n  Output directory: {output_dir}")
 
-    #Client
     print(f"\n  Connecting to vLLM server at {base_url}...")
     client = setup_client(base_url=base_url)
     print(f"  Model: {model_name}")
 
-    #Load Data
     print(f"\n  Loading data from {data_path}...")
     all_triples = load_triples(data_path)
 
-    #if max_samples:
-    #    all_triples = all_triples[:max_samples]
-    #    print(f"   LIMITED to {max_samples} samples for testing")
-
     print(f"   Loaded {len(all_triples)} triples")
 
-    #Load & Split Schema
     print(f"\n  Loading schema from {schema_path}...")
     schema = load_schema_from_file(schema_path)
 
@@ -142,7 +136,6 @@ def run_extraction(
     with open(extraction_dir / "ground_truth.json", "w") as f:
         json.dump(ground_truth, f, indent=2)
 
-    #Resume Logic
     extraction_output = extraction_dir / "extractions.jsonl"
     llm_outputs = []
     start_idx = 0
@@ -156,10 +149,8 @@ def run_extraction(
     else:
         print(f"\n  Starting fresh extraction")
 
-    #Extraction Loop
     print(f"\n  Extracting from index {start_idx}...")
     print(f"   Total samples: {len(sampled)} | Remaining: {len(sampled) - start_idx}")
-    print("-" * 70)
 
     for idx, sample in enumerate(sampled[start_idx:], start=start_idx):
         try:
@@ -210,11 +201,26 @@ def run_extraction(
     with open(output_dir / "00_config.yaml", "w") as f:
         yaml.dump(config, f)
 
-    print("\n" + "=" * 70)
+    print(f"\n  Computing extraction metrics...")
+ 
+    known_relation_set = {
+        (o["relation"], o["domain_type"], o["range_type"])
+        for o in known_mgr.to_dict()
+    }
+ 
+    raw_results     = evaluate_extraction(sampled, llm_outputs, known_relation_set)
+    metrics         = compute_extraction_metrics(raw_results)
+ 
+    with open(extraction_dir / "extraction_metrics.json", "w") as f:
+        import json as _json
+        _json.dump({k: v for k, v in metrics.items() if k != "detailed_results"}, f, indent=2)
+ 
+    print_extraction_report(metrics)
+
+    print("\n")
     print(f"  Extraction complete!")
     print(f"   Total extractions: {len(llm_outputs)}")
     print(f"   Artifacts saved to: {output_dir}")
-    print("=" * 70)
 
     return output_dir
 
@@ -248,7 +254,7 @@ def main():
     )
 
     args = parser.parse_args()
-
+    setup_logger(f"extraction")
     run_extraction(
         data_path=args.data,
         schema_path=args.schema,
@@ -257,7 +263,7 @@ def main():
         model_name=args.model,
         resume=not args.no_resume,
     )
-
+    close_logger()
 
 if __name__ == "__main__":
     main()

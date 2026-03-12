@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run ontology alignment on extracted triples.
-"""
-
 import json
 import argparse
 from pathlib import Path
@@ -14,7 +10,8 @@ sys.path.append(str(Path(__file__).parent.parent))
 from src.alignment.embeddings import TripleEmbedder
 from src.alignment.similarity import compute_similarities
 from src.alignment.aligner import align_triples, AlignmentConfig
-
+from src.logger import setup_logger, close_logger
+from src.alignment.metrics import evaluate_alignment, print_alignment_report
 
 def run_alignment(
     extraction_dir: str,
@@ -38,13 +35,11 @@ def run_alignment(
     alignment_dir  = output_dir / "03_alignment"
     alignment_dir.mkdir(parents=True, exist_ok=True)
 
-    print("=" * 70)
-    print("ORAX-KG Ontology Alignment")
-    print("=" * 70)
+    print("\n")
+    print("ORAX-KG Ontology Alignment:")
     print(f"\n  Loading from:     {extraction_dir}")
     print(f"  Output directory: {alignment_dir}")
 
-    # ── Load Extraction Artifacts ─────────────────────────────────────────
     print(f"\n  Loading extraction artifacts...")
 
     with open(extraction_dir / "02_extraction" / "extractions.jsonl") as f:
@@ -55,7 +50,6 @@ def run_alignment(
         known_ontology = json.load(f)
     print(f"   Loaded known ontology ({len(known_ontology)} entries)")
 
-    # ── Prepare Extracted Triples ─────────────────────────────────────────
     print(f"\n  Preparing extracted triples...")
     extracted_triples = [
         {
@@ -76,7 +70,6 @@ def run_alignment(
         if t
     }
 
-    # ── Embed ─────────────────────────────────────────────────────────────
     print(f"\n  Initializing embedder: {embedder_model}")
     embedder = TripleEmbedder(embedder_model, device=device)
 
@@ -91,12 +84,10 @@ def run_alignment(
     torch.save(ontology_embs,  alignment_dir / "ontology_embeddings.pt")
     print(f"   Saved to {alignment_dir}")
 
-    # ── Similarities ──────────────────────────────────────────────────────
     print(f"\n  Computing similarities...")
     similarities = compute_similarities(extracted_embs, ontology_embs)
     torch.save(similarities, alignment_dir / "similarities.pt")
 
-    # ── Align ─────────────────────────────────────────────────────────────
     print(f"\n  Aligning triples (threshold={threshold})...")
     config  = AlignmentConfig(threshold=threshold)
     results = align_triples(
@@ -121,12 +112,23 @@ def run_alignment(
     with open(alignment_dir / "statistics.json", "w") as f:
         json.dump(stats, f, indent=2)
 
-    print("\n" + "=" * 70)
+    print(f"\n  Computing alignment metrics...")
+    with open(extraction_dir / "02_extraction" / "test_samples.json") as f:
+        import json as _json
+        test_samples = _json.load(f)
+ 
+    alignment_metrics = evaluate_alignment(results, test_samples, known_ontology)
+    with open(alignment_dir / "evaluation_metrics.json", "w") as f:
+        import json as _json
+        _json.dump(alignment_metrics, f, indent=2)
+ 
+    print_alignment_report(alignment_metrics)
+
+    print("\n")
     print("  Alignment complete!")
     print(f"   Aligned:          {stats['aligned']}")
     print(f"   Novel candidates: {stats['to_cluster']}")
     print(f"   Artifacts saved:  {alignment_dir}")
-    print("=" * 70)
 
     return alignment_dir
 
@@ -155,7 +157,7 @@ def main():
     )
 
     args = parser.parse_args()
-
+    setup_logger("alignment")
     run_alignment(
         extraction_dir=args.run_dir,
         output_dir=args.output,
@@ -163,7 +165,7 @@ def main():
         threshold=args.threshold,
         device=args.device,
     )
-
+    close_logger()
 
 if __name__ == "__main__":
     main()

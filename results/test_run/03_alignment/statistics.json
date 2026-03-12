@@ -1,0 +1,8 @@
+{
+  "total_triples": 296,
+  "aligned": 151,
+  "to_cluster": 145,
+  "constraint_violations": 4,
+  "threshold": 0.9,
+  "embedder_model": "sentence-transformers/all-MiniLM-L6-v2"
+}

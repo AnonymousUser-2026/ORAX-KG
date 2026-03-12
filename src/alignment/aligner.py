@@ -1,7 +1,3 @@
-"""
-Ontology alignment with threshold-based matching.
-"""
-
 import torch
 from typing import List, Dict
 from dataclasses import dataclass

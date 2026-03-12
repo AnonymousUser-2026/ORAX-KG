@@ -1,9 +1,3 @@
-"""
-LLM-based relation extraction module for ORAX-KG.
-Supports structured ontology-guided extraction with known/hidden relation splits.
-Uses an OpenAI-compatible server (e.g. vLLM serving Qwen3-14B).
-"""
-
 import json
 import re
 from dataclasses import dataclass
@@ -14,10 +8,6 @@ import random
 from openai import OpenAI
 from pydantic import BaseModel
 
-
-# ============================================================================
-# Configuration & Data Models
-# ============================================================================
 
 @dataclass
 class RelationSchema:
@@ -42,10 +32,6 @@ class ExtractionResult(BaseModel):
     sentence: str
     triple: Triple
 
-
-# ============================================================================
-# Schema & Ontology Management
-# ============================================================================
 
 class OntologyManager:
     """
@@ -73,10 +59,10 @@ class OntologyManager:
         """
         Load ontology from schema format.
         Creates one RelationSchema per (relation, domain, range) combination.
-
+ 
         Args:
             schema: Dict with 'relations' key containing domain -> range -> [relations] mappings
-
+ 
         Returns:
             self for chaining
         """
@@ -85,27 +71,29 @@ class OntologyManager:
             for range_type, relations in ranges.items():
                 self.entity_types.add(range_type)
                 for relation in relations:
+                    if relation == "no_relation":
+                        continue
                     self.ontology.append(RelationSchema(
                         relation=relation,
                         domain_type=domain.lower(),
                         range_type=range_type.lower(),
                     ))
-
+ 
         print(f"   Loaded {len(self.ontology)} ontology entries")
-
+ 
         relation_variants = defaultdict(list)
         for rel_schema in self.ontology:
             relation_variants[rel_schema.relation].append(
                 (rel_schema.domain_type, rel_schema.range_type)
             )
-
+ 
         multi_variant = {
             rel: types for rel, types in relation_variants.items()
             if len(types) > 1
         }
         if multi_variant:
             print(f"   Found {len(multi_variant)} relations with multiple type signatures")
-
+ 
         return self
 
     def to_dict(self) -> List[Dict]:
@@ -163,10 +151,6 @@ class OntologyManager:
         self.ontology = ontology_list
         return self
 
-
-# ============================================================================
-# Prompt Generation
-# ============================================================================
 
 class PromptGenerator:
     """Generate LLM prompts for relation extraction."""
@@ -264,27 +248,17 @@ NEVER output:
 }}
 """
 
-
-# ============================================================================
-# LLM Client
-# ============================================================================
-
-def setup_client(base_url: str = "http://localhost:8000/v1") -> OpenAI:
+def setup_client(base_url: str = "http://localhost:8000") -> OpenAI:
     """
     Set up an OpenAI-compatible client pointing at a local vLLM server.
 
     Args:
-        base_url: Base URL of the vLLM server (default: http://localhost:8000/v1)
+        base_url: Base URL of the vLLM server (default: http://localhost:8000)
 
     Returns:
         OpenAI client instance
     """
     return OpenAI(base_url=base_url, api_key="not-needed")
-
-
-# ============================================================================
-# Extraction Function
-# ============================================================================
 
 def extract_triple(
     sample: Dict,
@@ -328,11 +302,8 @@ def extract_triple(
             temperature=temperature,
             max_tokens=max_tokens,
         )
-        print(response)
         result = json.loads(response.choices[0].message.content)
-        print(result)
         triple = result.get("triple", {})
-        print(triple)
         triple.setdefault("subject",  sample["subject"])
         triple.setdefault("object",   sample["object"])
         triple.setdefault("relation", "extraction_failed")
@@ -363,34 +334,36 @@ def sample_dataset(
     """
     Sample test data ensuring coverage of both known and hidden relations.
     Matches on (relation, domain_type, range_type) tuples.
-
+ 
     Args:
         test_samples: Full test dataset
         known_ontology: Known ontology relations
         hidden_ontology: Hidden ontology relations
         seed: Random seed
-
+ 
     Returns:
         Shuffled list of samples covering known and hidden relations
     """
     random.seed(seed)
-
-    known_set  = {(o['relation'], o['domain_type'], o['range_type']) for o in known_ontology}
-    hidden_set = {(o['relation'], o['domain_type'], o['range_type']) for o in hidden_ontology}
-
+ 
+    known_set  = {(o['relation'], o['domain_type'].lower(), o['range_type'].lower()) for o in known_ontology}
+    hidden_set = {(o['relation'], o['domain_type'].lower(), o['range_type'].lower()) for o in hidden_ontology}
+ 
     known_samples  = [s for s in test_samples
-                      if (s['relation'], s['subj_type'], s['obj_type']) in known_set]
+                      if s['relation'] != 'no_relation'
+                      and (s['relation'], s['subj_type'].lower(), s['obj_type'].lower()) in known_set]
     hidden_samples = [s for s in test_samples
-                      if (s['relation'], s['subj_type'], s['obj_type']) in hidden_set]
-
+                      if s['relation'] != 'no_relation'
+                      and (s['relation'], s['subj_type'].lower(), s['obj_type'].lower()) in hidden_set]
+ 
     final = known_samples + hidden_samples
     random.shuffle(final)
-
+ 
     print(f"Sampling Statistics:")
     print(f"   Known samples:  {len(known_samples)}")
     print(f"   Hidden samples: {len(hidden_samples)}")
     print(f"   Total sampled:  {len(final)}")
-
+ 
     return final
 
 

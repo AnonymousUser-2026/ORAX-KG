@@ -1,0 +1,8 @@
+extraction:
+  base_url: https://unflippant-concetta-bilgiest.ngrok-free.dev/v1
+  data_path: data/raw_data/DATASET_EXAMPLE.json
+  model: Qwen/Qwen3-14B
+  schema_path: data/ontologies/ReTACRED_ontology.json
+n_extracted: 296
+n_samples: 296
+timestamp: '2026-03-12T14:22:44.245106'

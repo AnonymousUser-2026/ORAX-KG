@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run complete ORAX-KG pipeline end-to-end.
-Stages: Extraction -> Alignment -> Clustering -> Validation
-"""
 
 import argparse
 import yaml
@@ -16,6 +12,7 @@ from run_extraction import run_extraction
 from run_alignment import run_alignment
 from run_clustering import run_clustering
 from run_validation import run_validation
+from src.logger import setup_logger, close_logger
 
 
 def run_full_pipeline(config_path: str, resume: bool = True):
@@ -33,15 +30,13 @@ def run_full_pipeline(config_path: str, resume: bool = True):
     run_name  = config.get("run_name", "run")
     run_dir   = Path(config["output"]["base_dir"]) / f"{run_name}_{timestamp}"
 
-    print("=" * 70)
-    print("ORAX-KG FULL PIPELINE")
-    print("=" * 70)
+    print("\n")
+    print("ORAX-KG FULL PIPELINE:")
     print(f"\n  Run directory: {run_dir}")
 
     # Step 1: Extraction
-    print("\n" + "=" * 70)
+    print("\n")
     print("STEP 1: EXTRACTION")
-    print("=" * 70)
 
     run_extraction(
         data_path=config["data"]["test_path"],
@@ -53,9 +48,8 @@ def run_full_pipeline(config_path: str, resume: bool = True):
     )
 
     # Step 2: Alignment
-    print("\n" + "=" * 70)
+    print("\n")
     print("STEP 2: ALIGNMENT")
-    print("=" * 70)
 
     run_alignment(
         extraction_dir=run_dir,
@@ -66,9 +60,8 @@ def run_full_pipeline(config_path: str, resume: bool = True):
     )
 
     # Step 3: Clustering
-    print("\n" + "=" * 70)
+    print("\n")
     print("STEP 3: CLUSTERING")
-    print("=" * 70)
 
     run_clustering(
         run_dir=run_dir,
@@ -78,9 +71,8 @@ def run_full_pipeline(config_path: str, resume: bool = True):
     )
 
     # Step 4: Validation
-    print("\n" + "=" * 70)
+    print("\n")
     print("STEP 4: VALIDATION")
-    print("=" * 70)
 
     run_validation(
         extraction_dir=run_dir,
@@ -95,9 +87,8 @@ def run_full_pipeline(config_path: str, resume: bool = True):
     )
 
     # Summary 
-    print("\n" + "=" * 70)
+    print("\n")
     print("PIPELINE COMPLETE!")
-    print("=" * 70)
     print(f"\n  All results saved to: {run_dir}")
     print("\n  Output:")
     print(f"    01_ontology/   — known/hidden ontology splits")
@@ -119,12 +110,12 @@ def main():
     )
 
     args = parser.parse_args()
-
+    setup_logger("full_pipeline")
     run_full_pipeline(
         config_path=args.config,
         resume=not args.no_resume,
     )
-
+    close_logger()
 
 if __name__ == "__main__":
     main()

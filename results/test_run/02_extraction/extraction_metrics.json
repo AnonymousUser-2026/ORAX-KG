@@ -1,0 +1,18 @@
+{
+  "known_relations": {
+    "total_samples": 167,
+    "entity_accuracy": 1.0,
+    "relation_exact_match": 0.7664670658682635,
+    "full_triple_accuracy": 0.7664670658682635
+  },
+  "hidden_relations": {
+    "total_samples": 129,
+    "entity_accuracy": 1.0,
+    "relation_extraction_rate": 0.6821705426356589
+  },
+  "overall": {
+    "total_samples": 296,
+    "entity_accuracy": 1.0,
+    "extraction_success_rate": 0.7297297297297297
+  }
+}

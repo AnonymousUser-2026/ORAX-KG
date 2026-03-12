@@ -1,8 +1,3 @@
-"""
-Evaluation metrics for clustering quality.
-Includes both supervised and unsupervised metrics.
-"""
-
 import numpy as np
 import pandas as pd
 import itertools
@@ -21,10 +16,8 @@ from sklearn.metrics import (
 )
 
 
-# ============================================================================
-# Unsupervised Metrics
-# ============================================================================
 
+# Unsupervised Metrics
 def evaluate_cluster_quality(
     embeddings: np.ndarray,
     labels: np.ndarray
@@ -195,10 +188,7 @@ def evaluate_typepair_clusters(
 
     return results, summary
 
-
-# ============================================================================
 # Supervised Metrics (with Ground Truth)
-# ============================================================================
 
 def map_clusters_to_ground_truth(
     pred_labels: np.ndarray,

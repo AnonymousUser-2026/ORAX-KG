@@ -1,7 +1,3 @@
-"""
-Utility functions for clustering.
-"""
-
 import numpy as np
 import torch
 import torch.nn.functional as F
@@ -54,7 +50,6 @@ def build_full_ground_truth(
         if sent_id in sentence_to_gt:
             full_ground_truth[idx] = sentence_to_gt[sent_id]
 
-    print(f"\n✓ Built ground truth for {len(full_ground_truth)} extracted triples")
     return full_ground_truth
 
 
@@ -87,9 +82,8 @@ def analyze_semantic_clusters(
     """
     import networkx as nx
 
-    print("\n" + "=" * 70)
-    print("SEMANTIC CLUSTER ANALYSIS")
-    print("=" * 70)
+    print("\n")
+    print("SEMANTIC CLUSTER ANALYSIS:")
 
     for mode, clusters in sorted(all_clusters.items()):
         print(f"\n{'='*70}")
@@ -142,9 +136,8 @@ def print_clustering_summary(
         all_clusters: Clustering results keyed by mode
         quality_scores: Quality metrics dict
     """
-    print("\n" + "=" * 70)
-    print("CLUSTERING SUMMARY")
-    print("=" * 70)
+    print("\n")
+    print("CLUSTERING SUMMARY:")
 
     total_clusters = sum(len(c) for c in all_clusters.values())
     total_items    = sum(len(items) for c in all_clusters.values() for items in c.values())

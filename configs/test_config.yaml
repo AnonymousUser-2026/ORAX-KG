@@ -18,7 +18,7 @@ output:
 
 # Step 1: Extraction
 extraction:
-  base_url:    "http://localhost:8000/v1"
+  base_url:    "http://localhost:8000"
   model:       "Qwen/Qwen3-14B"
 
 # Step 2: Alignment
@@ -30,11 +30,11 @@ alignment:
 clustering:
   similarity_threshold: 0.60   # minimum similarity for graph-split connectivity
   n_consensus_runs:     3      # voting rounds per algorithm
-  preserve_singletons:  true   # keep size-1 clusters as potential novel relations
+  preserve_singletons:  false   # omit size-1 clusters
 
 # Step 4: Validation 
 validation:
-  base_url:              "http://localhost:8000/v1"
+  base_url:              "http://localhost:8000"
   model:                 "Qwen/Qwen3-14B"   # can use a larger model than extraction
   top_k_representatives: 5                  # triples shown to LLM per cluster
   min_cluster_size:      5                  # skip clusters smaller than this

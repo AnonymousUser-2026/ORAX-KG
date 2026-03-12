@@ -1,0 +1,98 @@
+
+
+  Run started: 2026-03-12 14:12:21
+  Log: results/logs/test_run_log\extraction.log
+
+
+
+
+ORAX-KG Relation Extraction:
+
+  Output directory: results\test_run
+
+  Connecting to vLLM server at https://unflippant-concetta-bilgiest.ngrok-free.dev/v1...
+  Model: Qwen/Qwen3-14B
+
+  Loading data from data/raw_data/DATASET_EXAMPLE.json...
+   Loaded 296 triples
+
+  Loading schema from data/ontologies/ReTACRED_ontology.json...
+   Loaded schema from data/ontologies/ReTACRED_ontology.json
+   Domain types: 2
+   Total relation types: 120
+   Loaded 95 ontology entries
+   Found 23 relations with multiple type signatures
+
+  Splitting ontology...
+
+ Ontology Split:
+   Total ontology entries: 95
+   Known:  31 relations -> 71 entries
+   Hidden: 8 relations -> 24 entries
+
+  Saving ontology splits...
+   Saved to results\test_run\01_ontology
+
+  Sampling test data...
+Sampling Statistics:
+   Known samples:  167
+   Hidden samples: 129
+   Total sampled:  296
+
+  Starting fresh extraction
+
+  Extracting from index 0...
+   Total samples: 296 | Remaining: 296
+   Progress: 10/296 (3.4%)
+   Progress: 20/296 (6.8%)
+   Progress: 30/296 (10.1%)
+   Progress: 40/296 (13.5%)
+   Progress: 50/296 (16.9%)
+   Progress: 60/296 (20.3%)
+   Progress: 70/296 (23.6%)
+   Progress: 80/296 (27.0%)
+   Progress: 90/296 (30.4%)
+   Progress: 100/296 (33.8%)
+   Progress: 110/296 (37.2%)
+   Progress: 120/296 (40.5%)
+   Progress: 130/296 (43.9%)
+   Progress: 140/296 (47.3%)
+   Progress: 150/296 (50.7%)
+   Progress: 160/296 (54.1%)
+   Progress: 170/296 (57.4%)
+   Progress: 180/296 (60.8%)
+   Progress: 190/296 (64.2%)
+   Progress: 200/296 (67.6%)
+   Progress: 210/296 (70.9%)
+   Progress: 220/296 (74.3%)
+   Progress: 230/296 (77.7%)
+   Progress: 240/296 (81.1%)
+   Progress: 250/296 (84.5%)
+   Progress: 260/296 (87.8%)
+   Progress: 270/296 (91.2%)
+   Progress: 280/296 (94.6%)
+   Progress: 290/296 (98.0%)
+
+  Computing extraction metrics...
+   Matched 296/296 sample-output pairs
+
+
+EXTRACTION EVALUATION :
+
+  Known Relations (167 samples):
+   Entity Accuracy:      1.000
+   Relation Exact Match: 0.766
+   Full Triple Accuracy: 0.766
+
+  Hidden Relations (129 samples):
+   Entity Accuracy:          1.000
+   Relation Extraction Rate: 0.682
+
+  Overall (296 samples):
+   Entity Accuracy:       1.000
+   Extraction Success:    0.730
+
+
+  Extraction complete!
+   Total extractions: 296
+   Artifacts saved to: results\test_run

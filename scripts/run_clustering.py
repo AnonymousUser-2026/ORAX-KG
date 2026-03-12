@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run consensus clustering on aligned triples.
-"""
 
 import json
 import argparse
@@ -23,11 +20,7 @@ from src.clustering.utils import (
     build_full_ground_truth,
     normalize_embeddings,
 )
-
-
-# ============================================================================
-# Helpers
-# ============================================================================
+from src.logger import setup_logger, close_logger
 
 def _save_json(obj, path):
     """Serialize an object to JSON, converting numpy scalars automatically."""
@@ -49,9 +42,6 @@ def _save_json(obj, path):
         json.dump(_convert(obj), f, indent=2)
 
 
-# ============================================================================
-# Main Pipeline
-# ============================================================================
 
 def run_clustering(
     run_dir: str,
@@ -74,12 +64,10 @@ def run_clustering(
     output_dir = Path(output_dir) if output_dir else run_dir / "04_clustering"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    print("=" * 70)
-    print("ORAX-KG Consensus Clustering")
-    print("=" * 70)
+    print("\n")
+    print("ORAX-KG Consensus Clustering:")
     print(f"\n  Loading from: {run_dir}")
 
-    # ── Load Artifacts ────────────────────────────────────────────────────
     print(f"\n  Loading artifacts...")
 
     with open(run_dir / "03_alignment" / "alignment_results.json") as f:
@@ -102,21 +90,18 @@ def run_clustering(
     with open(run_dir / "01_ontology" / "hidden_ontology.json") as f:
         hidden_ontology = json.load(f)
 
-    print(f"   ✓ Loaded {len(llm_outputs)} extractions, "
+    print(f"Loaded {len(llm_outputs)} extractions, "
           f"{len(alignment_results)} alignment results, "
           f"{len(extracted_embs)} embeddings")
 
-    # ── Prepare Labels & Ground Truth ─────────────────────────────────────
     hidden_relation_labels = extract_relation_labels_from_ontology(hidden_ontology)
     full_ground_truth = build_full_ground_truth(test_samples, llm_outputs, alignment_results)
 
-    # ── Embeddings & Similarities ─────────────────────────────────────────
     normalize_embeddings(extracted_embs)
 
     print(f"\n  Computing inter-triple similarities...")
     inter_triple_sims = compute_inter_triple_similarities(extracted_embs)
 
-    # ── Clustering ────────────────────────────────────────────────────────
     print(f"\n  Running consensus clustering...")
     clusterer = SemanticAwareConsensusClustering(
         n_consensus_runs=n_consensus_runs,
@@ -128,7 +113,6 @@ def run_clustering(
         alignment_results, extracted_embs, inter_triple_sims, llm_outputs
     )
 
-    # ── Evaluation ────────────────────────────────────────────────────────
     print(f"\n  Evaluating clustering...")
     stratified_metrics = evaluate_clustering(
         all_clusters,
@@ -138,14 +122,12 @@ def run_clustering(
         hidden_relation_labels,
     )
 
-    # Flatten top-level scalar metrics into quality_scores for convenience
     for subset_name, subset_metrics in stratified_metrics.items():
         if isinstance(subset_metrics, dict):
             for metric_name, value in subset_metrics.items():
                 if not isinstance(value, dict):
                     quality_scores[f"{subset_name}_{metric_name}"] = value
 
-    # ── Save Results ──────────────────────────────────────────────────────
     print(f"\n  Saving results...")
 
     # clusters.json — lightweight JSON with idx + triple metadata
@@ -168,7 +150,6 @@ def run_clustering(
         json.dump(serializable_clusters, f, indent=2)
 
     # cluster_embeddings.pt — full item dicts including embedding tensors,
-    # keyed by mode -> cid -> list of {idx, triple, embedding}
     # loaded by run_validation.py to reconstruct cluster items
     torch.save(all_clusters, output_dir / "cluster_embeddings.pt")
     print(f"   Saved cluster embeddings to {output_dir / 'cluster_embeddings.pt'}")
@@ -178,17 +159,11 @@ def run_clustering(
 
     _save_json(stratified_metrics, output_dir / "stratified_metrics.json")
 
-    print("\n" + "=" * 70)
+    print("\n")
     print(f"  Clustering complete!")
     print(f"   Artifacts saved to: {output_dir}")
-    print("=" * 70)
 
     return output_dir
-
-
-# ============================================================================
-# CLI
-# ============================================================================
 
 def main():
     parser = argparse.ArgumentParser(
@@ -223,7 +198,7 @@ def main():
     )
 
     args = parser.parse_args()
-
+    setup_logger("clustering")
     run_clustering(
         run_dir=args.run_dir,
         output_dir=args.output,
@@ -231,6 +206,7 @@ def main():
         n_consensus_runs=args.consensus_runs,
         preserve_singletons=not args.no_preserve_singletons,
     )
+    close_logger()
 
 
 if __name__ == "__main__":

@@ -1,7 +1,3 @@
-"""
-Similarity computation between extracted triples and ontology embeddings.
-"""
-
 import torch
 from typing import Dict, List
 

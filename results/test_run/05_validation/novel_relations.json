@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "n_novel_relations": 4,
+    "timestamp": "2026-03-12T14:47:54.179775"
+  },
+  "novel_relations": [
+    {
+      "name": "org:founded_by",
+      "description": "The cluster represents the relationship between an organization and its founder(s).",
+      "domain": "ORGANIZATION",
+      "range": "PERSON",
+      "confidence": "High",
+      "cluster_id": 1,
+      "evidence_count": 26,
+      "reasoning": "Step 1: Core semantics is 'founded by' which is distinct from 'shareholders'. Step 2: 'Shareholders' refers to ownership, not founding. Step 3: Types are valid. Step 4: All triples consistently express the founder relationship.",
+      "sample_triples": [
+        {
+          "subject": "Facebook",
+          "relation": "founded_by",
+          "object": "Mark Zuckerberg"
+        },
+        {
+          "subject": "Netflix",
+          "relation": "org:has_ceo",
+          "object": "Ted Sarandos"
+        },
+        {
+          "subject": "Twitter",
+          "relation": "org:founded_by",
+          "object": "Jack Dorsey"
+        },
+        {
+          "subject": "Apple",
+          "relation": "org:founded_by",
+          "object": "Steve Jobs"
+        },
+        {
+          "subject": "WHO",
+          "relation": "org:member_of",
+          "object": "Tedros Adhanom"
+        }
+      ]
+    },
+    {
+      "name": "person_spouse",
+      "description": "Semantic relationship indicating a marital connection between two persons.",
+      "domain": "PERSON",
+      "range": "PERSON",
+      "confidence": "High",
+      "cluster_id": 5,
+      "evidence_count": 7,
+      "reasoning": "Step 1: Core semantics indicate a marital relationship between persons. Step 2: None of the existing relations (per:children, per:parents, etc.) express a marital connection. Step 3: Domain and range are both PERSON, valid. Step 4: All triples consistently express a spouse relationship.",
+      "sample_triples": [
+        {
+          "subject": "Anna Wintour",
+          "relation": "per:spouse",
+          "object": "David Shaffer"
+        },
+        {
+          "subject": "Kim Kardashian",
+          "relation": "per:spouse",
+          "object": "Kanye West"
+        },
+        {
+          "subject": "Ryan Reynolds",
+          "relation": "per:spouse",
+          "object": "Blake Lively"
+        },
+        {
+          "subject": "actress",
+          "relation": "person_married_to",
+          "object": "co star"
+        },
+        {
+          "subject": "diplomat",
+          "relation": "married_to",
+          "object": "Elena Petrov"
+        }
+      ]
+    },
+    {
+      "name": "per:age",
+      "description": "The age of a person",
+      "domain": "PERSON",
+      "range": "NUMBER",
+      "confidence": "High",
+      "cluster_id": 14,
+      "evidence_count": 5,
+      "reasoning": "Step 1: Core semantics is the age of a person. Step 2: Existing relations are date_of_birth and date_of_death, which are different from age. Step 3: Domain is PERSON, range is NUMBER, both valid. Step 4: All triples consistently express age.",
+      "sample_triples": [
+        {
+          "subject": "journalist",
+          "relation": "per:age",
+          "object": "29"
+        },
+        {
+          "subject": "suspect",
+          "relation": "per:age",
+          "object": "34"
+        },
+        {
+          "subject": "athlete",
+          "relation": "per:age",
+          "object": "28"
+        },
+        {
+          "subject": "CEO",
+          "relation": "per:age",
+          "object": "38"
+        },
+        {
+          "subject": "William Hayes",
+          "relation": "per:age",
+          "object": "53"
+        }
+      ]
+    },
+    {
+      "name": "person_employed_by",
+      "description": "The semantic relationship indicates employment by an organization, which is distinct from education-related relationships like schools_attended.",
+      "domain": "PERSON",
+      "range": "ORGANIZATION",
+      "confidence": "High",
+      "cluster_id": 23,
+      "evidence_count": 9,
+      "reasoning": "Step 1: Core semantics of the cluster indicate employment relationships (works_for, worked_for, employed_by). Step 2: Existing relation 'schools_attended' refers to education, not employment. No semantic identity. Step 3: Domain and range are valid. Step 4: All triples consistently express employment by an organization.",
+      "sample_triples": [
+        {
+          "subject": "Omar Hassan",
+          "relation": "person_worked_for_organization",
+          "object": "McKinsey"
+        },
+        {
+          "subject": "Patricia Owens",
+          "relation": "person_employed_by_organization",
+          "object": "World Health Organization"
+        },
+        {
+          "subject": "Robert Pearce",
+          "relation": "person_occupation_organization",
+          "object": "BlackRock"
+        },
+        {
+          "subject": "Michael Torres",
+          "relation": "person_employed_by_organization",
+          "object": "Reuters"
+        },
+        {
+          "subject": "Beatrice Fontaine",
+          "relation": "person_employed_by_organization",
+          "object": "Louvre"
+        }
+      ]
+    }
+  ]
+}

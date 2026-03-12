@@ -24,10 +24,11 @@ data/
 │   │   └── test.json
 │   └── DATASET_EXAMPLE.json 
 └── ontologies/
-    └── ReTACRED_ontology.json
+    ├── ReTACRED_ontology.json
+    └── TACRED_ontology.json
 ```
 
-**Note:**DATASET_EXAMPLE.json is a small synthetic file in the TACRED JSON format. It is enough to run the full pipeline end-to-end and verify your setup. Point config.yaml at it:
+**Note:**DATASET_EXAMPLE.json is a small synthetic file in the TACRED JSON format. It is enough to run the full pipeline end-to-end and verify the setup. Point config.yaml at it:
 
 ```yaml
 data:
