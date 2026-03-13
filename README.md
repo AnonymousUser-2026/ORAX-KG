@@ -81,7 +81,7 @@ Extract relation triples guided by the initial ontology schema using an LLM:
 python scripts/run_extraction.py \
     --data data/raw_data/ReTACRED/test.json \
     --schema data/ontologies/ReTACRED_ontology.json \
-    --output results/my_run \
+    --output results/test_run \
     --base-url http://localhost:8000 \
     --model Qwen/Qwen3-14B
 ```
@@ -93,8 +93,8 @@ python scripts/run_extraction.py \
 Embed the extracted triples and align them against the initial ontology:
 ```bash
 python scripts/run_alignment.py \
-    --run-dir results/my_run \
-    --output results/my_run \
+    --run-dir results/test_run \
+    --output results/test_run \
     --embedder Qwen/Qwen3-Embedding-8B \
     --threshold 0.90 \
     --device cuda
@@ -107,7 +107,7 @@ python scripts/run_alignment.py \
 Cluster unaligned triples into semantically coherent groups:
 ```bash
 python scripts/run_clustering.py \
-    --run-dir results/my_run \
+    --run-dir results/test_run \
     --similarity-threshold 0.60 \
     --consensus-runs 3
 ```
@@ -119,10 +119,10 @@ python scripts/run_clustering.py \
 Validate the clusters and label novel relations before integration into the ontology:
 ```bash
 python scripts/run_validation.py \
-    --extraction-dir results/my_run \
-    --clusters results/my_run/04_clustering/clusters.json \
-    --embeddings results/my_run/03_alignment/extracted_embeddings.pt \
-    --output results/my_run/05_validation \
+    --extraction-dir results/test_run \
+    --clusters results/test_run/04_clustering/clusters.json \
+    --embeddings results/test_run/03_alignment/extracted_embeddings.pt \
+    --output results/test_run/05_validation \
     --base-url http://localhost:8000 \
     --model Qwen/Qwen3-32B \
     --min-cluster-size 5 \
@@ -137,14 +137,63 @@ Execute the complete pipeline end-to-end from a configuration file:
 ```bash
 python scripts/run_full_pipeline.py --config configs/config.yaml
 ```
+---
 
+## Repository Structure
+```
+ORAX-KG/
+│
+├── configs/                     # Configuration files
+│   ├── config.yaml
+│   └── test_config.yaml         # For testing
+│
+├── README.md
+├── requirements.txt
+├── logger.py
+├── run_predictions.ipynb
+│
+├── scripts/                     # Entry-point scripts
+│   ├── run_extraction.py
+│   ├── run_alignment.py
+│   ├── run_clustering.py
+│   ├── run_validation.py
+│   ├── run_full_pipeline.py
+│   └── extract_schema.py
+│
+├── src/                         # Core library
+│   ├── extraction/              # LLM extraction + prompt generation
+│   │   ├── llm_extractor.py
+│   │   └── metrics.py 
+│   ├── alignment/               # Embedding + similarity computation
+│   │   ├── embeddings.py
+│   │   ├── similarity.py
+│   │   ├── aligner.py
+│   │   └── metrics.py
+│   ├── clustering/              # Consensus clustering + evaluation
+│   │   ├── consensus.py
+│   │   ├── evaluation.py
+│   │   └── utils.py
+│   └── validation/              # LLM cluster validation
+│       └── llm_validator.py
+│
+├── data/
+│   ├── raw_data/
+│   │   └── DATASET_EXAMPLE/     # Small synthetic sample for testing
+│   │       
+│   └── ontologies/
+│       ├── ReTACRED_ontology.json
+│       └── TACRED_ontology.json
+│
+├── results/                     # Created at runtime; one sub-folder per run
+└── logs/                        # Run logs
+```
 ---
 
 ## Output Structure
 
 Each run creates a timestamped directory under `results/` with the following layout:
 ```
-results/retacred_qwen_20250310_142501/
+results/retacred_qwen_20260310_142501/
 │
 ├── 00_config.yaml               # Saved run configuration
 │
@@ -176,52 +225,3 @@ results/retacred_qwen_20250310_142501/
     ├── rejected_candidates.json # Rejected clusters with reasons
     └── 00_config.yaml           # Validation-specific configuration
 ```
-
----
-
-## Repository Structure
-```
-ORAX-KG/
-│
-├── configs/                     # Configuration files
-│   ├── config.yaml
-│   └── test_config.yaml         # For testing
-│
-├── README.md
-├── requirements.txt
-├── run_predictions.ipynb
-│
-├── scripts/                     # Entry-point scripts
-│   ├── run_extraction.py
-│   ├── run_alignment.py
-│   ├── run_clustering.py
-│   ├── run_validation.py
-│   ├── run_full_pipeline.py
-│   └── extract_schema.py
-│
-├── src/                         # Core library
-│   ├── extraction/              # LLM extraction + prompt generation
-│   │   └── llm_extractor.py
-│   ├── alignment/               # Embedding + similarity computation
-│   │   ├── embeddings.py
-│   │   ├── similarity.py
-│   │   └── aligner.py
-│   ├── clustering/              # Consensus clustering + evaluation
-│   │   ├── consensus.py
-│   │   ├── evaluation.py
-│   │   └── utils.py
-│   └── validation/              # LLM cluster validation
-│       └── llm_validator.py
-│
-├── data/
-│   ├── raw_data/
-│   │   └── DATASET_EXAMPLE/         # Small synthetic sample for testing
-│   │       
-│   └── ontologies/
-│       ├── ReTACRED_ontology.json
-│       └── TACRED_ontology.json
-│
-└── results/                     # Created at runtime; one sub-folder per run
-```
-
----

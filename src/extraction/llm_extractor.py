@@ -41,14 +41,7 @@ class OntologyManager:
  
     # Relations withheld from the LLM during evaluation
     HIDDEN_RELATIONS = {
-        "per:employee_of",
-        "org:top_members/employees",
-        "per:age",
-        "per:countries_of_residence",
-        "per:origin",
-        "per:charges",
-        "org:founded_by",
-        "per:spouse",
+        
     }
  
     def __init__(self):
