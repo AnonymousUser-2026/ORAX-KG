@@ -52,7 +52,7 @@ data/
 Before running the modules, ensure all dependencies are installed:
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ORAX-KG.git
+git clone https://github.com/AnonymousUser-2026/ORAX-KG.git
 cd ORAX-KG
 
 # Install dependencies
