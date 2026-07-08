@@ -10,27 +10,27 @@ class AlignmentConfig:
 
 
 def check_constraint_violation(
-    extracted_triple: Dict,
+    classified_triple: Dict,
     ontology_triple: Dict,
     ontology_classes: set,
 ) -> bool:
     """
-    Check if an extracted triple violates ontology type constraints.
+    Check if an classified triple violates ontology type constraints.
 
     Returns True only when both types are known but don't match the
     relation's domain/range — unknown types signal class expansion,
     not a violation.
 
     Args:
-        extracted_triple: Triple dict with subj_type, obj_type
+        classified_triple: Triple dict with subj_type, obj_type
         ontology_triple: Ontology pattern dict with domain_type, range_type
         ontology_classes: Set of known entity type strings
 
     Returns:
         True if constraint is violated, False otherwise
     """
-    subj_type = extracted_triple.get("subj_type")
-    obj_type  = extracted_triple.get("obj_type")
+    subj_type = classified_triple.get("subj_type")
+    obj_type  = classified_triple.get("obj_type")
 
     # Unknown types are not violations
     if subj_type not in ontology_classes or obj_type not in ontology_classes:
@@ -50,17 +50,17 @@ def check_constraint_violation(
 
 
 def align_triples(
-    extracted_triples: List[Dict],
+    classified_triples: List[Dict],
     ontology_triples: List[Dict],
     similarities: Dict[str, torch.Tensor],
     ontology_classes: set,
     config: AlignmentConfig,
 ) -> List[Dict]:
     """
-    Align extracted triples to ontology using threshold-based matching.
+    Align classified triples to ontology using threshold-based matching.
 
     Args:
-        extracted_triples: List of extracted triple dicts
+        classified_triples: List of classified triple dicts
         ontology_triples: List of ontology pattern dicts
         similarities: Dict of similarity matrices keyed by view name
         ontology_classes: Set of known entity type strings
@@ -82,8 +82,8 @@ def align_triples(
 
     results = []
 
-    for i, extracted in enumerate(extracted_triples):
-        sent_id = extracted.get("id", extracted.get("sentence_id"))
+    for i, classified in enumerate(classified_triples):
+        sent_id = classified.get("id", classified.get("sentence_id"))
 
         best_score, best_idx = torch.max(score[i], dim=0)
         best_idx   = int(best_idx.item())
@@ -94,7 +94,7 @@ def align_triples(
         constraint_ok = True
         if aligned and sim_sub is not None and sim_obj is not None:
             constraint_ok = not check_constraint_violation(
-                extracted,
+                classified,
                 ontology_triples[best_idx],
                 ontology_classes,
             )
@@ -110,7 +110,7 @@ def align_triples(
             cluster_mode = "relation"
 
         results.append({
-            "extracted_idx":        i,
+            "classified_idx":        i,
             "sentence_id":          sent_id,
             "matched_ontology_idx": best_idx if aligned else None,
             "match_type":           match_type,

@@ -42,32 +42,32 @@ set_all_seeds(SEED)
 
 
 def compute_inter_triple_similarities(
-    extracted_embeddings: List[Dict],
+    classified_embeddings: List[Dict],
 ) -> Dict[str, torch.Tensor]:
     """
-    Compute pairwise similarities between extracted triples.
+    Compute pairwise similarities between classified triples.
 
     Args:
-        extracted_embeddings: List of embedding dicts with keys:
+        classified_embeddings: List of embedding dicts with keys:
             'triple_emb', 'relation_emb', 'subj_type_emb', 'obj_type_emb'
 
     Returns:
         Dict of similarity matrices keyed by view name
     """
-    if not extracted_embeddings:
-        raise ValueError("extracted_embeddings cannot be empty")
+    if not classified_embeddings:
+        raise ValueError("classified_embeddings cannot be empty")
 
-    zero = torch.zeros_like(extracted_embeddings[0]["relation_emb"])
+    zero = torch.zeros_like(classified_embeddings[0]["relation_emb"])
 
-    triple_embs   = torch.stack([e["triple_emb"]   for e in extracted_embeddings])
-    relation_embs = torch.stack([e["relation_emb"] for e in extracted_embeddings])
+    triple_embs   = torch.stack([e["triple_emb"]   for e in classified_embeddings])
+    relation_embs = torch.stack([e["relation_emb"] for e in classified_embeddings])
     subj_embs     = torch.stack([
         e["subj_type_emb"] if e.get("subj_type_emb") is not None else zero
-        for e in extracted_embeddings
+        for e in classified_embeddings
     ])
     obj_embs      = torch.stack([
         e["obj_type_emb"] if e.get("obj_type_emb") is not None else zero
-        for e in extracted_embeddings
+        for e in classified_embeddings
     ])
 
     return {
@@ -124,7 +124,7 @@ class SemanticAwareConsensusClustering:
     def fit_predict(
         self,
         alignment_results: List[Dict],
-        extracted_embeddings: List[Dict],
+        classified_embeddings: List[Dict],
         inter_triple_sims: Dict[str, torch.Tensor],
         llm_outputs: List[Dict],
     ) -> Tuple[Dict[str, Dict[int, List[Dict]]], Dict[str, float]]:
@@ -133,7 +133,7 @@ class SemanticAwareConsensusClustering:
 
         Args:
             alignment_results: Alignment results
-            extracted_embeddings: Embedded triples
+            classified_embeddings: Embedded triples
             inter_triple_sims: Similarity matrices
             llm_outputs: Original LLM outputs
 
@@ -141,7 +141,7 @@ class SemanticAwareConsensusClustering:
             (all_clusters, quality_scores)
         """
         mode_groups = self._prepare_groups(
-            alignment_results, extracted_embeddings, inter_triple_sims, llm_outputs
+            alignment_results, classified_embeddings, inter_triple_sims, llm_outputs
         )
 
         if not mode_groups:
@@ -172,7 +172,7 @@ class SemanticAwareConsensusClustering:
     def _prepare_groups(
         self,
         alignment_results: List[Dict],
-        extracted_embeddings: List[Dict],
+        classified_embeddings: List[Dict],
         inter_triple_sims: Dict[str, torch.Tensor],
         llm_outputs: List[Dict],
     ) -> Dict[str, List[Dict]]:
@@ -184,14 +184,14 @@ class SemanticAwareConsensusClustering:
                 continue
 
             mode = result["cluster_mode"]
-            idx  = result["extracted_idx"]
+            idx  = result["classified_idx"]
 
-            if idx >= len(extracted_embeddings) or idx >= len(llm_outputs):
+            if idx >= len(classified_embeddings) or idx >= len(llm_outputs):
                 continue
 
             cluster_groups[mode].append({
                 "alignment_result": result,
-                "embedding":        extracted_embeddings[idx],
+                "embedding":        classified_embeddings[idx],
                 "triple":           llm_outputs[idx]["triple"],
                 "idx":              idx,
                 "relation_sims":    inter_triple_sims["relation"][idx],

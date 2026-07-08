@@ -11,7 +11,7 @@ ORAX-KG Consensus Clustering:
   Loading from: results\test_run
 
   Loading artifacts...
-Loaded 296 extractions, 296 alignment results, 296 embeddings
+Loaded 296 classifications, 296 alignment results, 296 embeddings
 
   Computing inter-triple similarities...
 

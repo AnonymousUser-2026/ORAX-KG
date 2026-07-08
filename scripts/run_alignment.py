@@ -14,44 +14,44 @@ from src.logger import setup_logger, close_logger
 from src.alignment.metrics import evaluate_alignment, print_alignment_report
 
 def run_alignment(
-    extraction_dir: str,
+    classification_dir: str,
     output_dir: str,
     embedder_model: str = "Qwen/Qwen3-Embedding-8B",
     threshold: float = 0.90,
     device: str = None,
 ):
     """
-    Run alignment pipeline using artifacts from extraction.
+    Run alignment pipeline using artifacts from classification.
 
     Args:
-        extraction_dir: Directory containing extraction artifacts
+        classification_dir: Directory containing classification artifacts
         output_dir: Directory to save alignment artifacts
         embedder_model: HuggingFace embedding model name
         threshold: Cosine similarity threshold for alignment
         device: Device for computation (auto-detected if None)
     """
-    extraction_dir = Path(extraction_dir)
+    classification_dir = Path(classification_dir)
     output_dir     = Path(output_dir)
     alignment_dir  = output_dir / "03_alignment"
     alignment_dir.mkdir(parents=True, exist_ok=True)
 
     print("\n")
     print("ORAX-KG Ontology Alignment:")
-    print(f"\n  Loading from:     {extraction_dir}")
+    print(f"\n  Loading from:     {classification_dir}")
     print(f"  Output directory: {alignment_dir}")
 
-    print(f"\n  Loading extraction artifacts...")
+    print(f"\n  Loading classification artifacts...")
 
-    with open(extraction_dir / "02_extraction" / "extractions.jsonl") as f:
+    with open(classification_dir / "02_classification" / "classifications.jsonl") as f:
         llm_outputs = [json.loads(line) for line in f if line.strip()]
-    print(f"   Loaded {len(llm_outputs)} extractions")
+    print(f"   Loaded {len(llm_outputs)} classifications")
 
-    with open(extraction_dir / "01_ontology" / "known_ontology.json") as f:
+    with open(classification_dir / "01_ontology" / "known_ontology.json") as f:
         known_ontology = json.load(f)
     print(f"   Loaded known ontology ({len(known_ontology)} entries)")
 
-    print(f"\n  Preparing extracted triples...")
-    extracted_triples = [
+    print(f"\n  Preparing classified triples...")
+    classified_triples = [
         {
             "sentence_id": item["id"],
             "subject":     item["triple"]["subject"],
@@ -73,25 +73,25 @@ def run_alignment(
     print(f"\n  Initializing embedder: {embedder_model}")
     embedder = TripleEmbedder(embedder_model, device=device)
 
-    print(f"\n  Embedding extracted triples...")
-    extracted_embs = embedder.embed_triples(extracted_triples)
+    print(f"\n  Embedding classified triples...")
+    classified_embs = embedder.embed_triples(classified_triples)
 
     print(f"\n  Embedding ontology patterns...")
     ontology_embs = embedder.embed_ontology(known_ontology)
 
     print(f"\n  Saving embeddings...")
-    torch.save(extracted_embs, alignment_dir / "extracted_embeddings.pt")
+    torch.save(classified_embs, alignment_dir / "classified_embeddings.pt")
     torch.save(ontology_embs,  alignment_dir / "ontology_embeddings.pt")
     print(f"   Saved to {alignment_dir}")
 
     print(f"\n  Computing similarities...")
-    similarities = compute_similarities(extracted_embs, ontology_embs)
+    similarities = compute_similarities(classified_embs, ontology_embs)
     torch.save(similarities, alignment_dir / "similarities.pt")
 
     print(f"\n  Aligning triples (threshold={threshold})...")
     config  = AlignmentConfig(threshold=threshold)
     results = align_triples(
-        extracted_triples,
+        classified_triples,
         known_ontology,
         similarities,
         ontology_classes,
@@ -113,7 +113,7 @@ def run_alignment(
         json.dump(stats, f, indent=2)
 
     print(f"\n  Computing alignment metrics...")
-    with open(extraction_dir / "02_extraction" / "test_samples.json") as f:
+    with open(classification_dir / "02_classification" / "test_samples.json") as f:
         import json as _json
         test_samples = _json.load(f)
  
@@ -137,7 +137,7 @@ def main():
     parser = argparse.ArgumentParser(description="Run ORAX-KG ontology alignment")
     parser.add_argument(
         "--run-dir", type=str, required=True,
-        help="Path to extraction output directory"
+        help="Path to classification output directory"
     )
     parser.add_argument(
         "--output", type=str, required=True,
@@ -159,7 +159,7 @@ def main():
     args = parser.parse_args()
     setup_logger("alignment")
     run_alignment(
-        extraction_dir=args.run_dir,
+        classification_dir=args.run_dir,
         output_dir=args.output,
         embedder_model=args.embedder,
         threshold=args.threshold,

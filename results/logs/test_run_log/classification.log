@@ -1,12 +1,12 @@
 
 
   Run started: 2026-03-12 14:12:21
-  Log: results/logs/test_run_log\extraction.log
+  Log: results/logs/test_run_log\classification.log
 
 
 
 
-ORAX-KG Relation Extraction:
+ORAX-KG Relation classification:
 
   Output directory: results\test_run
 
@@ -39,9 +39,9 @@ Sampling Statistics:
    Hidden samples: 129
    Total sampled:  296
 
-  Starting fresh extraction
+  Starting fresh classification
 
-  Extracting from index 0...
+  classifying from index 0...
    Total samples: 296 | Remaining: 296
    Progress: 10/296 (3.4%)
    Progress: 20/296 (6.8%)
@@ -73,11 +73,11 @@ Sampling Statistics:
    Progress: 280/296 (94.6%)
    Progress: 290/296 (98.0%)
 
-  Computing extraction metrics...
+  Computing classification metrics...
    Matched 296/296 sample-output pairs
 
 
-EXTRACTION EVALUATION :
+classification EVALUATION :
 
   Known Relations (167 samples):
    Entity Accuracy:      1.000
@@ -86,13 +86,13 @@ EXTRACTION EVALUATION :
 
   Hidden Relations (129 samples):
    Entity Accuracy:          1.000
-   Relation Extraction Rate: 0.682
+   Relation classification Rate: 0.682
 
   Overall (296 samples):
    Entity Accuracy:       1.000
-   Extraction Success:    0.730
+   classification Success:    0.730
 
 
-  Extraction complete!
-   Total extractions: 296
+  classification complete!
+   Total classifications: 296
    Artifacts saved to: results\test_run

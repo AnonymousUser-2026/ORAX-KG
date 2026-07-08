@@ -10,24 +10,24 @@ import sys
 import yaml
 sys.path.append(str(Path(__file__).parent.parent))
 
-from src.extraction.llm_extractor import (
+from src.classification.llm_classifier import (
     OntologyManager,
-    extract_triple,
+    classify_triple,
     load_triples,
     sample_dataset,
     setup_client,
 )
-from src.extraction.metrics import (
-    evaluate_extraction,
-    compute_extraction_metrics,
-    print_extraction_report,
+from src.classification.metrics import (
+    evaluate_classification,
+    compute_classification_metrics,
+    print_classification_report,
 )
 
 from src.logger import setup_logger, close_logger
 
 def load_schema_from_file(schema_path: str) -> Dict:
     """
-    Load pre-extracted schema from JSON file.
+    Load pre-classified schema from JSON file.
 
     Args:
         schema_path: Path to schema JSON file
@@ -53,7 +53,7 @@ def load_schema_from_file(schema_path: str) -> Dict:
     return schema
 
 
-def run_extraction(
+def run_classification(
     data_path: str,
     schema_path: str,
     output_dir: str,
@@ -62,25 +62,25 @@ def run_extraction(
     resume: bool = True,
 ):
     """
-    Run extraction pipeline on dataset.
+    Run classification pipeline on dataset.
 
     Args:
         data_path: Path to test data JSON
         schema_path: Path to schema JSON file
-        output_dir: Directory to save all extraction artifacts
+        output_dir: Directory to save all classification artifacts
         base_url: Base URL of the vLLM server
         model_name: Model identifier served by vLLM
         resume: Whether to resume from existing output file
     """
     output_dir    = Path(output_dir)
     ontology_dir  = output_dir / "01_ontology"
-    extraction_dir = output_dir / "02_extraction"
+    classification_dir = output_dir / "02_classification"
 
     ontology_dir.mkdir(parents=True, exist_ok=True)
-    extraction_dir.mkdir(parents=True, exist_ok=True)
+    classification_dir.mkdir(parents=True, exist_ok=True)
 
     print("\n")
-    print("ORAX-KG Relation Extraction:")
+    print("ORAX-KG Relation classification:")
     print(f"\n  Output directory: {output_dir}")
 
     print(f"\n  Connecting to vLLM server at {base_url}...")
@@ -126,35 +126,35 @@ def run_extraction(
     print(f"\n  Sampling test data...")
     sampled = sample_dataset(all_triples, known_mgr.to_dict(), hidden_mgr.to_dict())
 
-    with open(extraction_dir / "test_samples.json", "w") as f:
+    with open(classification_dir / "test_samples.json", "w") as f:
         json.dump(sampled, f, indent=2)
 
     ground_truth = {
         sample.get("id", f"sample_{i}"): sample["relation"]
         for i, sample in enumerate(sampled)
     }
-    with open(extraction_dir / "ground_truth.json", "w") as f:
+    with open(classification_dir / "ground_truth.json", "w") as f:
         json.dump(ground_truth, f, indent=2)
 
-    extraction_output = extraction_dir / "extractions.jsonl"
+    classification_output = classification_dir / "classifications.jsonl"
     llm_outputs = []
     start_idx = 0
 
-    if resume and extraction_output.exists():
+    if resume and classification_output.exists():
         print(f"\n  Resuming from existing output...")
-        with open(extraction_output, "r", encoding="utf-8") as f:
+        with open(classification_output, "r", encoding="utf-8") as f:
             llm_outputs = [json.loads(line) for line in f if line.strip()]
         start_idx = len(llm_outputs)
-        print(f"   Found {start_idx} existing extractions")
+        print(f"   Found {start_idx} existing classifications")
     else:
-        print(f"\n  Starting fresh extraction")
+        print(f"\n  Starting fresh classification")
 
-    print(f"\n  Extracting from index {start_idx}...")
+    print(f"\n  classifying from index {start_idx}...")
     print(f"   Total samples: {len(sampled)} | Remaining: {len(sampled) - start_idx}")
 
     for idx, sample in enumerate(sampled[start_idx:], start=start_idx):
         try:
-            result = extract_triple(
+            result = classify_triple(
                 sample=sample,
                 ontology_manager=known_mgr,
                 client=client,
@@ -162,7 +162,7 @@ def run_extraction(
             )
             llm_outputs.append(result)
 
-            with open(extraction_output, "a", encoding="utf-8") as f:
+            with open(classification_output, "a", encoding="utf-8") as f:
                 f.write(json.dumps(result, ensure_ascii=False) + "\n")
 
             if (idx + 1) % 10 == 0:
@@ -177,18 +177,18 @@ def run_extraction(
                 "sentence": sample["sentence"],
                 "triple": {
                     "subject":   sample["subject"],
-                    "relation":  "extraction_error",
+                    "relation":  "classification_error",
                     "object":    sample["object"],
                     "subj_type": sample.get("subj_type"),
                     "obj_type":  sample.get("obj_type"),
                 },
             }
             llm_outputs.append(fallback)
-            with open(extraction_output, "a", encoding="utf-8") as f:
+            with open(classification_output, "a", encoding="utf-8") as f:
                 f.write(json.dumps(fallback, ensure_ascii=False) + "\n")
 
     config = {
-        "extraction": {
+        "classification": {
             "base_url":    base_url,
             "model":       model_name,
             "data_path":   str(data_path),
@@ -196,37 +196,37 @@ def run_extraction(
         },
         "timestamp":   datetime.now().isoformat(),
         "n_samples":   len(sampled),
-        "n_extracted": len(llm_outputs),
+        "n_classified": len(llm_outputs),
     }
     with open(output_dir / "00_config.yaml", "w") as f:
         yaml.dump(config, f)
 
-    print(f"\n  Computing extraction metrics...")
+    print(f"\n  Computing classification metrics...")
  
     known_relation_set = {
         (o["relation"], o["domain_type"], o["range_type"])
         for o in known_mgr.to_dict()
     }
  
-    raw_results     = evaluate_extraction(sampled, llm_outputs, known_relation_set)
-    metrics         = compute_extraction_metrics(raw_results)
+    raw_results     = evaluate_classification(sampled, llm_outputs, known_relation_set)
+    metrics         = compute_classification_metrics(raw_results)
  
-    with open(extraction_dir / "extraction_metrics.json", "w") as f:
+    with open(classification_dir / "classification_metrics.json", "w") as f:
         import json as _json
         _json.dump({k: v for k, v in metrics.items() if k != "detailed_results"}, f, indent=2)
  
-    print_extraction_report(metrics)
+    print_classification_report(metrics)
 
     print("\n")
-    print(f"  Extraction complete!")
-    print(f"   Total extractions: {len(llm_outputs)}")
+    print(f"  classification complete!")
+    print(f"   Total classifications: {len(llm_outputs)}")
     print(f"   Artifacts saved to: {output_dir}")
 
     return output_dir
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run ORAX-KG relation extraction"
+        description="Run ORAX-KG relation classification"
     )
     parser.add_argument(
         "--data", type=str, required=True,
@@ -238,7 +238,7 @@ def main():
     )
     parser.add_argument(
         "--output", type=str, required=True,
-        help="Output directory for all extraction artifacts"
+        help="Output directory for all classification artifacts"
     )
     parser.add_argument(
         "--base-url", type=str, default="http://localhost:8000",
@@ -254,8 +254,8 @@ def main():
     )
 
     args = parser.parse_args()
-    setup_logger(f"extraction")
-    run_extraction(
+    setup_logger(f"classification")
+    run_classification(
         data_path=args.data,
         schema_path=args.schema,
         output_dir=args.output,

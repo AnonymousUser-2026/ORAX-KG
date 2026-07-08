@@ -8,7 +8,7 @@ import torch
 import pandas as pd
 
 from ..clustering.consensus import compute_inter_triple_similarities
-from ..extraction.llm_extractor import extract_json_from_text
+from ..classification.llm_classifier import extract_json_from_text
 
 
 class ConfidenceLevel(Enum):

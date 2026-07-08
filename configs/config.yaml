@@ -16,8 +16,8 @@ data:
 output:
   base_dir: "results"
 
-# Step 1: Extraction
-extraction:
+# Step 1: Relation Classification
+classification:
   base_url:    "http://localhost:8000"
   model:       "Qwen/Qwen3-14B"
 
@@ -35,7 +35,7 @@ clustering:
 # Step 4: Validation 
 validation:
   base_url:              "http://localhost:8000"
-  model:                 "Qwen/Qwen3-32B"   # can use a larger model than extraction
+  model:                 "Qwen/Qwen3-32B"   # can use a larger model than classification
   top_k_representatives: 5                  # triples shown to LLM per cluster
   min_cluster_size:      5                  # skip clusters smaller than this
   min_confidence:        "Medium"           # Low | Medium | High

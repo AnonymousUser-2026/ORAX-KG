@@ -3,18 +3,18 @@ import json
 from typing import Dict, List, Optional
 
 
-def entities_fuzzy_match(extracted: str, ground_truth: str) -> bool:
+def entities_fuzzy_match(classified: str, ground_truth: str) -> bool:
     """Fuzzy entity matching — handles substrings and case differences."""
-    if not extracted or not ground_truth:
+    if not classified or not ground_truth:
         return False
-    ext_clean = extracted.lower().strip()
+    ext_clean = classified.lower().strip()
     gt_clean  = ground_truth.lower().strip()
     return ext_clean == gt_clean or ext_clean in gt_clean or gt_clean in ext_clean
 
 
 def is_meaningful_relation(relation: str) -> bool:
     """
-    Check if an extracted relation is semantically meaningful.
+    Check if an classified relation is semantically meaningful.
     Filters out placeholder strings, error markers, and overly generic labels.
     """
     if not relation or len(relation) <= 2:
@@ -38,25 +38,25 @@ def is_meaningful_relation(relation: str) -> bool:
     return relation.count("_") <= 2 and len(relation) > 2
 
 
-def evaluate_extraction(
+def evaluate_classification(
     sampled_data: List[Dict],
     llm_outputs: List[Dict],
     known_relation_set: set,
 ) -> Dict:
     """
-    Evaluate LLM extraction results against ground truth.
+    Evaluate LLM classification results against ground truth.
 
     Known relations  → entity accuracy + exact relation match
-    Hidden relations → entity accuracy + relation extractability
+    Hidden relations → entity accuracy + relation_extractability
 
     Args:
         sampled_data: Original test samples with ground truth
-        llm_outputs: LLM extraction results (extractions.jsonl)
+        llm_outputs: LLM classification results (classifications.jsonl)
         known_relation_set: Set of (relation, subj_type, obj_type) tuples
                             for relations shown to the LLM
 
     Returns:
-        Raw counts dict passed to compute_extraction_metrics()
+        Raw counts dict passed to compute_classification_metrics()
     """
     results = {
         "known_relations": {
@@ -65,7 +65,7 @@ def evaluate_extraction(
         },
         "hidden_relations": {
             "total": 0, "entity_correct": 0,
-            "relation_extractable": 0, "details": []
+            "relation_predictable": 0, "details": []
         },
     }
 
@@ -84,14 +84,14 @@ def evaluate_extraction(
 
     print(f"   Matched {len(matched)}/{len(sampled_data)} sample-output pairs")
 
-    for sample, extracted in matched:
+    for sample, classified in matched:
         gt_sub      = sample["subject"]
         gt_obj      = sample["object"]
         gt_rel      = sample["relation"]
         gt_sub_type = sample.get("subj_type", "UNKNOWN")
         gt_obj_type = sample.get("obj_type",  "UNKNOWN")
 
-        triple  = extracted.get("triple", {})
+        triple  = classified.get("triple", {})
         ext_sub = triple.get("subject",  "")
         ext_obj = triple.get("object",   "")
         ext_rel = triple.get("relation", "")
@@ -104,7 +104,7 @@ def evaluate_extraction(
             "sentence":     sample["sentence"],
             "ground_truth": {"subject": gt_sub, "relation": gt_rel, "object": gt_obj,
                              "subj_type": gt_sub_type, "obj_type": gt_obj_type},
-            "extracted":    {"subject": ext_sub, "relation": ext_rel, "object": ext_obj},
+            "classified":    {"subject": ext_sub, "relation": ext_rel, "object": ext_obj},
             "entities_correct": ent_match,
         }
 
@@ -116,22 +116,22 @@ def evaluate_extraction(
             detail["relation_correct"] = exact
             results["known_relations"]["details"].append(detail)
         else:
-            extractable = is_meaningful_relation(ext_rel)
+            predictable = is_meaningful_relation(ext_rel)
             results["hidden_relations"]["total"]                += 1
             results["hidden_relations"]["entity_correct"]       += int(ent_match)
-            results["hidden_relations"]["relation_extractable"] += int(extractable)
-            detail["relation_extractable"] = extractable
+            results["hidden_relations"]["relation_predictable"] += int(predictable)
+            detail["relation_predictable"] = predictable
             results["hidden_relations"]["details"].append(detail)
 
     return results
 
 
-def compute_extraction_metrics(results: Dict) -> Dict:
+def compute_classification_metrics(results: Dict) -> Dict:
     """
     Compute final metrics from raw evaluation counts.
 
     Known relations  → entity accuracy, relation exact match, full triple accuracy
-    Hidden relations → entity accuracy, relation extraction rate
+    Hidden relations → entity accuracy, relation classification rate
     Overall          → weighted average across both subsets
     """
     known       = results["known_relations"]
@@ -150,13 +150,13 @@ def compute_extraction_metrics(results: Dict) -> Dict:
     hidden_metrics = {
         "total_samples":            h_total,
         "entity_accuracy":          hidden["entity_correct"]       / h_total if h_total > 0 else 0.0,
-        "relation_extraction_rate": hidden["relation_extractable"] / h_total if h_total > 0 else 0.0,
+        "relation_classification_rate": hidden["relation_predictable"] / h_total if h_total > 0 else 0.0,
     }
 
     overall_metrics = {
         "total_samples":         total,
         "entity_accuracy":       (known["entity_correct"] + hidden["entity_correct"]) / total if total > 0 else 0.0,
-        "extraction_success_rate": (known["exact_match"] + hidden["relation_extractable"]) / total if total > 0 else 0.0,
+        "classification_success_rate": (known["exact_match"] + hidden["relation_predictable"]) / total if total > 0 else 0.0,
     }
 
     return {
@@ -167,14 +167,14 @@ def compute_extraction_metrics(results: Dict) -> Dict:
     }
 
 
-def print_extraction_report(metrics: Dict):
-    """Print formatted extraction evaluation report."""
+def print_classification_report(metrics: Dict):
+    """Print formatted classification evaluation report."""
     k = metrics["known_relations"]
     h = metrics["hidden_relations"]
     o = metrics["overall"]
 
     print("\n")
-    print("EXTRACTION EVALUATION :")
+    print("classification EVALUATION :")
 
     print(f"\n  Known Relations ({k['total_samples']} samples):")
     print(f"   Entity Accuracy:      {k['entity_accuracy']:.3f}")
@@ -183,8 +183,8 @@ def print_extraction_report(metrics: Dict):
 
     print(f"\n  Hidden Relations ({h['total_samples']} samples):")
     print(f"   Entity Accuracy:          {h['entity_accuracy']:.3f}")
-    print(f"   Relation Extraction Rate: {h['relation_extraction_rate']:.3f}")
+    print(f"   Relation classification Rate: {h['relation_classification_rate']:.3f}")
 
     print(f"\n  Overall ({o['total_samples']} samples):")
     print(f"   Entity Accuracy:       {o['entity_accuracy']:.3f}")
-    print(f"   Extraction Success:    {o['extraction_success_rate']:.3f}")
+    print(f"   classification Success:    {o['classification_success_rate']:.3f}")

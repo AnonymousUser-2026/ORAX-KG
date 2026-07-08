@@ -356,7 +356,7 @@ def evaluate_clustering(
             true_labels[idx] = rel
 
     aligned_set = {
-        r["extracted_idx"]
+        r["classified_idx"]
         for r in alignment_results
         if r.get("match_type") == "known_triple"
     }

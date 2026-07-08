@@ -8,7 +8,7 @@
 
 ORAX-KG Cluster Validation:
 
-  Extraction dir: results\test_run
+  classification dir: results\test_run
   Output dir:     results\test_run\05_validation
 
   Connecting to vLLM server at https://unflippant-concetta-bilgiest.ngrok-free.dev/v1...
@@ -22,8 +22,8 @@ ORAX-KG Cluster Validation:
    Loaded clusters from results/test_run/04_clustering/clusters.json
    Relation-mode clusters: 29
 
-  Loading embeddings from results/test_run/03_alignment/extracted_embeddings.pt...
-   Loaded 296 embeddings from results/test_run/03_alignment/extracted_embeddings.pt
+  Loading embeddings from results/test_run/03_alignment/classified_embeddings.pt...
+   Loaded 296 embeddings from results/test_run/03_alignment/classified_embeddings.pt
 
   Computing inter-triple similarities...
 

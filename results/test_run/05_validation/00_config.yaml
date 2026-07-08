@@ -5,8 +5,8 @@ timestamp: '2026-03-12T14:47:54.191933'
 validation:
   base_url: https://unflippant-concetta-bilgiest.ngrok-free.dev/v1
   clusters_path: results/test_run/04_clustering/clusters.json
-  embeddings_path: results/test_run/03_alignment/extracted_embeddings.pt
-  extraction_dir: results\test_run
+  embeddings_path: results/test_run/03_alignment/classified_embeddings.pt
+  classification_dir: results\test_run
   min_cluster_size: 5
   min_confidence: Medium
   model: Qwen/Qwen3-14B

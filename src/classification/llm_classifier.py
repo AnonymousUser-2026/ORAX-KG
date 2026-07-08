@@ -26,8 +26,8 @@ class Triple(BaseModel):
     obj_type: Optional[str] = None
 
 
-class ExtractionResult(BaseModel):
-    """LLM extraction output format."""
+class classificationResult(BaseModel):
+    """LLM classification output format."""
     id: str
     sentence: str
     triple: Triple
@@ -35,7 +35,7 @@ class ExtractionResult(BaseModel):
 
 class OntologyManager:
     """
-    Manages ontology for relation extraction.
+    Manages ontology for relation classification.
     Handles loading, splitting, and querying ontologies.
     """
  
@@ -189,19 +189,19 @@ class OntologyManager:
         return self
 
 class PromptGenerator:
-    """Generate LLM prompts for relation extraction."""
+    """Generate LLM prompts for relation classification."""
 
     @staticmethod
     def generate_system_message() -> str:
-        return """You are an expert knowledge graph relation extraction system specialized in semantic relation identification and ontology alignment.
+        return """You are an expert knowledge graph relation classification system specialized in semantic relation identification and ontology alignment.
 
 ## Your Task
 Given a sentence with marked subject and object entities, identify the semantic relation connecting them and align it to the provided ontology.
 
 ## CRITICAL RULES
 
-### 1. Entity Extraction
-- Extract EXACTLY the entities as marked (subject and object)
+### 1. Entity classification
+- classify EXACTLY the entities as marked (subject and object)
 - DO NOT modify, paraphrase, or substitute entity mentions
 - DO NOT swap subject and object positions
 
@@ -240,7 +240,7 @@ NEVER output:
 
     @staticmethod
     def generate_prompt(sample: Dict, ontology: List[Dict]) -> str:
-        """Generate extraction prompt with ontology and typed entities."""
+        """Generate classification prompt with ontology and typed entities."""
         ontology_str = "\n".join(
             f"- {ont['relation']}"
             f"\n  Domain: {ont.get('domain_type', 'ANY')}"
@@ -248,7 +248,7 @@ NEVER output:
             for ont in ontology
         )
 
-        return f"""### EXTRACTION TASK
+        return f"""### classification TASK
 
 **Sentence:**
 "{sample['sentence']}"
@@ -296,7 +296,7 @@ def setup_client(base_url: str = "http://localhost:8000") -> OpenAI:
     """
     return OpenAI(base_url=base_url, api_key="not-needed")
 
-def extract_triple(
+def classify_triple(
     sample: Dict,
     ontology_manager: OntologyManager,
     client: OpenAI,
@@ -305,7 +305,7 @@ def extract_triple(
     max_tokens: int = 500,
 ) -> Dict:
     """
-    Extract a relation triple using the LLM with ontology guidance.
+    classify a relation triple using the LLM with ontology guidance.
 
     Args:
         sample: Input sample with sentence, subject, object, and type fields
@@ -331,8 +331,8 @@ def extract_triple(
             response_format={
                 "type": "json_schema",
                 "json_schema": {
-                    "name":   "relation_extraction",
-                    "schema": ExtractionResult.model_json_schema(),
+                    "name":   "relation_classification",
+                    "schema": classificationResult.model_json_schema(),
                 },
             },
             temperature=temperature,
@@ -342,19 +342,19 @@ def extract_triple(
         triple = result.get("triple", {})
         triple.setdefault("subject",  sample["subject"])
         triple.setdefault("object",   sample["object"])
-        triple.setdefault("relation", "extraction_failed")
+        triple.setdefault("relation", "classification_failed")
 
         result["triple"] = triple
         return result
 
     except Exception as e:
-        print(f"LLM extraction failed: {e}")
+        print(f"LLM classification failed: {e}")
         return {
             "id":       sample.get("id", "unknown"),
             "sentence": sample["sentence"],
             "triple": {
                 "subject":   sample["subject"],
-                "relation":  "extraction_failed",
+                "relation":  "classification_failed",
                 "object":    sample["object"],
                 "subj_type": sample.get("subj_type"),
                 "obj_type":  sample.get("obj_type"),

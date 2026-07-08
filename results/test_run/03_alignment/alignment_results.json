@@ -1,6 +1,6 @@
 [
   {
-    "extracted_idx": 0,
+    "classified_idx": 0,
     "sentence_id": "e749b5e5dd32db863",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -14,7 +14,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 1,
+    "classified_idx": 1,
     "sentence_id": "e0c3cadaf672e563f",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -28,7 +28,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 2,
+    "classified_idx": 2,
     "sentence_id": "e248d6be6127c237e",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -42,7 +42,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 3,
+    "classified_idx": 3,
     "sentence_id": "e4a7a309c06db8cd2",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -56,7 +56,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 4,
+    "classified_idx": 4,
     "sentence_id": "ea120ecf8be62f05e",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -70,7 +70,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 5,
+    "classified_idx": 5,
     "sentence_id": "e127d51c652d5d9cf",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -84,7 +84,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 6,
+    "classified_idx": 6,
     "sentence_id": "edf108e39873f8c3b",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -98,7 +98,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 7,
+    "classified_idx": 7,
     "sentence_id": "e5c18d68c95561f85",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -112,7 +112,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 8,
+    "classified_idx": 8,
     "sentence_id": "e0c761617a1e20a68",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -126,7 +126,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 9,
+    "classified_idx": 9,
     "sentence_id": "e37b33e88b34114e2",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -140,7 +140,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 10,
+    "classified_idx": 10,
     "sentence_id": "e3e4f984e8f1a0a87",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -154,7 +154,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 11,
+    "classified_idx": 11,
     "sentence_id": "e8f4381e2c609ef11",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -168,7 +168,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 12,
+    "classified_idx": 12,
     "sentence_id": "ec6a106d4207564af",
     "matched_ontology_idx": 18,
     "match_type": "known_triple",
@@ -182,7 +182,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 13,
+    "classified_idx": 13,
     "sentence_id": "ed6c8c08f756876ae",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -196,7 +196,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 14,
+    "classified_idx": 14,
     "sentence_id": "e78055baa7955d927",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -210,7 +210,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 15,
+    "classified_idx": 15,
     "sentence_id": "ec0c475a9e527d515",
     "matched_ontology_idx": 44,
     "match_type": "known_triple",
@@ -224,7 +224,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 16,
+    "classified_idx": 16,
     "sentence_id": "e821a07cb2eb9656c",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -238,7 +238,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 17,
+    "classified_idx": 17,
     "sentence_id": "e190d4d3a53aee0cf",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -252,7 +252,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 18,
+    "classified_idx": 18,
     "sentence_id": "e2038304d05e4f998",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -266,7 +266,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 19,
+    "classified_idx": 19,
     "sentence_id": "e91ffbc0247240739",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -280,7 +280,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 20,
+    "classified_idx": 20,
     "sentence_id": "e7b4776a64e9bbb8b",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -294,7 +294,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 21,
+    "classified_idx": 21,
     "sentence_id": "e15c762bfa6471309",
     "matched_ontology_idx": 14,
     "match_type": "known_triple",
@@ -308,7 +308,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 22,
+    "classified_idx": 22,
     "sentence_id": "e9e729d7cba3b2bd7",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -322,7 +322,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 23,
+    "classified_idx": 23,
     "sentence_id": "eb33d311489ddba9d",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -336,7 +336,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 24,
+    "classified_idx": 24,
     "sentence_id": "e2eb09ca46a0087ca",
     "matched_ontology_idx": 44,
     "match_type": "known_triple",
@@ -350,7 +350,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 25,
+    "classified_idx": 25,
     "sentence_id": "e65fe4e7c74818999",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -364,7 +364,7 @@
     "object_similarity": 0.992786169052124
   },
   {
-    "extracted_idx": 26,
+    "classified_idx": 26,
     "sentence_id": "e90870d5134fcb949",
     "matched_ontology_idx": 9,
     "match_type": "constraint_violation",
@@ -378,7 +378,7 @@
     "object_similarity": 0.7514257431030273
   },
   {
-    "extracted_idx": 27,
+    "classified_idx": 27,
     "sentence_id": "eccaa5fd5e627a835",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -392,7 +392,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 28,
+    "classified_idx": 28,
     "sentence_id": "e918274aa5b90adad",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -406,7 +406,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 29,
+    "classified_idx": 29,
     "sentence_id": "e48e24015bd876473",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -420,7 +420,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 30,
+    "classified_idx": 30,
     "sentence_id": "e850144a575d7463e",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -434,7 +434,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 31,
+    "classified_idx": 31,
     "sentence_id": "e786e4772b6b9440e",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -448,7 +448,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 32,
+    "classified_idx": 32,
     "sentence_id": "ea901e638f529a777",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -462,7 +462,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 33,
+    "classified_idx": 33,
     "sentence_id": "eb9bcfb7bfe8ca12e",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -476,7 +476,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 34,
+    "classified_idx": 34,
     "sentence_id": "ef06442365637f3ce",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -490,7 +490,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 35,
+    "classified_idx": 35,
     "sentence_id": "e5daf649a200bf072",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -504,7 +504,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 36,
+    "classified_idx": 36,
     "sentence_id": "efa026a41880b6a0d",
     "matched_ontology_idx": 14,
     "match_type": "known_triple",
@@ -518,7 +518,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 37,
+    "classified_idx": 37,
     "sentence_id": "e36a2fa800db09586",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -532,7 +532,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 38,
+    "classified_idx": 38,
     "sentence_id": "e89e80d8514f66852",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -546,7 +546,7 @@
     "object_similarity": 0.992729902267456
   },
   {
-    "extracted_idx": 39,
+    "classified_idx": 39,
     "sentence_id": "e0c9c56ad36e0d310",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -560,7 +560,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 40,
+    "classified_idx": 40,
     "sentence_id": "ee6e115d3cdd57f63",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -574,7 +574,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 41,
+    "classified_idx": 41,
     "sentence_id": "ed88c2c5013da7641",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -588,7 +588,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 42,
+    "classified_idx": 42,
     "sentence_id": "eb641695f55b2df0b",
     "matched_ontology_idx": 58,
     "match_type": "known_triple",
@@ -602,7 +602,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 43,
+    "classified_idx": 43,
     "sentence_id": "ecab99abbc56332d2",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -616,7 +616,7 @@
     "object_similarity": 0.9782170057296753
   },
   {
-    "extracted_idx": 44,
+    "classified_idx": 44,
     "sentence_id": "e3a0d1b40b6e8b807",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -630,7 +630,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 45,
+    "classified_idx": 45,
     "sentence_id": "e7415291562b3d0fe",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -644,7 +644,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 46,
+    "classified_idx": 46,
     "sentence_id": "e4b10a5032cb75f55",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -658,7 +658,7 @@
     "object_similarity": 0.9934096336364746
   },
   {
-    "extracted_idx": 47,
+    "classified_idx": 47,
     "sentence_id": "e275e8a7b02ed2650",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -672,7 +672,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 48,
+    "classified_idx": 48,
     "sentence_id": "e58bee6b9a685af3f",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -686,7 +686,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 49,
+    "classified_idx": 49,
     "sentence_id": "e0aaab065de1799d5",
     "matched_ontology_idx": 9,
     "match_type": "constraint_violation",
@@ -700,7 +700,7 @@
     "object_similarity": 0.7514257431030273
   },
   {
-    "extracted_idx": 50,
+    "classified_idx": 50,
     "sentence_id": "e7c71210a4b2383f7",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -714,7 +714,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 51,
+    "classified_idx": 51,
     "sentence_id": "e7c076292571d1254",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -728,7 +728,7 @@
     "object_similarity": 0.9934096336364746
   },
   {
-    "extracted_idx": 52,
+    "classified_idx": 52,
     "sentence_id": "eb0a46c25798e8cb0",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -742,7 +742,7 @@
     "object_similarity": 0.9934096336364746
   },
   {
-    "extracted_idx": 53,
+    "classified_idx": 53,
     "sentence_id": "ed29a5e801573de61",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -756,7 +756,7 @@
     "object_similarity": 0.5927567481994629
   },
   {
-    "extracted_idx": 54,
+    "classified_idx": 54,
     "sentence_id": "e5b0f4adbd1827236",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -770,7 +770,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 55,
+    "classified_idx": 55,
     "sentence_id": "e094cdc81b32ee8eb",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -784,7 +784,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 56,
+    "classified_idx": 56,
     "sentence_id": "e1ea6e8a166d54b7f",
     "matched_ontology_idx": 14,
     "match_type": "known_triple",
@@ -798,7 +798,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 57,
+    "classified_idx": 57,
     "sentence_id": "e161c3147b8046b9f",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -812,7 +812,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 58,
+    "classified_idx": 58,
     "sentence_id": "eaf667b2e398c4ed5",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -826,7 +826,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 59,
+    "classified_idx": 59,
     "sentence_id": "e1d3c539e55e96eef",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -840,7 +840,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 60,
+    "classified_idx": 60,
     "sentence_id": "e21ae7201092af760",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -854,7 +854,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 61,
+    "classified_idx": 61,
     "sentence_id": "e25bf9e8483367c83",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -868,7 +868,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 62,
+    "classified_idx": 62,
     "sentence_id": "e171f60376ddbeffc",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -882,7 +882,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 63,
+    "classified_idx": 63,
     "sentence_id": "ef3d04f1f07b0e9f1",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -896,7 +896,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 64,
+    "classified_idx": 64,
     "sentence_id": "ee78870664669efb5",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -910,7 +910,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 65,
+    "classified_idx": 65,
     "sentence_id": "e61d46b508242daa0",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -924,7 +924,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 66,
+    "classified_idx": 66,
     "sentence_id": "eb201cb0e8f3e67dd",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -938,7 +938,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 67,
+    "classified_idx": 67,
     "sentence_id": "eaf99b6ae9e4b7c38",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -952,7 +952,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 68,
+    "classified_idx": 68,
     "sentence_id": "e96793e4dbf32b480",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -966,7 +966,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 69,
+    "classified_idx": 69,
     "sentence_id": "e818ccfd58204e3bf",
     "matched_ontology_idx": 47,
     "match_type": "known_triple",
@@ -980,7 +980,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 70,
+    "classified_idx": 70,
     "sentence_id": "e4f4a95ab27d1f7bf",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -994,7 +994,7 @@
     "object_similarity": 0.9963698983192444
   },
   {
-    "extracted_idx": 71,
+    "classified_idx": 71,
     "sentence_id": "ebd2921c5563845d4",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1008,7 +1008,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 72,
+    "classified_idx": 72,
     "sentence_id": "eaa632aaccbcf5b95",
     "matched_ontology_idx": 14,
     "match_type": "known_triple",
@@ -1022,7 +1022,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 73,
+    "classified_idx": 73,
     "sentence_id": "e0b1959477f688199",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -1036,7 +1036,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 74,
+    "classified_idx": 74,
     "sentence_id": "ea8cfa2a942e8026d",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1050,7 +1050,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 75,
+    "classified_idx": 75,
     "sentence_id": "ec1538d881599ed2f",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1064,7 +1064,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 76,
+    "classified_idx": 76,
     "sentence_id": "e6e30a0497730fab9",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1078,7 +1078,7 @@
     "object_similarity": 0.9934096336364746
   },
   {
-    "extracted_idx": 77,
+    "classified_idx": 77,
     "sentence_id": "e0113433090e07665",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -1092,7 +1092,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 78,
+    "classified_idx": 78,
     "sentence_id": "eeb8670b4beafb708",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1106,7 +1106,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 79,
+    "classified_idx": 79,
     "sentence_id": "e9c31112d429cb0ee",
     "matched_ontology_idx": 9,
     "match_type": "constraint_violation",
@@ -1120,7 +1120,7 @@
     "object_similarity": 0.7514257431030273
   },
   {
-    "extracted_idx": 80,
+    "classified_idx": 80,
     "sentence_id": "ed27235aa6a5282df",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1134,7 +1134,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 81,
+    "classified_idx": 81,
     "sentence_id": "ec4b8655e0794ba3c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1148,7 +1148,7 @@
     "object_similarity": 0.9938611388206482
   },
   {
-    "extracted_idx": 82,
+    "classified_idx": 82,
     "sentence_id": "eb6af4c88631d8bed",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1162,7 +1162,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 83,
+    "classified_idx": 83,
     "sentence_id": "e999fefe2b06b0b8e",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1176,7 +1176,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 84,
+    "classified_idx": 84,
     "sentence_id": "e751d51d96a26a05a",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1190,7 +1190,7 @@
     "object_similarity": 0.9938611388206482
   },
   {
-    "extracted_idx": 85,
+    "classified_idx": 85,
     "sentence_id": "edf47d9b64d1b022a",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1204,7 +1204,7 @@
     "object_similarity": 0.9934096336364746
   },
   {
-    "extracted_idx": 86,
+    "classified_idx": 86,
     "sentence_id": "e88cc60e1b3f16e2e",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1218,7 +1218,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 87,
+    "classified_idx": 87,
     "sentence_id": "eda1f04ca3ec8d8d4",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1232,7 +1232,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 88,
+    "classified_idx": 88,
     "sentence_id": "ecd1fd3f22c1af22c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1246,7 +1246,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 89,
+    "classified_idx": 89,
     "sentence_id": "eb157072301b1a284",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1260,7 +1260,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 90,
+    "classified_idx": 90,
     "sentence_id": "eb56e81b8ba4e6635",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1274,7 +1274,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 91,
+    "classified_idx": 91,
     "sentence_id": "e35668ef0c4460d6e",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -1288,7 +1288,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 92,
+    "classified_idx": 92,
     "sentence_id": "e32f21f2c438f2f34",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -1302,7 +1302,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 93,
+    "classified_idx": 93,
     "sentence_id": "ec081d281aeaab40f",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1316,7 +1316,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 94,
+    "classified_idx": 94,
     "sentence_id": "e8780c19d4cb9bef8",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -1330,7 +1330,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 95,
+    "classified_idx": 95,
     "sentence_id": "e15599858979bd0a4",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -1344,7 +1344,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 96,
+    "classified_idx": 96,
     "sentence_id": "e8bddc2e104095f40",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -1358,7 +1358,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 97,
+    "classified_idx": 97,
     "sentence_id": "e30bf99a588d9b766",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -1372,7 +1372,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 98,
+    "classified_idx": 98,
     "sentence_id": "e8f685c565f7dd259",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1386,7 +1386,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 99,
+    "classified_idx": 99,
     "sentence_id": "e48184d45086f56bf",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1400,7 +1400,7 @@
     "object_similarity": 0.9850866794586182
   },
   {
-    "extracted_idx": 100,
+    "classified_idx": 100,
     "sentence_id": "e5ceb12e4adc89ad8",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -1414,7 +1414,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 101,
+    "classified_idx": 101,
     "sentence_id": "e1eed92d1bdb2a743",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1428,7 +1428,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 102,
+    "classified_idx": 102,
     "sentence_id": "e0afd9226e3e5f77a",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -1442,7 +1442,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 103,
+    "classified_idx": 103,
     "sentence_id": "e26255584d50676ef",
     "matched_ontology_idx": 33,
     "match_type": "known_triple",
@@ -1456,7 +1456,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 104,
+    "classified_idx": 104,
     "sentence_id": "e8a3653ef81765228",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -1470,7 +1470,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 105,
+    "classified_idx": 105,
     "sentence_id": "ee5068a8c9189ca7a",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1484,7 +1484,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 106,
+    "classified_idx": 106,
     "sentence_id": "e341142b351cf0dbb",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -1498,7 +1498,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 107,
+    "classified_idx": 107,
     "sentence_id": "e9d99c7e2a8147612",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1512,7 +1512,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 108,
+    "classified_idx": 108,
     "sentence_id": "e354c01d128fd7e90",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -1526,7 +1526,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 109,
+    "classified_idx": 109,
     "sentence_id": "e32bde052884f4401",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -1540,7 +1540,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 110,
+    "classified_idx": 110,
     "sentence_id": "ef30902f13c5743da",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1554,7 +1554,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 111,
+    "classified_idx": 111,
     "sentence_id": "e9d4a4c3ce6d63151",
     "matched_ontology_idx": 44,
     "match_type": "known_triple",
@@ -1568,7 +1568,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 112,
+    "classified_idx": 112,
     "sentence_id": "eb9fea5422d5a0964",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -1582,7 +1582,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 113,
+    "classified_idx": 113,
     "sentence_id": "e8bb48d56c6d037e9",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1596,7 +1596,7 @@
     "object_similarity": 0.9867768883705139
   },
   {
-    "extracted_idx": 114,
+    "classified_idx": 114,
     "sentence_id": "e83cd118f9651ec7d",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -1610,7 +1610,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 115,
+    "classified_idx": 115,
     "sentence_id": "ef1a3a4f77fa12cd7",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1624,7 +1624,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 116,
+    "classified_idx": 116,
     "sentence_id": "e0b24204e9e822dc8",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -1638,7 +1638,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 117,
+    "classified_idx": 117,
     "sentence_id": "ecd99afad30db2346",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1652,7 +1652,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 118,
+    "classified_idx": 118,
     "sentence_id": "e2bfae72cab603e27",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1666,7 +1666,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 119,
+    "classified_idx": 119,
     "sentence_id": "e8165ccc59379c41f",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -1680,7 +1680,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 120,
+    "classified_idx": 120,
     "sentence_id": "efdcea7d0cf5bd73e",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -1694,7 +1694,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 121,
+    "classified_idx": 121,
     "sentence_id": "e58b6031552bda4ba",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1708,7 +1708,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 122,
+    "classified_idx": 122,
     "sentence_id": "e5ccbe438cdebac95",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -1722,7 +1722,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 123,
+    "classified_idx": 123,
     "sentence_id": "e34cc2eaee58185f0",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1736,7 +1736,7 @@
     "object_similarity": 0.9864052534103394
   },
   {
-    "extracted_idx": 124,
+    "classified_idx": 124,
     "sentence_id": "eb0d465c594df6484",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -1750,7 +1750,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 125,
+    "classified_idx": 125,
     "sentence_id": "e39cf83e224683979",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -1764,7 +1764,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 126,
+    "classified_idx": 126,
     "sentence_id": "e017096811be96817",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1778,7 +1778,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 127,
+    "classified_idx": 127,
     "sentence_id": "efbb8bee0b60a8acb",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1792,7 +1792,7 @@
     "object_similarity": 0.9864052534103394
   },
   {
-    "extracted_idx": 128,
+    "classified_idx": 128,
     "sentence_id": "eb68be5a8a8a465b5",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -1806,7 +1806,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 129,
+    "classified_idx": 129,
     "sentence_id": "e8b5aff5fa5d740e5",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -1820,7 +1820,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 130,
+    "classified_idx": 130,
     "sentence_id": "eb0caa4ffdc3c2ff3",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -1834,7 +1834,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 131,
+    "classified_idx": 131,
     "sentence_id": "ed178dcc0b8cd4cd7",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -1848,7 +1848,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 132,
+    "classified_idx": 132,
     "sentence_id": "ee7c48ddbab7d2e0e",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -1862,7 +1862,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 133,
+    "classified_idx": 133,
     "sentence_id": "e46c1ab403bff81c4",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -1876,7 +1876,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 134,
+    "classified_idx": 134,
     "sentence_id": "ee061085d66361625",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1890,7 +1890,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 135,
+    "classified_idx": 135,
     "sentence_id": "e97772051b07ce5de",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1904,7 +1904,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 136,
+    "classified_idx": 136,
     "sentence_id": "ee1673409fc601e08",
     "matched_ontology_idx": 58,
     "match_type": "known_triple",
@@ -1918,7 +1918,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 137,
+    "classified_idx": 137,
     "sentence_id": "ee896df30f42688c6",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1932,7 +1932,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 138,
+    "classified_idx": 138,
     "sentence_id": "e3f6f9d75d6f18271",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -1946,7 +1946,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 139,
+    "classified_idx": 139,
     "sentence_id": "e97539d246f41fe83",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1960,7 +1960,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 140,
+    "classified_idx": 140,
     "sentence_id": "e44d6df142d651b9c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1974,7 +1974,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 141,
+    "classified_idx": 141,
     "sentence_id": "ea3d9c0cd499d8538",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -1988,7 +1988,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 142,
+    "classified_idx": 142,
     "sentence_id": "e98ff6f6d5fe7bd3f",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2002,7 +2002,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 143,
+    "classified_idx": 143,
     "sentence_id": "eef2efb84ea3d7343",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2016,7 +2016,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 144,
+    "classified_idx": 144,
     "sentence_id": "e5205837f60e6d4b1",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -2030,7 +2030,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 145,
+    "classified_idx": 145,
     "sentence_id": "ec1f78f444098ddec",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2044,7 +2044,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 146,
+    "classified_idx": 146,
     "sentence_id": "eca44f9b94c1d8165",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2058,7 +2058,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 147,
+    "classified_idx": 147,
     "sentence_id": "e3c6e5c71634581ba",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -2072,7 +2072,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 148,
+    "classified_idx": 148,
     "sentence_id": "e46137891d30efebf",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -2086,7 +2086,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 149,
+    "classified_idx": 149,
     "sentence_id": "e8d6ae9c2373b11eb",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2100,7 +2100,7 @@
     "object_similarity": 0.9860833287239075
   },
   {
-    "extracted_idx": 150,
+    "classified_idx": 150,
     "sentence_id": "e0c685fddca44f159",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2114,7 +2114,7 @@
     "object_similarity": 0.9864052534103394
   },
   {
-    "extracted_idx": 151,
+    "classified_idx": 151,
     "sentence_id": "e5fc6186d0f371173",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2128,7 +2128,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 152,
+    "classified_idx": 152,
     "sentence_id": "e380b75e77b106050",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2142,7 +2142,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 153,
+    "classified_idx": 153,
     "sentence_id": "ec198ceee4a88733a",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -2156,7 +2156,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 154,
+    "classified_idx": 154,
     "sentence_id": "e24bbf0ce1b8b9a0e",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2170,7 +2170,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 155,
+    "classified_idx": 155,
     "sentence_id": "e154ac44dd27e4904",
     "matched_ontology_idx": 47,
     "match_type": "known_triple",
@@ -2184,7 +2184,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 156,
+    "classified_idx": 156,
     "sentence_id": "ea2fa15a3fa5a693c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2198,7 +2198,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 157,
+    "classified_idx": 157,
     "sentence_id": "e6f304baaaba03d2e",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -2212,7 +2212,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 158,
+    "classified_idx": 158,
     "sentence_id": "ef9196cf3d81b6f22",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -2226,7 +2226,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 159,
+    "classified_idx": 159,
     "sentence_id": "ecf1570c241582636",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -2240,7 +2240,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 160,
+    "classified_idx": 160,
     "sentence_id": "e4f7cf0d9eb0c97a5",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2254,7 +2254,7 @@
     "object_similarity": 0.9698984622955322
   },
   {
-    "extracted_idx": 161,
+    "classified_idx": 161,
     "sentence_id": "ed66b313ae4f2036c",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -2268,7 +2268,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 162,
+    "classified_idx": 162,
     "sentence_id": "e2ac6d18a9b43ee63",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -2282,7 +2282,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 163,
+    "classified_idx": 163,
     "sentence_id": "e21a0206cec6fc608",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2296,7 +2296,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 164,
+    "classified_idx": 164,
     "sentence_id": "e8a69fc64af0a67f1",
     "matched_ontology_idx": 58,
     "match_type": "known_triple",
@@ -2310,7 +2310,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 165,
+    "classified_idx": 165,
     "sentence_id": "e1b20bfd8fd734638",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -2324,7 +2324,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 166,
+    "classified_idx": 166,
     "sentence_id": "ea0050e7239a530c1",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -2338,7 +2338,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 167,
+    "classified_idx": 167,
     "sentence_id": "ee0b90fcea8c570b3",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2352,7 +2352,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 168,
+    "classified_idx": 168,
     "sentence_id": "e030c222eff4dc286",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2366,7 +2366,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 169,
+    "classified_idx": 169,
     "sentence_id": "e4640a38d34d64c1c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2380,7 +2380,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 170,
+    "classified_idx": 170,
     "sentence_id": "ea9177a7a9691bd62",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2394,7 +2394,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 171,
+    "classified_idx": 171,
     "sentence_id": "e9cb01b7c87e33631",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2408,7 +2408,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 172,
+    "classified_idx": 172,
     "sentence_id": "eb84561e9f856b886",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -2422,7 +2422,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 173,
+    "classified_idx": 173,
     "sentence_id": "ee0e56e733518a5c6",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2436,7 +2436,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 174,
+    "classified_idx": 174,
     "sentence_id": "e03920eed0a11f5f1",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2450,7 +2450,7 @@
     "object_similarity": 0.9864052534103394
   },
   {
-    "extracted_idx": 175,
+    "classified_idx": 175,
     "sentence_id": "ec8e9cf16fabe4c18",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -2464,7 +2464,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 176,
+    "classified_idx": 176,
     "sentence_id": "ee95bd6556041dc7b",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2478,7 +2478,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 177,
+    "classified_idx": 177,
     "sentence_id": "e3f3b8d4c351cf228",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2492,7 +2492,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 178,
+    "classified_idx": 178,
     "sentence_id": "ea3b16ed003978f55",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -2506,7 +2506,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 179,
+    "classified_idx": 179,
     "sentence_id": "e476269d7338ab7b4",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -2520,7 +2520,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 180,
+    "classified_idx": 180,
     "sentence_id": "e508ecb8423d7a86f",
     "matched_ontology_idx": 58,
     "match_type": "known_triple",
@@ -2534,7 +2534,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 181,
+    "classified_idx": 181,
     "sentence_id": "e24170607af0f3158",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -2548,7 +2548,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 182,
+    "classified_idx": 182,
     "sentence_id": "ee694f8f2e7c83876",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -2562,7 +2562,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 183,
+    "classified_idx": 183,
     "sentence_id": "e9d99ded784738f6c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2576,7 +2576,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 184,
+    "classified_idx": 184,
     "sentence_id": "ef88285d0c4e3ad68",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -2590,7 +2590,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 185,
+    "classified_idx": 185,
     "sentence_id": "e9eb064363d2c80cf",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2604,7 +2604,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 186,
+    "classified_idx": 186,
     "sentence_id": "e0837e5a4bfced4e3",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2618,7 +2618,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 187,
+    "classified_idx": 187,
     "sentence_id": "e662374085d39b72b",
     "matched_ontology_idx": 14,
     "match_type": "known_triple",
@@ -2632,7 +2632,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 188,
+    "classified_idx": 188,
     "sentence_id": "ee62c2ae1ebcead38",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2646,7 +2646,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 189,
+    "classified_idx": 189,
     "sentence_id": "ef10112666821fd74",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -2660,7 +2660,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 190,
+    "classified_idx": 190,
     "sentence_id": "e43fb6a182c6a9bb8",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -2674,7 +2674,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 191,
+    "classified_idx": 191,
     "sentence_id": "e39143cefcf304b3c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2688,7 +2688,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 192,
+    "classified_idx": 192,
     "sentence_id": "e9b47b10c8b32630c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2702,7 +2702,7 @@
     "object_similarity": 0.9938611388206482
   },
   {
-    "extracted_idx": 193,
+    "classified_idx": 193,
     "sentence_id": "ed5e78876609235a4",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -2716,7 +2716,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 194,
+    "classified_idx": 194,
     "sentence_id": "e32c4d902d1b94e27",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2730,7 +2730,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 195,
+    "classified_idx": 195,
     "sentence_id": "e8f900e54b80180e3",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -2744,7 +2744,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 196,
+    "classified_idx": 196,
     "sentence_id": "e91b6dc35a030428d",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2758,7 +2758,7 @@
     "object_similarity": 0.992729902267456
   },
   {
-    "extracted_idx": 197,
+    "classified_idx": 197,
     "sentence_id": "e0c6524d6b90d8015",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2772,7 +2772,7 @@
     "object_similarity": 0.9907379150390625
   },
   {
-    "extracted_idx": 198,
+    "classified_idx": 198,
     "sentence_id": "eb00c073fd845287c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2786,7 +2786,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 199,
+    "classified_idx": 199,
     "sentence_id": "e6de80e6353a1a5f9",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2800,7 +2800,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 200,
+    "classified_idx": 200,
     "sentence_id": "e6c2056d49695acbb",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -2814,7 +2814,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 201,
+    "classified_idx": 201,
     "sentence_id": "e540a0f7628dea52d",
     "matched_ontology_idx": 23,
     "match_type": "known_triple",
@@ -2828,7 +2828,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 202,
+    "classified_idx": 202,
     "sentence_id": "e8fd9d3f385cfe963",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -2842,7 +2842,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 203,
+    "classified_idx": 203,
     "sentence_id": "e2eaa48605ce54afb",
     "matched_ontology_idx": 14,
     "match_type": "known_triple",
@@ -2856,7 +2856,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 204,
+    "classified_idx": 204,
     "sentence_id": "e4b1242c4bfbd2115",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2870,7 +2870,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 205,
+    "classified_idx": 205,
     "sentence_id": "e24b09a66c9a6a000",
     "matched_ontology_idx": 44,
     "match_type": "known_triple",
@@ -2884,7 +2884,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 206,
+    "classified_idx": 206,
     "sentence_id": "ec3b763dc99a79b4a",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -2898,7 +2898,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 207,
+    "classified_idx": 207,
     "sentence_id": "ec7ae40f1cf465971",
     "matched_ontology_idx": 18,
     "match_type": "known_triple",
@@ -2912,7 +2912,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 208,
+    "classified_idx": 208,
     "sentence_id": "e9f2363de93d8be8a",
     "matched_ontology_idx": 44,
     "match_type": "known_triple",
@@ -2926,7 +2926,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 209,
+    "classified_idx": 209,
     "sentence_id": "e443bf944434048c4",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2940,7 +2940,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 210,
+    "classified_idx": 210,
     "sentence_id": "eb17dd0eb00182b60",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -2954,7 +2954,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 211,
+    "classified_idx": 211,
     "sentence_id": "e478d68fc44860ddd",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -2968,7 +2968,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 212,
+    "classified_idx": 212,
     "sentence_id": "edd547735914de7ef",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -2982,7 +2982,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 213,
+    "classified_idx": 213,
     "sentence_id": "e9c8ff0a2169e367e",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -2996,7 +2996,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 214,
+    "classified_idx": 214,
     "sentence_id": "ed06abb77d6738742",
     "matched_ontology_idx": 14,
     "match_type": "known_triple",
@@ -3010,7 +3010,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 215,
+    "classified_idx": 215,
     "sentence_id": "ebde11d11fcbdd77a",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -3024,7 +3024,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 216,
+    "classified_idx": 216,
     "sentence_id": "ef8c4e2dc4b1523a4",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -3038,7 +3038,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 217,
+    "classified_idx": 217,
     "sentence_id": "ea5ac95874502369d",
     "matched_ontology_idx": 44,
     "match_type": "known_triple",
@@ -3052,7 +3052,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 218,
+    "classified_idx": 218,
     "sentence_id": "ef57a87ce7af57fd5",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3066,7 +3066,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 219,
+    "classified_idx": 219,
     "sentence_id": "e4b7ac887585ec979",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3080,7 +3080,7 @@
     "object_similarity": 0.9934096336364746
   },
   {
-    "extracted_idx": 220,
+    "classified_idx": 220,
     "sentence_id": "e5834d383dc06cd29",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -3094,7 +3094,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 221,
+    "classified_idx": 221,
     "sentence_id": "eba6d803406196698",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3108,7 +3108,7 @@
     "object_similarity": 0.9934096336364746
   },
   {
-    "extracted_idx": 222,
+    "classified_idx": 222,
     "sentence_id": "eacf7f6c963c62453",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -3122,7 +3122,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 223,
+    "classified_idx": 223,
     "sentence_id": "ea2ccfda6365ef4a7",
     "matched_ontology_idx": 58,
     "match_type": "known_triple",
@@ -3136,7 +3136,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 224,
+    "classified_idx": 224,
     "sentence_id": "e387363bf2e35fd30",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -3150,7 +3150,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 225,
+    "classified_idx": 225,
     "sentence_id": "e81ccd1bf2da2efa1",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -3164,7 +3164,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 226,
+    "classified_idx": 226,
     "sentence_id": "e14a6eab4161c739b",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -3178,7 +3178,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 227,
+    "classified_idx": 227,
     "sentence_id": "e2ac9d75fe8dbd12a",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3192,7 +3192,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 228,
+    "classified_idx": 228,
     "sentence_id": "e78533fc85eaa6db8",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -3206,7 +3206,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 229,
+    "classified_idx": 229,
     "sentence_id": "eb1a79e12dbfcb8f7",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -3220,7 +3220,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 230,
+    "classified_idx": 230,
     "sentence_id": "e12841d18c0ea205a",
     "matched_ontology_idx": 9,
     "match_type": "constraint_violation",
@@ -3234,7 +3234,7 @@
     "object_similarity": 0.7514257431030273
   },
   {
-    "extracted_idx": 231,
+    "classified_idx": 231,
     "sentence_id": "e3a92065ae27c09de",
     "matched_ontology_idx": 69,
     "match_type": "known_triple",
@@ -3248,7 +3248,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 232,
+    "classified_idx": 232,
     "sentence_id": "eb5811d8a7608cec5",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3262,7 +3262,7 @@
     "object_similarity": 0.9771456122398376
   },
   {
-    "extracted_idx": 233,
+    "classified_idx": 233,
     "sentence_id": "e029786c5ba51e35a",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3276,7 +3276,7 @@
     "object_similarity": 0.9934096336364746
   },
   {
-    "extracted_idx": 234,
+    "classified_idx": 234,
     "sentence_id": "ef28c36813b9d9cc5",
     "matched_ontology_idx": 44,
     "match_type": "known_triple",
@@ -3290,7 +3290,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 235,
+    "classified_idx": 235,
     "sentence_id": "e1f0968f4de0487ea",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3304,7 +3304,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 236,
+    "classified_idx": 236,
     "sentence_id": "eb619084fcef00be2",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3318,7 +3318,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 237,
+    "classified_idx": 237,
     "sentence_id": "e56a4df735f05c37d",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -3332,7 +3332,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 238,
+    "classified_idx": 238,
     "sentence_id": "e0fe9e8275aeded90",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3346,7 +3346,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 239,
+    "classified_idx": 239,
     "sentence_id": "ef677f944fc5d0fa9",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -3360,7 +3360,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 240,
+    "classified_idx": 240,
     "sentence_id": "ed403dbb906b2fd9c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3374,7 +3374,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 241,
+    "classified_idx": 241,
     "sentence_id": "e0a8c1ae738642633",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -3388,7 +3388,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 242,
+    "classified_idx": 242,
     "sentence_id": "ed65372854b8edc31",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -3402,7 +3402,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 243,
+    "classified_idx": 243,
     "sentence_id": "e92808fff52ca7333",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3416,7 +3416,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 244,
+    "classified_idx": 244,
     "sentence_id": "e9749079e53cbb187",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3430,7 +3430,7 @@
     "object_similarity": 0.9938611388206482
   },
   {
-    "extracted_idx": 245,
+    "classified_idx": 245,
     "sentence_id": "e88a138fc0083ef1d",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -3444,7 +3444,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 246,
+    "classified_idx": 246,
     "sentence_id": "eda355d19cc924a55",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -3458,7 +3458,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 247,
+    "classified_idx": 247,
     "sentence_id": "e88e1d85a8e6a9add",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3472,7 +3472,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 248,
+    "classified_idx": 248,
     "sentence_id": "e0cb26b0187901a25",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3486,7 +3486,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 249,
+    "classified_idx": 249,
     "sentence_id": "eaafae3a2cc930584",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -3500,7 +3500,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 250,
+    "classified_idx": 250,
     "sentence_id": "ef0b9d48d4d5b2c37",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3514,7 +3514,7 @@
     "object_similarity": 0.9865466356277466
   },
   {
-    "extracted_idx": 251,
+    "classified_idx": 251,
     "sentence_id": "ee8725b92ac6addf8",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3528,7 +3528,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 252,
+    "classified_idx": 252,
     "sentence_id": "eb8792477526d2a00",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -3542,7 +3542,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 253,
+    "classified_idx": 253,
     "sentence_id": "e13b9d5c00f0eb762",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -3556,7 +3556,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 254,
+    "classified_idx": 254,
     "sentence_id": "e29283a847029296f",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -3570,7 +3570,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 255,
+    "classified_idx": 255,
     "sentence_id": "ebeb19331cbd907c4",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3584,7 +3584,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 256,
+    "classified_idx": 256,
     "sentence_id": "eeff366c14fc6f907",
     "matched_ontology_idx": 54,
     "match_type": "known_triple",
@@ -3598,7 +3598,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 257,
+    "classified_idx": 257,
     "sentence_id": "e9b1e9e289c19fcee",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3612,7 +3612,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 258,
+    "classified_idx": 258,
     "sentence_id": "e6c41eec40c3dad13",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -3626,7 +3626,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 259,
+    "classified_idx": 259,
     "sentence_id": "e7e5205c46b5cf264",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -3640,7 +3640,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 260,
+    "classified_idx": 260,
     "sentence_id": "ec7d0e444ee4e1a64",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3654,7 +3654,7 @@
     "object_similarity": 0.9850866794586182
   },
   {
-    "extracted_idx": 261,
+    "classified_idx": 261,
     "sentence_id": "eacbd0ad1bd9b29a7",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3668,7 +3668,7 @@
     "object_similarity": 0.9934096336364746
   },
   {
-    "extracted_idx": 262,
+    "classified_idx": 262,
     "sentence_id": "e2904f71a85059eaa",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -3682,7 +3682,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 263,
+    "classified_idx": 263,
     "sentence_id": "ea19276a0d5037e2b",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3696,7 +3696,7 @@
     "object_similarity": 0.9850866794586182
   },
   {
-    "extracted_idx": 264,
+    "classified_idx": 264,
     "sentence_id": "e350a16b2154d96b0",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3710,7 +3710,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 265,
+    "classified_idx": 265,
     "sentence_id": "e4c12f20028c27e43",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3724,7 +3724,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 266,
+    "classified_idx": 266,
     "sentence_id": "e2650ab75f23ecf2c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3738,7 +3738,7 @@
     "object_similarity": 0.9938611388206482
   },
   {
-    "extracted_idx": 267,
+    "classified_idx": 267,
     "sentence_id": "e959e6705c2a2e680",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -3752,7 +3752,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 268,
+    "classified_idx": 268,
     "sentence_id": "ee62e61fb9a168846",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -3766,7 +3766,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 269,
+    "classified_idx": 269,
     "sentence_id": "ec49f77ad8c48235b",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3780,7 +3780,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 270,
+    "classified_idx": 270,
     "sentence_id": "efaa6fcc312e9b602",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3794,7 +3794,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 271,
+    "classified_idx": 271,
     "sentence_id": "e6b17c338d863a2af",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3808,7 +3808,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 272,
+    "classified_idx": 272,
     "sentence_id": "e7405a9b9f729e12a",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -3822,7 +3822,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 273,
+    "classified_idx": 273,
     "sentence_id": "ebb3b8967ab080ddc",
     "matched_ontology_idx": 4,
     "match_type": "known_triple",
@@ -3836,7 +3836,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 274,
+    "classified_idx": 274,
     "sentence_id": "e5e65c4a12fcf4dfc",
     "matched_ontology_idx": 41,
     "match_type": "known_triple",
@@ -3850,7 +3850,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 275,
+    "classified_idx": 275,
     "sentence_id": "e4a1ed199db7dc81c",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3864,7 +3864,7 @@
     "object_similarity": 0.984978437423706
   },
   {
-    "extracted_idx": 276,
+    "classified_idx": 276,
     "sentence_id": "e633f120691390cd4",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -3878,7 +3878,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 277,
+    "classified_idx": 277,
     "sentence_id": "e11ed84fbb16ffa93",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3892,7 +3892,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 278,
+    "classified_idx": 278,
     "sentence_id": "e344e91c5b8ef9e97",
     "matched_ontology_idx": 43,
     "match_type": "known_triple",
@@ -3906,7 +3906,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 279,
+    "classified_idx": 279,
     "sentence_id": "ef52042cd8cb1b53b",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -3920,7 +3920,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 280,
+    "classified_idx": 280,
     "sentence_id": "ee0d0418d523cf19b",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3934,7 +3934,7 @@
     "object_similarity": 0.9907222986221313
   },
   {
-    "extracted_idx": 281,
+    "classified_idx": 281,
     "sentence_id": "e39d573fe39cdeeac",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -3948,7 +3948,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 282,
+    "classified_idx": 282,
     "sentence_id": "e1f39e139ca5b93eb",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3962,7 +3962,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 283,
+    "classified_idx": 283,
     "sentence_id": "e34f01757870c67f8",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -3976,7 +3976,7 @@
     "object_similarity": 1.000000238418579
   },
   {
-    "extracted_idx": 284,
+    "classified_idx": 284,
     "sentence_id": "ef86b9a9dfc8bbde3",
     "matched_ontology_idx": 44,
     "match_type": "known_triple",
@@ -3990,7 +3990,7 @@
     "object_similarity": 1.0000001192092896
   },
   {
-    "extracted_idx": 285,
+    "classified_idx": 285,
     "sentence_id": "e9e7a390112ffcd09",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -4004,7 +4004,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 286,
+    "classified_idx": 286,
     "sentence_id": "e5d26367823e1b2f7",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -4018,7 +4018,7 @@
     "object_similarity": 0.977054238319397
   },
   {
-    "extracted_idx": 287,
+    "classified_idx": 287,
     "sentence_id": "e2403b476ad3374ae",
     "matched_ontology_idx": 61,
     "match_type": "known_triple",
@@ -4032,7 +4032,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 288,
+    "classified_idx": 288,
     "sentence_id": "e5b159b4e03b5a4c1",
     "matched_ontology_idx": null,
     "match_type": "new_triple_candidate",
@@ -4046,7 +4046,7 @@
     "object_similarity": 0.986059308052063
   },
   {
-    "extracted_idx": 289,
+    "classified_idx": 289,
     "sentence_id": "ed35917025cf707aa",
     "matched_ontology_idx": 0,
     "match_type": "known_triple",
@@ -4060,7 +4060,7 @@
     "object_similarity": 0.9999997615814209
   },
   {
-    "extracted_idx": 290,
+    "classified_idx": 290,
     "sentence_id": "ea2765561f98dd924",
     "matched_ontology_idx": 52,
     "match_type": "known_triple",
@@ -4074,7 +4074,7 @@
     "object_similarity": 0.9999997019767761
   },
   {
-    "extracted_idx": 291,
+    "classified_idx": 291,
     "sentence_id": "efbb6215b0283284d",
     "matched_ontology_idx": 31,
     "match_type": "known_triple",
@@ -4088,7 +4088,7 @@
     "object_similarity": 1.0
   },
   {
-    "extracted_idx": 292,
+    "classified_idx": 292,
     "sentence_id": "e8ff15843cfdef6f7",
     "matched_ontology_idx": 42,
     "match_type": "known_triple",
@@ -4102,7 +4102,7 @@
     "object_similarity": 0.9999999403953552
   },
   {
-    "extracted_idx": 293,
+    "classified_idx": 293,
     "sentence_id": "e50ef658907d1411e",
     "matched_ontology_idx": 26,
     "match_type": "known_triple",
@@ -4116,7 +4116,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 294,
+    "classified_idx": 294,
     "sentence_id": "ee4e267f2196fe98b",
     "matched_ontology_idx": 27,
     "match_type": "known_triple",
@@ -4130,7 +4130,7 @@
     "object_similarity": 0.9999998807907104
   },
   {
-    "extracted_idx": 295,
+    "classified_idx": 295,
     "sentence_id": "e6c7034376b334d2d",
     "matched_ontology_idx": 44,
     "match_type": "known_triple",

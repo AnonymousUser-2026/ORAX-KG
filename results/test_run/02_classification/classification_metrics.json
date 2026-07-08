@@ -8,11 +8,11 @@
   "hidden_relations": {
     "total_samples": 129,
     "entity_accuracy": 1.0,
-    "relation_extraction_rate": 0.6821705426356589
+    "relation_classification_rate": 0.6821705426356589
   },
   "overall": {
     "total_samples": 296,
     "entity_accuracy": 1.0,
-    "extraction_success_rate": 0.7297297297297297
+    "classification_success_rate": 0.7297297297297297
   }
 }

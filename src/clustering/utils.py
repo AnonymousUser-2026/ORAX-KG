@@ -24,15 +24,15 @@ def build_full_ground_truth(
     alignment_results: List[Dict],
 ) -> Dict[int, str]:
     """
-    Build a complete ground truth mapping for all extracted triples.
+    Build a complete ground truth mapping for all classified triples.
 
     Args:
         sampled: Original test dataset samples (each with 'id'/'sentence_id' and 'relation')
-        llm_outputs: Extracted triples from the LLM (each with 'id'/'sentence_id')
-        alignment_results: Alignment results (each with 'extracted_idx')
+        llm_outputs: classified triples from the LLM (each with 'id'/'sentence_id')
+        alignment_results: Alignment results (each with 'classified_idx')
 
     Returns:
-        Dict mapping extraction_idx → ground_truth_relation
+        Dict mapping classification_idx → ground_truth_relation
     """
     # sentence_id → ground-truth relation
     sentence_to_gt = {
@@ -43,7 +43,7 @@ def build_full_ground_truth(
 
     full_ground_truth = {}
     for align_result in alignment_results:
-        idx = align_result["extracted_idx"]
+        idx = align_result["classified_idx"]
         if idx >= len(llm_outputs):
             continue
         sent_id = llm_outputs[idx].get("sentence_id") or llm_outputs[idx].get("id")
@@ -53,15 +53,15 @@ def build_full_ground_truth(
     return full_ground_truth
 
 
-def normalize_embeddings(extracted_embeddings: List[Dict]):
+def normalize_embeddings(classified_embeddings: List[Dict]):
     """
     L2-normalize all embedding vectors in-place.
 
     Args:
-        extracted_embeddings: List of embedding dicts
+        classified_embeddings: List of embedding dicts
     """
     keys = ["relation_emb", "triple_emb", "subj_type_emb", "obj_type_emb"]
-    for e in extracted_embeddings:
+    for e in classified_embeddings:
         for key in keys:
             if key in e and e[key] is not None:
                 e[key] = F.normalize(e[key].float(), p=2, dim=-1)

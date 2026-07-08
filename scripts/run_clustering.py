@@ -73,15 +73,15 @@ def run_clustering(
     with open(run_dir / "03_alignment" / "alignment_results.json") as f:
         alignment_results = json.load(f)
 
-    with open(run_dir / "02_extraction" / "extractions.jsonl") as f:
+    with open(run_dir / "02_classification" / "classifications.jsonl") as f:
         llm_outputs = [json.loads(line) for line in f if line.strip()]
 
-    extracted_embs = torch.load(
-        run_dir / "03_alignment" / "extracted_embeddings.pt",
+    classified_embs = torch.load(
+        run_dir / "03_alignment" / "classified_embeddings.pt",
         map_location="cpu",
     )
 
-    with open(run_dir / "02_extraction" / "test_samples.json") as f:
+    with open(run_dir / "02_classification" / "test_samples.json") as f:
         test_samples = json.load(f)
 
     with open(run_dir / "01_ontology" / "known_ontology.json") as f:
@@ -90,17 +90,17 @@ def run_clustering(
     with open(run_dir / "01_ontology" / "hidden_ontology.json") as f:
         hidden_ontology = json.load(f)
 
-    print(f"Loaded {len(llm_outputs)} extractions, "
+    print(f"Loaded {len(llm_outputs)} classifications, "
           f"{len(alignment_results)} alignment results, "
-          f"{len(extracted_embs)} embeddings")
+          f"{len(classified_embs)} embeddings")
 
     hidden_relation_labels = extract_relation_labels_from_ontology(hidden_ontology)
     full_ground_truth = build_full_ground_truth(test_samples, llm_outputs, alignment_results)
 
-    normalize_embeddings(extracted_embs)
+    normalize_embeddings(classified_embs)
 
     print(f"\n  Computing inter-triple similarities...")
-    inter_triple_sims = compute_inter_triple_similarities(extracted_embs)
+    inter_triple_sims = compute_inter_triple_similarities(classified_embs)
 
     print(f"\n  Running consensus clustering...")
     clusterer = SemanticAwareConsensusClustering(
@@ -110,7 +110,7 @@ def run_clustering(
     )
 
     all_clusters, quality_scores = clusterer.fit_predict(
-        alignment_results, extracted_embs, inter_triple_sims, llm_outputs
+        alignment_results, classified_embs, inter_triple_sims, llm_outputs
     )
 
     print(f"\n  Evaluating clustering...")

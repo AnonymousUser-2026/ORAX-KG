@@ -35,7 +35,7 @@ def setup_logger(name: str):
     Call once at the start of each script.
  
     Args:
-        name: Log file stem, e.g. "extraction" → results/logs/extraction.log
+        name: Log file stem, e.g. "classification" → results/logs/classification.log
     """
     global _tee_instance
  

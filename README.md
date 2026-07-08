@@ -4,14 +4,14 @@ Official implementation of ORAX-KG.
 
 ## Description
 
-ORAX-KG is a unified framework that expands an initial ontology for ontology-grounded knowledge graph construction. Given a corpus and a partial ontology schema, it automatically extracts relation triples, aligns them against known relations, clusters the unaligned ones, and validates the resulting clusters with an LLM to propose genuinely new ontology relations.
+ORAX-KG is a unified framework that expands an initial ontology for ontology-grounded knowledge graph construction. Given a corpus and a partial ontology schema, it automatically classifies  relation triples, aligns them against known relations, clusters the unaligned ones, and validates the resulting clusters with an LLM to propose genuinely new ontology relations.
 
 ### Key Components
 
 **ORAX-KG combines:**
 
-1. **LLM-based extraction** — An instruction-tuned model extracts (subject, relation, object) triples from sentences, guided by the known portion of the ontology.
-2. **Semantic alignment** — Extracted triples are embedded and matched against known ontology patterns; unmatched triples are flagged for clustering.
+1. **LLM-based classification** — An instruction-tuned model classifies  (subject, relation, object) triples from sentences, guided by the known portion of the ontology.
+2. **Semantic alignment** — classified triples are embedded and matched against known ontology patterns; unmatched triples are flagged for clustering.
 3. **Consensus clustering** — A multi-algorithm ensemble groups unaligned triples by semantic similarity.
 4. **LLM validation** — A second LLM pass inspects each cluster, decides whether it represents a genuinely new relation, and proposes a labeling.
 
@@ -74,11 +74,11 @@ python scripts/extract_schema.py \
 
 ---
 
-### Step 1: Ontology-Guided Triple Extraction
+### Step 1: Ontology-Guided Triple classification
 
-Extract relation triples guided by the initial ontology schema using an LLM:
+classify relation triples guided by the initial ontology schema using an LLM:
 ```bash
-python scripts/run_extraction.py \
+python scripts/run_classification.py \
     --data data/raw_data/ReTACRED/test.json \
     --schema data/ontologies/ReTACRED_ontology.json \
     --output results/test_run \
@@ -90,7 +90,7 @@ python scripts/run_extraction.py \
 
 ### Step 2: Triple Embeddings and Alignment
 
-Embed the extracted triples and align them against the initial ontology:
+Embed the classified triples and align them against the initial ontology:
 ```bash
 python scripts/run_alignment.py \
     --run-dir results/test_run \
@@ -119,9 +119,9 @@ python scripts/run_clustering.py \
 Validate the clusters and label novel relations before integration into the ontology:
 ```bash
 python scripts/run_validation.py \
-    --extraction-dir results/test_run \
+    --classification-dir results/test_run \
     --clusters results/test_run/04_clustering/clusters.json \
-    --embeddings results/test_run/03_alignment/extracted_embeddings.pt \
+    --embeddings results/test_run/03_alignment/classified_embeddings.pt \
     --output results/test_run/05_validation \
     --base-url http://localhost:8000 \
     --model Qwen/Qwen3-32B \
@@ -153,7 +153,7 @@ ORAX-KG/
 ├── run_predictions.ipynb
 │
 ├── scripts/                     # Entry-point scripts
-│   ├── run_extraction.py
+│   ├── run_classification.py
 │   ├── run_alignment.py
 │   ├── run_clustering.py
 │   ├── run_validation.py
@@ -161,8 +161,8 @@ ORAX-KG/
 │   └── extract_schema.py
 │
 ├── src/                         # Core library
-│   ├── extraction/              # LLM extraction + prompt generation
-│   │   ├── llm_extractor.py
+│   ├── classification/              # LLM classification + prompt generation
+│   │   ├── llm_classifier.py
 │   │   └── metrics.py 
 │   ├── alignment/               # Embedding + similarity computation
 │   │   ├── embeddings.py
@@ -203,14 +203,14 @@ results/retacred_qwen_20260310_142501/
 │   ├── hidden_ontology.json     # Ontology triples withheld (evaluation targets)
 │   └── split_metadata.json      # Split statistics
 │
-├── 02_extraction/
-│   ├── extractions.jsonl        # LLM-extracted triples (one JSON per line)
+├── 02_classification/
+│   ├── classifications.jsonl        # LLM-classified triples (one JSON per line)
 │   ├── test_samples.json        # Sampled input sentences
 │   └── ground_truth.json        # Ground truth relation labels
 │
 ├── 03_alignment/
 │   ├── alignment_results.json   # Per-triple alignment decisions
-│   ├── extracted_embeddings.pt  # Saved embedding tensors
+│   ├── classified_embeddings.pt  # Saved embedding tensors
 │   ├── ontology_embeddings.pt   # Ontology embeddings
 │   └── statistics.json          # Alignment statistics
 │

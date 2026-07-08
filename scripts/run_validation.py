@@ -11,7 +11,7 @@ import yaml
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from src.extraction.llm_extractor import setup_client
+from src.classification.llm_classifier import setup_client
 from src.clustering.consensus import compute_inter_triple_similarities
 from src.validation.llm_validator import (
     ClusterValidator,
@@ -36,18 +36,18 @@ def load_embeddings(embeddings_path: str) -> list:
     return embs
 
 
-def normalize_embeddings(extracted_embs: list) -> list:
+def normalize_embeddings(classified_embs: list) -> list:
     """L2-normalize all embedding vectors in-place."""
     keys = ["relation_emb", "triple_emb", "subj_type_emb", "obj_type_emb"]
-    for e in extracted_embs:
+    for e in classified_embs:
         for key in keys:
             if key in e:
                 e[key] = torch.nn.functional.normalize(e[key].float(), p=2, dim=-1)
-    return extracted_embs
+    return classified_embs
 
 
 def run_validation(
-    extraction_dir: str,
+    classification_dir: str,
     clusters_path: str,
     embeddings_path: str,
     output_dir: str,
@@ -61,8 +61,8 @@ def run_validation(
     Run the full validation pipeline.
 
     Args:
-        extraction_dir: Directory produced by run_extraction.py
-                        (contains 01_ontology/ and 02_extraction/)
+        classification_dir: Directory produced by run_classification.py
+                        (contains 01_ontology/ and 02_classification/)
         clusters_path: Path to clusters JSON file
         embeddings_path: Path to embeddings .pt file
         output_dir: Directory to save validation results
@@ -72,13 +72,13 @@ def run_validation(
         min_cluster_size: Skip clusters smaller than this
         min_confidence: Minimum confidence to accept ('Low'/'Medium'/'High')
     """
-    extraction_dir = Path(extraction_dir)
+    classification_dir = Path(classification_dir)
     output_dir     = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print("\n")
     print("ORAX-KG Cluster Validation:")
-    print(f"\n  Extraction dir: {extraction_dir}")
+    print(f"\n  classification dir: {classification_dir}")
     print(f"  Output dir:     {output_dir}")
 
     print(f"\n  Connecting to vLLM server at {base_url}...")
@@ -86,8 +86,8 @@ def run_validation(
     print(f"  Model: {model_name}")
 
     print(f"\n  Loading ontology...")
-    known_path = extraction_dir / "01_ontology" / "known_ontology.json"
-    full_path  = extraction_dir / "01_ontology" / "full_ontology.json"
+    known_path = classification_dir / "01_ontology" / "known_ontology.json"
+    full_path  = classification_dir / "01_ontology" / "full_ontology.json"
 
     with open(known_path) as f:
         known_ontology = json.load(f)
@@ -109,12 +109,12 @@ def run_validation(
     n_relation_clusters = len(raw_clusters.get("relation", {}))
     print(f"   Relation-mode clusters: {n_relation_clusters}")
 
-    # Load extracted_embeddings.pt for inter-triple similarity computation
+    # Load classified_embeddings.pt for inter-triple similarity computation
     print(f"\n  Loading embeddings from {embeddings_path}...")
-    extracted_embs = normalize_embeddings(load_embeddings(embeddings_path))
+    classified_embs = normalize_embeddings(load_embeddings(embeddings_path))
 
     print(f"\n  Computing inter-triple similarities...")
-    inter_triple_sims = compute_inter_triple_similarities(extracted_embs)
+    inter_triple_sims = compute_inter_triple_similarities(classified_embs)
 
     # Load full cluster items (with embeddings)
     # cluster_embeddings.pt is saved by run_clustering.py alongside clusters.json
@@ -176,7 +176,7 @@ def run_validation(
             "top_k_representatives": top_k_representatives,
             "min_cluster_size":      min_cluster_size,
             "min_confidence":        min_confidence,
-            "extraction_dir":        str(extraction_dir),
+            "classification_dir":        str(classification_dir),
             "clusters_path":         str(clusters_path),
             "embeddings_path":       str(embeddings_path),
         },
@@ -198,8 +198,8 @@ def run_validation(
 def main():
     parser = argparse.ArgumentParser(description="Run ORAX-KG cluster validation")
     parser.add_argument(
-        "--extraction-dir", type=str, required=True,
-        help="Directory produced by run_extraction.py (contains 01_ontology/)"
+        "--classification-dir", type=str, required=True,
+        help="Directory produced by run_classification.py (contains 01_ontology/)"
     )
     parser.add_argument(
         "--clusters", type=str, required=True,
@@ -238,7 +238,7 @@ def main():
     args = parser.parse_args()
     setup_logger("validation")
     run_validation(
-        extraction_dir=args.extraction_dir,
+        classification_dir=args.classification_dir,
         clusters_path=args.clusters,
         embeddings_path=args.embeddings,
         output_dir=args.output,

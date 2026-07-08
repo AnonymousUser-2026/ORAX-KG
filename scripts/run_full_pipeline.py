@@ -8,7 +8,7 @@ import sys
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from run_extraction import run_extraction
+from run_classification import run_classification
 from run_alignment import run_alignment
 from run_clustering import run_clustering
 from run_validation import run_validation
@@ -34,16 +34,16 @@ def run_full_pipeline(config_path: str, resume: bool = True):
     print("ORAX-KG FULL PIPELINE:")
     print(f"\n  Run directory: {run_dir}")
 
-    # Step 1: Extraction
+    # Step 1: classification
     print("\n")
-    print("STEP 1: EXTRACTION")
+    print("STEP 1: classification")
 
-    run_extraction(
+    run_classification(
         data_path=config["data"]["test_path"],
         schema_path=config["data"]["schema_path"],
         output_dir=run_dir,
-        base_url=config["extraction"]["base_url"],
-        model_name=config["extraction"]["model"],
+        base_url=config["classification"]["base_url"],
+        model_name=config["classification"]["model"],
         resume=resume
     )
 
@@ -52,7 +52,7 @@ def run_full_pipeline(config_path: str, resume: bool = True):
     print("STEP 2: ALIGNMENT")
 
     run_alignment(
-        extraction_dir=run_dir,
+        classification_dir=run_dir,
         output_dir=run_dir,
         embedder_model=config["alignment"]["embedder_model"],
         threshold=config["alignment"]["threshold"],
@@ -75,9 +75,9 @@ def run_full_pipeline(config_path: str, resume: bool = True):
     print("STEP 4: VALIDATION")
 
     run_validation(
-        extraction_dir=run_dir,
+        classification_dir=run_dir,
         clusters_path=run_dir / "04_clustering" / "clusters.json",
-        embeddings_path=run_dir / "03_alignment" / "extracted_embeddings.pt",
+        embeddings_path=run_dir / "03_alignment" / "classified_embeddings.pt",
         output_dir=run_dir / "05_validation",
         base_url=config["validation"]["base_url"],
         model_name=config["validation"]["model"],
@@ -92,7 +92,7 @@ def run_full_pipeline(config_path: str, resume: bool = True):
     print(f"\n  All results saved to: {run_dir}")
     print("\n  Output:")
     print(f"    01_ontology/   — known/hidden ontology splits")
-    print(f"    02_extraction/ — LLM extractions + ground truth")
+    print(f"    02_classification/ — LLM classifications + ground truth")
     print(f"    03_alignment/  — embeddings + alignment results")
     print(f"    04_clustering/ — consensus cluster assignments")
     print(f"    05_validation/ — novel relations + rejected candidates")
