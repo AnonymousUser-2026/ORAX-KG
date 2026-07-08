@@ -4,7 +4,7 @@ Official implementation of ORAX-KG.
 
 ## Description
 
-ORAX-KG is a unified framework that expands an initial ontology for ontology-grounded knowledge graph construction. Given a corpus and a partial ontology schema, it automatically classifies  relation triples, aligns them against known relations, clusters the unaligned ones, and validates the resulting clusters with an LLM to propose genuinely new ontology relations.
+ORAX-KG is a unified framework that expands an initial ontology for ontology-grounded knowledge graph enrichment. Given a corpus and a partial ontology schema, it automatically classifies relations between typed entity pairs, aligns the resulting triples against known ontology relations, clusters the unaligned ones, and validates the resulting clusters with an LLM to propose genuinely novel relation types.
 
 ### Key Components
 
